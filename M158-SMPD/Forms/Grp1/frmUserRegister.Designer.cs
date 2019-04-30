@@ -30,7 +30,7 @@
         {
             this.LblName = new System.Windows.Forms.Label();
             this.CbxAdm = new System.Windows.Forms.CheckBox();
-            this.TbxName = new System.Windows.Forms.TextBox();
+            this.TbxFirstname = new System.Windows.Forms.TextBox();
             this.TbxSurname = new System.Windows.Forms.TextBox();
             this.TbxUsername = new System.Windows.Forms.TextBox();
             this.TbxPassword = new System.Windows.Forms.TextBox();
@@ -43,6 +43,8 @@
             this.LblUserGroup = new System.Windows.Forms.Label();
             this.BtnAddUser = new System.Windows.Forms.Button();
             this.BtnBreak = new System.Windows.Forms.Button();
+            this.LblAddUser = new System.Windows.Forms.Label();
+            this.LblComments = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LblName
@@ -64,12 +66,13 @@
             this.CbxAdm.Text = "Administrator";
             this.CbxAdm.UseVisualStyleBackColor = true;
             // 
-            // TbxName
+            // TbxFirstname
             // 
-            this.TbxName.Location = new System.Drawing.Point(154, 54);
-            this.TbxName.Name = "TbxName";
-            this.TbxName.Size = new System.Drawing.Size(121, 20);
-            this.TbxName.TabIndex = 2;
+            this.TbxFirstname.Location = new System.Drawing.Point(154, 54);
+            this.TbxFirstname.Name = "TbxFirstname";
+            this.TbxFirstname.Size = new System.Drawing.Size(121, 20);
+            this.TbxFirstname.TabIndex = 2;
+            this.TbxFirstname.TextChanged += new System.EventHandler(this.TbxName_TextChanged);
             // 
             // TbxSurname
             // 
@@ -160,6 +163,7 @@
             this.BtnAddUser.TabIndex = 13;
             this.BtnAddUser.Text = "Hinzufügen";
             this.BtnAddUser.UseVisualStyleBackColor = true;
+            this.BtnAddUser.Click += new System.EventHandler(this.BtnAddUser_Click);
             // 
             // BtnBreak
             // 
@@ -169,12 +173,34 @@
             this.BtnBreak.TabIndex = 14;
             this.BtnBreak.Text = "Abbrechen";
             this.BtnBreak.UseVisualStyleBackColor = true;
+            this.BtnBreak.Click += new System.EventHandler(this.BtnBreak_Click);
+            // 
+            // LblAddUser
+            // 
+            this.LblAddUser.AutoSize = true;
+            this.LblAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAddUser.Location = new System.Drawing.Point(40, 19);
+            this.LblAddUser.Name = "LblAddUser";
+            this.LblAddUser.Size = new System.Drawing.Size(179, 20);
+            this.LblAddUser.TabIndex = 15;
+            this.LblAddUser.Text = "Benutzer Hinzufügen";
+            // 
+            // LblComments
+            // 
+            this.LblComments.AutoSize = true;
+            this.LblComments.Location = new System.Drawing.Point(46, 302);
+            this.LblComments.Name = "LblComments";
+            this.LblComments.Size = new System.Drawing.Size(0, 13);
+            this.LblComments.TabIndex = 16;
+            this.LblComments.Visible = false;
             // 
             // frmUserRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 305);
+            this.ClientSize = new System.Drawing.Size(332, 355);
+            this.Controls.Add(this.LblComments);
+            this.Controls.Add(this.LblAddUser);
             this.Controls.Add(this.BtnBreak);
             this.Controls.Add(this.BtnAddUser);
             this.Controls.Add(this.LblUserGroup);
@@ -187,7 +213,7 @@
             this.Controls.Add(this.TbxPassword);
             this.Controls.Add(this.TbxUsername);
             this.Controls.Add(this.TbxSurname);
-            this.Controls.Add(this.TbxName);
+            this.Controls.Add(this.TbxFirstname);
             this.Controls.Add(this.CbxAdm);
             this.Controls.Add(this.LblName);
             this.Name = "frmUserRegister";
@@ -202,7 +228,7 @@
 
         private System.Windows.Forms.Label LblName;
         private System.Windows.Forms.CheckBox CbxAdm;
-        private System.Windows.Forms.TextBox TbxName;
+        private System.Windows.Forms.TextBox TbxFirstname;
         private System.Windows.Forms.TextBox TbxSurname;
         private System.Windows.Forms.TextBox TbxUsername;
         private System.Windows.Forms.TextBox TbxPassword;
@@ -215,5 +241,7 @@
         private System.Windows.Forms.Label LblUserGroup;
         private System.Windows.Forms.Button BtnAddUser;
         private System.Windows.Forms.Button BtnBreak;
+        private System.Windows.Forms.Label LblAddUser;
+        private System.Windows.Forms.Label LblComments;
     }
 }
