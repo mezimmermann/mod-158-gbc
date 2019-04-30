@@ -131,6 +131,9 @@ namespace M158_SMPD
                 MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, connection);
                 dataAdapter.Fill(data);
 
+                //close connection
+                this.CloseConnection();
+
                 return data;
             }
             else
