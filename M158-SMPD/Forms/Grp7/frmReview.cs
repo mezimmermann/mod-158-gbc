@@ -15,15 +15,9 @@ namespace M158_SMPD.Forms
         public frmReview()
         {
             MySQLCon mysql = new MySQLCon();
-            //mysql.setSQLStatement("");
-
-            DataTable TableBeruf = mysql.getSQLStatement("SELECT * FROM tbl_beruf");
-            //DataTable TableFaecher = mysql.getSQLStatement("SELECT * FROM tbl_faecher");
-            //DataTable TableFirma = mysql.getSQLStatement("SELECT * FROM tbl_firma");
-            //DataTable TableKlasse = mysql.getSQLStatement("SELECT * FROM tbl_klasse");
-            //DataTable TableLehrling = mysql.getSQLStatement("SELECT * FROM tbl_lehrling");
-            //DataTable TableLehrzeit = mysql.getSQLStatement("SELECT * FROM tbl_lehrzeiten");
-            //DataTable TableSemester = mysql.getSQLStatement("SELECT * FROM tbl_semester");
+            
+            
+            
 
             //MessageBox.Show(outTable.Rows[0].RowState.ToString());
             InitializeComponent();
@@ -32,7 +26,44 @@ namespace M158_SMPD.Forms
         private void btn_beruf_ext_form_Click(object sender, EventArgs e)
         {
             FrmReviewBeruf fberuf = new FrmReviewBeruf();
-            fberuf.ShowDialog(); // Shows Form2
+            fberuf.ShowDialog(); // Shows Forms Review-Beruf
+        }
+
+        private void BtnFaecher_Click(object sender, EventArgs e)
+        {
+            FrmReviewFaecher ffaecher = new FrmReviewFaecher();
+            ffaecher.ShowDialog(); // Shows Forms Review-Fächer
+
+        }
+
+        private void BtnFirma_Click(object sender, EventArgs e)
+        {
+            FrmReviewFirma ffirma = new FrmReviewFirma();
+            ffirma.ShowDialog(); // Shows Forms Review-Firma
+        }
+
+        private void BtnKlasse_Click(object sender, EventArgs e)
+        {
+            FrmReviewKlasse fklasse = new FrmReviewKlasse();
+            fklasse.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmReviewLehrling flehrling = new FrmReviewLehrling();
+            flehrling.ShowDialog();
+        }
+
+        private void BtnLehrzeiten_Click(object sender, EventArgs e)
+        {
+            FrmReviewLehrzeiten flehrzeiten = new FrmReviewLehrzeiten();
+            flehrzeiten.ShowDialog();
+        }
+
+        private void BtnSemester_Click(object sender, EventArgs e)
+        {
+            FrmReviewSemester fsemester = new FrmReviewSemester();
+            fsemester.ShowDialog();
         }
     }
 }

@@ -121,6 +121,42 @@
     <Compile Include="Forms\Grp7\FrmReviewBeruf.Designer.cs">
       <DependentUpon>FrmReviewBeruf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewFaecher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewFaecher.Designer.cs">
+      <DependentUpon>FrmReviewFaecher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewFirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewFirma.Designer.cs">
+      <DependentUpon>FrmReviewFirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewKlasse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewKlasse.Designer.cs">
+      <DependentUpon>FrmReviewKlasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewLehrling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewLehrling.Designer.cs">
+      <DependentUpon>FrmReviewLehrling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewLehrzeiten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewLehrzeiten.Designer.cs">
+      <DependentUpon>FrmReviewLehrzeiten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReviewSemester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReviewSemester.Designer.cs">
+      <DependentUpon>FrmReviewSemester.cs</DependentUpon>
+    </Compile>
     <Compile Include="MySQLCon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,8 +166,26 @@
     <EmbeddedResource Include="Forms\Grp7\FrmReviewBeruf.resx">
       <DependentUpon>FrmReviewBeruf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewFaecher.resx">
+      <DependentUpon>FrmReviewFaecher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewFirma.resx">
+      <DependentUpon>FrmReviewFirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewKlasse.resx">
+      <DependentUpon>FrmReviewKlasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewLehrling.resx">
+      <DependentUpon>FrmReviewLehrling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewLehrzeiten.resx">
+      <DependentUpon>FrmReviewLehrzeiten.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReviewSemester.resx">
+      <DependentUpon>FrmReviewSemester.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

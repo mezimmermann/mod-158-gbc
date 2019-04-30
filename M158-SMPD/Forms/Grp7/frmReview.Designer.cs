@@ -28,36 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_review_title = new System.Windows.Forms.Label();
-            this.btn_beruf_ext_form = new System.Windows.Forms.Button();
+            this.LblReviewTitle = new System.Windows.Forms.Label();
+            this.BtnBeruf = new System.Windows.Forms.Button();
+            this.BtnFaecher = new System.Windows.Forms.Button();
+            this.BtnFirma = new System.Windows.Forms.Button();
+            this.BtnKlasse = new System.Windows.Forms.Button();
+            this.BtnLehrling = new System.Windows.Forms.Button();
+            this.BtnLehrzeiten = new System.Windows.Forms.Button();
+            this.BtnSemester = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lbl_review_title
+            // LblReviewTitle
             // 
-            this.lbl_review_title.AutoSize = true;
-            this.lbl_review_title.Location = new System.Drawing.Point(13, 13);
-            this.lbl_review_title.Name = "lbl_review_title";
-            this.lbl_review_title.Size = new System.Drawing.Size(51, 13);
-            this.lbl_review_title.TabIndex = 0;
-            this.lbl_review_title.Text = "Reviews:";
+            this.LblReviewTitle.AutoSize = true;
+            this.LblReviewTitle.Location = new System.Drawing.Point(13, 13);
+            this.LblReviewTitle.Name = "LblReviewTitle";
+            this.LblReviewTitle.Size = new System.Drawing.Size(51, 13);
+            this.LblReviewTitle.TabIndex = 0;
+            this.LblReviewTitle.Text = "Reviews:";
             // 
-            // btn_beruf_ext_form
+            // BtnBeruf
             // 
-            this.btn_beruf_ext_form.Location = new System.Drawing.Point(16, 42);
-            this.btn_beruf_ext_form.Name = "btn_beruf_ext_form";
-            this.btn_beruf_ext_form.Size = new System.Drawing.Size(148, 31);
-            this.btn_beruf_ext_form.TabIndex = 1;
-            this.btn_beruf_ext_form.Text = "Beruf";
-            this.btn_beruf_ext_form.UseVisualStyleBackColor = true;
-            this.btn_beruf_ext_form.Click += new System.EventHandler(this.btn_beruf_ext_form_Click);
+            this.BtnBeruf.Location = new System.Drawing.Point(16, 42);
+            this.BtnBeruf.Name = "BtnBeruf";
+            this.BtnBeruf.Size = new System.Drawing.Size(148, 31);
+            this.BtnBeruf.TabIndex = 1;
+            this.BtnBeruf.Text = "Beruf";
+            this.BtnBeruf.UseVisualStyleBackColor = true;
+            this.BtnBeruf.Click += new System.EventHandler(this.btn_beruf_ext_form_Click);
+            // 
+            // BtnFaecher
+            // 
+            this.BtnFaecher.Location = new System.Drawing.Point(16, 90);
+            this.BtnFaecher.Name = "BtnFaecher";
+            this.BtnFaecher.Size = new System.Drawing.Size(148, 31);
+            this.BtnFaecher.TabIndex = 3;
+            this.BtnFaecher.Text = "Fächer";
+            this.BtnFaecher.UseVisualStyleBackColor = true;
+            this.BtnFaecher.Click += new System.EventHandler(this.BtnFaecher_Click);
+            // 
+            // BtnFirma
+            // 
+            this.BtnFirma.Location = new System.Drawing.Point(16, 138);
+            this.BtnFirma.Name = "BtnFirma";
+            this.BtnFirma.Size = new System.Drawing.Size(148, 31);
+            this.BtnFirma.TabIndex = 4;
+            this.BtnFirma.Text = "Firma";
+            this.BtnFirma.UseVisualStyleBackColor = true;
+            this.BtnFirma.Click += new System.EventHandler(this.BtnFirma_Click);
+            // 
+            // BtnKlasse
+            // 
+            this.BtnKlasse.Location = new System.Drawing.Point(16, 187);
+            this.BtnKlasse.Name = "BtnKlasse";
+            this.BtnKlasse.Size = new System.Drawing.Size(148, 31);
+            this.BtnKlasse.TabIndex = 5;
+            this.BtnKlasse.Text = "Klasse";
+            this.BtnKlasse.UseVisualStyleBackColor = true;
+            this.BtnKlasse.Click += new System.EventHandler(this.BtnKlasse_Click);
+            // 
+            // BtnLehrling
+            // 
+            this.BtnLehrling.Location = new System.Drawing.Point(16, 236);
+            this.BtnLehrling.Name = "BtnLehrling";
+            this.BtnLehrling.Size = new System.Drawing.Size(148, 31);
+            this.BtnLehrling.TabIndex = 6;
+            this.BtnLehrling.Text = "Lehrling";
+            this.BtnLehrling.UseVisualStyleBackColor = true;
+            this.BtnLehrling.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // BtnLehrzeiten
+            // 
+            this.BtnLehrzeiten.Location = new System.Drawing.Point(16, 285);
+            this.BtnLehrzeiten.Name = "BtnLehrzeiten";
+            this.BtnLehrzeiten.Size = new System.Drawing.Size(148, 31);
+            this.BtnLehrzeiten.TabIndex = 7;
+            this.BtnLehrzeiten.Text = "Lehrzeiten";
+            this.BtnLehrzeiten.UseVisualStyleBackColor = true;
+            this.BtnLehrzeiten.Click += new System.EventHandler(this.BtnLehrzeiten_Click);
+            // 
+            // BtnSemester
+            // 
+            this.BtnSemester.Location = new System.Drawing.Point(16, 334);
+            this.BtnSemester.Name = "BtnSemester";
+            this.BtnSemester.Size = new System.Drawing.Size(148, 31);
+            this.BtnSemester.TabIndex = 8;
+            this.BtnSemester.Text = "Semester";
+            this.BtnSemester.UseVisualStyleBackColor = true;
+            this.BtnSemester.Click += new System.EventHandler(this.BtnSemester_Click);
             // 
             // frmReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 314);
-            this.Controls.Add(this.btn_beruf_ext_form);
-            this.Controls.Add(this.lbl_review_title);
+            this.ClientSize = new System.Drawing.Size(609, 388);
+            this.Controls.Add(this.BtnSemester);
+            this.Controls.Add(this.BtnLehrzeiten);
+            this.Controls.Add(this.BtnLehrling);
+            this.Controls.Add(this.BtnKlasse);
+            this.Controls.Add(this.BtnFirma);
+            this.Controls.Add(this.BtnFaecher);
+            this.Controls.Add(this.BtnBeruf);
+            this.Controls.Add(this.LblReviewTitle);
             this.Name = "frmReview";
             this.Text = "frmReview";
             this.ResumeLayout(false);
@@ -67,7 +139,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_review_title;
-        private System.Windows.Forms.Button btn_beruf_ext_form;
+        private System.Windows.Forms.Label LblReviewTitle;
+        private System.Windows.Forms.Button BtnBeruf;
+        private System.Windows.Forms.Button BtnFaecher;
+        private System.Windows.Forms.Button BtnFirma;
+        private System.Windows.Forms.Button BtnKlasse;
+        private System.Windows.Forms.Button BtnLehrling;
+        private System.Windows.Forms.Button BtnLehrzeiten;
+        private System.Windows.Forms.Button BtnSemester;
     }
 }

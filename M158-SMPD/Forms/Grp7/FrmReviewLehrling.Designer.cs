@@ -1,6 +1,6 @@
 ﻿namespace M158_SMPD
 {
-    partial class FrmReviewBeruf
+    partial class FrmReviewLehrling
     {
         /// <summary>
         /// Required designer variable.
@@ -28,39 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DgvBeruf = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvBeruf)).BeginInit();
+            this.DgvLehrling = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvLehrling)).BeginInit();
             this.SuspendLayout();
             // 
-            // DgvBeruf
+            // DgvLehrling
             // 
-            this.DgvBeruf.AllowUserToAddRows = false;
-            this.DgvBeruf.AllowUserToDeleteRows = false;
-            this.DgvBeruf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvBeruf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvBeruf.Location = new System.Drawing.Point(0, 0);
-            this.DgvBeruf.Name = "DgvBeruf";
-            this.DgvBeruf.ReadOnly = true;
-            this.DgvBeruf.Size = new System.Drawing.Size(484, 335);
-            this.DgvBeruf.TabIndex = 0;
+            this.DgvLehrling.AllowUserToAddRows = false;
+            this.DgvLehrling.AllowUserToDeleteRows = false;
+            this.DgvLehrling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvLehrling.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvLehrling.Location = new System.Drawing.Point(0, 0);
+            this.DgvLehrling.Name = "DgvLehrling";
+            this.DgvLehrling.ReadOnly = true;
+            this.DgvLehrling.Size = new System.Drawing.Size(1162, 609);
+            this.DgvLehrling.TabIndex = 0;
             // 
-            // FrmReviewBeruf
+            // FrmReviewLehrling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 335);
-            this.Controls.Add(this.DgvBeruf);
+            this.ClientSize = new System.Drawing.Size(1162, 609);
+            this.Controls.Add(this.DgvLehrling);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FrmReviewBeruf";
-            this.Text = "FrmReviewBeruf";
-            this.Load += new System.EventHandler(this.FrmReviewBeruf_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvBeruf)).EndInit();
+            this.Name = "FrmReviewLehrling";
+            this.Text = "FrmReviewLehrling";
+            this.Load += new System.EventHandler(this.FrmReviewLehrling_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvLehrling)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DgvBeruf;
+        private System.Windows.Forms.DataGridView DgvLehrling;
     }
 }

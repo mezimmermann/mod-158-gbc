@@ -1,6 +1,6 @@
 ﻿namespace M158_SMPD
 {
-    partial class FrmReviewBeruf
+    partial class FrmReviewKlasse
     {
         /// <summary>
         /// Required designer variable.
@@ -28,39 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DgvBeruf = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvBeruf)).BeginInit();
+            this.DgvKlasse = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvKlasse)).BeginInit();
             this.SuspendLayout();
             // 
-            // DgvBeruf
+            // DgvKlasse
             // 
-            this.DgvBeruf.AllowUserToAddRows = false;
-            this.DgvBeruf.AllowUserToDeleteRows = false;
-            this.DgvBeruf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvBeruf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvBeruf.Location = new System.Drawing.Point(0, 0);
-            this.DgvBeruf.Name = "DgvBeruf";
-            this.DgvBeruf.ReadOnly = true;
-            this.DgvBeruf.Size = new System.Drawing.Size(484, 335);
-            this.DgvBeruf.TabIndex = 0;
+            this.DgvKlasse.AllowUserToAddRows = false;
+            this.DgvKlasse.AllowUserToDeleteRows = false;
+            this.DgvKlasse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvKlasse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvKlasse.Location = new System.Drawing.Point(0, 0);
+            this.DgvKlasse.Name = "DgvKlasse";
+            this.DgvKlasse.ReadOnly = true;
+            this.DgvKlasse.Size = new System.Drawing.Size(500, 400);
+            this.DgvKlasse.TabIndex = 0;
             // 
-            // FrmReviewBeruf
+            // FrmReviewKlasse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 335);
-            this.Controls.Add(this.DgvBeruf);
+            this.ClientSize = new System.Drawing.Size(500, 400);
+            this.Controls.Add(this.DgvKlasse);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FrmReviewBeruf";
-            this.Text = "FrmReviewBeruf";
-            this.Load += new System.EventHandler(this.FrmReviewBeruf_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvBeruf)).EndInit();
+            this.Name = "FrmReviewKlasse";
+            this.Text = "FrmReviewKlasse";
+            this.Load += new System.EventHandler(this.FrmReviewKlasse_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvKlasse)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DgvBeruf;
+        private System.Windows.Forms.DataGridView DgvKlasse;
     }
 }
