@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Grp1\Cryption.cs" />
     <Compile Include="Forms\Grp1\frmUserRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +119,9 @@
     <Compile Include="MySQLCon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Grp1\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Grp1\frmUserRegister.resx">
       <DependentUpon>frmUserRegister.cs</DependentUpon>
     </EmbeddedResource>
