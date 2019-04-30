@@ -32,10 +32,10 @@ namespace M158_SMPD
 
         {
 
-            server = "localhost";
-            database = "classicmodels";
-            uid = "root";
-            password = "";
+            server = "192.168.2.88";
+            database = "access";
+            uid = "remote";
+            password = "remote";
             
             
             string connectionString;
