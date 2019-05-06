@@ -29,19 +29,21 @@ namespace M158_SMPD.Forms.Grp1
 
         private void BtnAddUser_Click(object sender, EventArgs e)
         {
+            bool BoolAdm;
             string StrFirstname = TbxFirstname.Text;
             string StrSurname = TbxSurname.Text;
             string StrUsername = TbxUsername.Text;
             string StrPassword = TbxPassword.Text;
             string StrConfirmPassword = TbxConfirmPassword.Text;
             string StrUserGroup = CmxUserGroups.Text;
+            
             if (CbxAdm.Checked == true)
             {
-                bool BoolAdm = true;
+                BoolAdm = true;
             }
             else
             {
-                bool BoolAdm = false;
+                BoolAdm = false;
             }
             if ((StrFirstname == "") && (StrSurname == "") && (StrUsername == "") && (StrPassword == "") && (StrConfirmPassword == "") && (StrUserGroup == ""))
             {

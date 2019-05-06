@@ -17,9 +17,8 @@ namespace M158_SMPD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
-            Application.Run(new frmUserRegister());
             Application.Run(new frmLogin());
+            Application.Run(new FrmMain());
         }
     }
 }

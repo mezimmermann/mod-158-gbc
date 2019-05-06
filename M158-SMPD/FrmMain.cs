@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using M158_SMPD.Forms.Grp1;
 
 namespace M158_SMPD
 {
@@ -14,7 +15,18 @@ namespace M158_SMPD
     {
         public FrmMain()
         {
-            InitializeComponent();
+            // Adminberechtigung
+            if (frmLogin.DtUserdetails.Rows[0][5].ToString() == "True")
+            {
+                //TsmiRegistration.Visible = true;
+                //TsmiSeperator.Visible = true;
+            }
+        }
+
+        private void TsmiRegistration_Click(object sender, EventArgs e)
+        {
+            frmUserRegister Registration = new frmUserRegister();
+            Registration.Show();
         }
     }
 }

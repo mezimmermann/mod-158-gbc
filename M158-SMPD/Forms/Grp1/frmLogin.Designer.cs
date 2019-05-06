@@ -34,6 +34,7 @@
             this.TbxPassword = new System.Windows.Forms.TextBox();
             this.LblTitle = new System.Windows.Forms.Label();
             this.BtnLogin = new System.Windows.Forms.Button();
+            this.BtnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LblUsername
@@ -82,23 +83,38 @@
             // 
             this.BtnLogin.Location = new System.Drawing.Point(199, 66);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(127, 71);
+            this.BtnLogin.Size = new System.Drawing.Size(127, 20);
             this.BtnLogin.TabIndex = 5;
             this.BtnLogin.Text = "Login";
             this.BtnLogin.UseVisualStyleBackColor = true;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            // 
+            // BtnClose
+            // 
+            this.BtnClose.Location = new System.Drawing.Point(199, 117);
+            this.BtnClose.Name = "BtnClose";
+            this.BtnClose.Size = new System.Drawing.Size(127, 20);
+            this.BtnClose.TabIndex = 6;
+            this.BtnClose.Text = "Schliessen";
+            this.BtnClose.UseVisualStyleBackColor = true;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 160);
+            this.ControlBox = false;
+            this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.LblTitle);
             this.Controls.Add(this.TbxPassword);
             this.Controls.Add(this.LblPassword);
             this.Controls.Add(this.TbxUsername);
             this.Controls.Add(this.LblUsername);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -114,5 +130,6 @@
         private System.Windows.Forms.TextBox TbxPassword;
         private System.Windows.Forms.Label LblTitle;
         private System.Windows.Forms.Button BtnLogin;
+        private System.Windows.Forms.Button BtnClose;
     }
 }
