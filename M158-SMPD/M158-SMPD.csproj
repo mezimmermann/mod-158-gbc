@@ -34,7 +34,7 @@
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.16\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+      <HintPath>Assemblies\v4.5.2\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,6 +49,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cryption.cs" />
+    <Compile Include="Forms\Grp1\FrmNotendaten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp1\FrmNotendaten.Designer.cs">
+      <DependentUpon>FrmNotendaten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp1\frmUserRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp1\frmUserRegister.Designer.cs">
+      <DependentUpon>frmUserRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Grp2\frmFaecherzuteilung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +125,12 @@
     <Compile Include="MySQLCon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Grp1\FrmNotendaten.resx">
+      <DependentUpon>FrmNotendaten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp1\frmUserRegister.resx">
+      <DependentUpon>frmUserRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
