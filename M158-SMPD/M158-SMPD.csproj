@@ -49,16 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Forms\Grp1\FrmNotendaten.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Grp1\FrmNotendaten.Designer.cs">
-      <DependentUpon>FrmNotendaten.cs</DependentUpon>
-    </Compile>
-=======
     <Compile Include="Forms\Grp1\Cryption.cs" />
->>>>>>> 240cc6122d9824c55d7d7e91133fbd44af4629be
     <Compile Include="Forms\Grp1\frmUserRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,13 +119,8 @@
     <Compile Include="MySQLCon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <EmbeddedResource Include="Forms\Grp1\FrmNotendaten.resx">
-      <DependentUpon>FrmNotendaten.cs</DependentUpon>
-=======
     <EmbeddedResource Include="Forms\Grp1\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
->>>>>>> 240cc6122d9824c55d7d7e91133fbd44af4629be
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Grp1\frmUserRegister.resx">
       <DependentUpon>frmUserRegister.cs</DependentUpon>

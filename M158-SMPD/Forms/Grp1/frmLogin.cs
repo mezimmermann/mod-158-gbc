@@ -27,7 +27,7 @@ namespace M158_SMPD
             //string password = Cryption.encrypt("test");
             StrPasswordDB = MysqlconUser.getSQLStatement("SELECT Passwort FROM user WHERE Benutzername=\""+ StrUsername + "\"").Rows[0][0].ToString();
 
-            if (Cryption.checkPwd(TbxPassword.Text.ToString(), StrPasswordDB) == true)
+            if (Cryption.checkPwd(StrPasswordDB, TbxPassword.Text.ToString()) == true)
             {
                 MessageBox.Show("Login Successful");
             }
