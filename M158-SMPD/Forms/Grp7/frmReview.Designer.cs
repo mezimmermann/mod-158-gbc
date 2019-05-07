@@ -42,6 +42,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.BtnBerufCSV = new System.Windows.Forms.Button();
+            this.BtnFaecherCSV = new System.Windows.Forms.Button();
+            this.BtnFirmaCSV = new System.Windows.Forms.Button();
+            this.BtnKlasseCSV = new System.Windows.Forms.Button();
+            this.BtnLehrlingCSV = new System.Windows.Forms.Button();
+            this.BtnLehrzeitenCSV = new System.Windows.Forms.Button();
+            this.BtnSemesterCSV = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LblReviewTitle
@@ -171,11 +178,90 @@
             this.panel6.Size = new System.Drawing.Size(400, 1);
             this.panel6.TabIndex = 14;
             // 
+            // BtnBerufCSV
+            // 
+            this.BtnBerufCSV.Location = new System.Drawing.Point(226, 42);
+            this.BtnBerufCSV.Name = "BtnBerufCSV";
+            this.BtnBerufCSV.Size = new System.Drawing.Size(190, 31);
+            this.BtnBerufCSV.TabIndex = 15;
+            this.BtnBerufCSV.Text = "Beruf als CSV exportieren";
+            this.BtnBerufCSV.UseVisualStyleBackColor = true;
+            this.BtnBerufCSV.Click += new System.EventHandler(this.CsvExport_Click);
+            // 
+            // BtnFaecherCSV
+            // 
+            this.BtnFaecherCSV.Location = new System.Drawing.Point(226, 90);
+            this.BtnFaecherCSV.Name = "BtnFaecherCSV";
+            this.BtnFaecherCSV.Size = new System.Drawing.Size(190, 31);
+            this.BtnFaecherCSV.TabIndex = 16;
+            this.BtnFaecherCSV.Text = "Fächer als CSV exportieren";
+            this.BtnFaecherCSV.UseVisualStyleBackColor = true;
+            this.BtnFaecherCSV.Click += new System.EventHandler(this.CsvExport_Click);
+            // 
+            // BtnFirmaCSV
+            // 
+            this.BtnFirmaCSV.Location = new System.Drawing.Point(226, 138);
+            this.BtnFirmaCSV.Name = "BtnFirmaCSV";
+            this.BtnFirmaCSV.Size = new System.Drawing.Size(190, 31);
+            this.BtnFirmaCSV.TabIndex = 17;
+            this.BtnFirmaCSV.Text = "Firma als CSV exportieren";
+            this.BtnFirmaCSV.UseVisualStyleBackColor = true;
+            this.BtnFirmaCSV.Click += new System.EventHandler(this.CsvExport_Click);
+            // 
+            // BtnKlasseCSV
+            // 
+            this.BtnKlasseCSV.Location = new System.Drawing.Point(226, 187);
+            this.BtnKlasseCSV.Name = "BtnKlasseCSV";
+            this.BtnKlasseCSV.Size = new System.Drawing.Size(190, 31);
+            this.BtnKlasseCSV.TabIndex = 18;
+            this.BtnKlasseCSV.Text = "Klasse als CSV exportieren";
+            this.BtnKlasseCSV.UseVisualStyleBackColor = true;
+            this.BtnKlasseCSV.Click += new System.EventHandler(this.CsvExport_Click);
+            // 
+            // BtnLehrlingCSV
+            // 
+            this.BtnLehrlingCSV.Location = new System.Drawing.Point(226, 236);
+            this.BtnLehrlingCSV.Name = "BtnLehrlingCSV";
+            this.BtnLehrlingCSV.Size = new System.Drawing.Size(190, 31);
+            this.BtnLehrlingCSV.TabIndex = 19;
+            this.BtnLehrlingCSV.Text = "Lehrling als CSV exportieren";
+            this.BtnLehrlingCSV.UseVisualStyleBackColor = true;
+            this.BtnLehrlingCSV.Click += new System.EventHandler(this.CsvExport_Click);
+            // 
+            // BtnLehrzeitenCSV
+            // 
+            this.BtnLehrzeitenCSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLehrzeitenCSV.Location = new System.Drawing.Point(226, 285);
+            this.BtnLehrzeitenCSV.Name = "BtnLehrzeitenCSV";
+            this.BtnLehrzeitenCSV.Size = new System.Drawing.Size(190, 31);
+            this.BtnLehrzeitenCSV.TabIndex = 20;
+            this.BtnLehrzeitenCSV.Text = "Lehrzeiten als CSV exportieren";
+            this.BtnLehrzeitenCSV.UseVisualStyleBackColor = true;
+            this.BtnLehrzeitenCSV.Click += new System.EventHandler(this.CsvExport_Click);
+            // 
+            // BtnSemesterCSV
+            // 
+            this.BtnSemesterCSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSemesterCSV.Location = new System.Drawing.Point(226, 334);
+            this.BtnSemesterCSV.Name = "BtnSemesterCSV";
+            this.BtnSemesterCSV.Size = new System.Drawing.Size(190, 31);
+            this.BtnSemesterCSV.TabIndex = 21;
+            this.BtnSemesterCSV.Text = "Semester als CSV exportieren";
+            this.BtnSemesterCSV.UseVisualStyleBackColor = true;
+            this.BtnSemesterCSV.Click += new System.EventHandler(this.CsvExport_Click);
+            // 
             // frmReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 388);
+            this.Controls.Add(this.BtnSemesterCSV);
+            this.Controls.Add(this.BtnLehrzeitenCSV);
+            this.Controls.Add(this.BtnLehrlingCSV);
+            this.Controls.Add(this.BtnKlasseCSV);
+            this.Controls.Add(this.BtnFirmaCSV);
+            this.Controls.Add(this.BtnFaecherCSV);
+            this.Controls.Add(this.BtnBerufCSV);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -213,5 +299,12 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button BtnBerufCSV;
+        private System.Windows.Forms.Button BtnFaecherCSV;
+        private System.Windows.Forms.Button BtnFirmaCSV;
+        private System.Windows.Forms.Button BtnKlasseCSV;
+        private System.Windows.Forms.Button BtnLehrlingCSV;
+        private System.Windows.Forms.Button BtnLehrzeitenCSV;
+        private System.Windows.Forms.Button BtnSemesterCSV;
     }
 }

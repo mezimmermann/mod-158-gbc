@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,6 +62,62 @@ namespace M158_SMPD.Forms
         {
             FrmReviewSemester fsemester = new FrmReviewSemester();          //Form FrmReviewSemester laden und öffnen
             fsemester.ShowDialog();
+        }
+
+        private void CsvExport_Click(object sender, EventArgs e)
+        {
+            Button BtnSender = sender as Button;                            //Sender des Buttons definieren
+            MySQLCon mysql = new MySQLCon();                                //MySQL Connection initialisieren
+            SaveFileDialog saveCSVFile = new SaveFileDialog();              //Savedialog initialisieren
+            DataTable dtblQuery;                                            //Datatable erstellen
+            switch (BtnSender.Name)                                         //Switch-Case Funktion mit case nach Buttonnamen
+            {
+                case "BtnBerufCSV":
+                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_lehrzeiten ORDER BY Lj_Nr ASC");   //Daten der Query in Datatable
+                    saveCSVFile.FileName = "Beruf.csv";                                                     // default Filename
+                    break;
+
+                case "BtnFaecherCSV":
+                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_faecher ORDER BY Fae_Nr ASC");     //Daten der Query in Datatable
+                    saveCSVFile.FileName = "Faecher.csv";                                                   // default Filename
+                    break;
+
+                case "BtnFirmaCSV":
+                    dtblQuery = mysql.getSQLStatement("SELECT Fi_Nr, F_Name, Anrede, F_Vorname, F_Nachname, Ort, F_Strasse, F_Ansprechperson, F_Zusatz, F_Telefon, F_Fax FROM tbl_firma JOIN tbl_anrede on tbl_anrede.An_Nr = tbl_firma.An_Nr JOIN tbl_ort on tbl_ort.Or_Nr = tbl_firma.Or_Nr");        //Daten der Query in Datatable
+                    saveCSVFile.FileName = "Firma.csv";                                                                                                                                                                                                                                                 // default Filename
+                    break;
+
+                case "BtnKlasseCSV":
+                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_klasse ORDER BY Kl_Nr ASC");       //Daten der Query in Datatable
+                    saveCSVFile.FileName = "Klasse.csv";                                                    // default Filename
+                    break;
+
+                case "BtnLehrlingCSV":
+                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_lehrling ORDER BY Ll_Nr ASC");     //Daten der Query in Datatable
+                    saveCSVFile.FileName = "Lehrling.csv";                                                  // default Filename
+                    break;
+
+                case "BtnLehrzeitenCSV":
+                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_lehrzeiten ORDER BY Lj_Nr ASC");   //Daten der Query in Datatable
+                    saveCSVFile.FileName = "Lehrzeiten.csv";                                                // default Filename
+                    break;
+
+                case "BtnSemesterCSV":
+                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_semester ORDER BY Se_Nr ASC");     //Daten der Query in Datatable
+                    saveCSVFile.FileName = "Semester.csv";                                                  //default Filename
+                    break;
+
+                default:
+                    return;
+            }
+ 
+            saveCSVFile.Filter = "Comma Seperated Values (*.csv)|*.csv";                                    //Filter, damit nur als CSV-File abgespeichert werden kann                                 
+
+            if (saveCSVFile.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = saveCSVFile.FileName;
+                dtblQuery.ToCSV(fileName);                                                                  //Funktionsaufruf "ToCSV" -> Siehe CSVUtil.cs, Exportierung nach definiertem Pfad/Namen in Dialog
+            }
         }
     }
 }

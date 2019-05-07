@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSVUtil.cs" />
     <Compile Include="Forms\Grp7\frmReview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,10 +153,10 @@
     <Compile Include="Forms\Grp7\FrmReviewLehrzeiten.Designer.cs">
       <DependentUpon>FrmReviewLehrzeiten.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmReviewSemester.cs">
+    <Compile Include="Forms\Grp7\FrmReviewSemester.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmReviewSemester.Designer.cs">
+    <Compile Include="Forms\Grp7\FrmReviewSemester.Designer.cs">
       <DependentUpon>FrmReviewSemester.cs</DependentUpon>
     </Compile>
     <Compile Include="MySQLCon.cs" />
@@ -184,7 +186,7 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReviewSemester.resx">
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewSemester.resx">
       <DependentUpon>FrmReviewSemester.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
