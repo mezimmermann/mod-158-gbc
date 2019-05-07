@@ -88,7 +88,7 @@ namespace M158_SMPD.Forms
                     break;
 
                 case "BtnKlasseCSV":
-                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_klasse ORDER BY Kl_Nr ASC");       //Daten der Query in Datatable
+                    dtblQuery = mysql.getSQLStatement("SELECT Kl_Nr, Klasse,  Beruf, Kürzel, tbl_klasse.Be_Nr FROM tbl_klasse JOIN tbl_beruf on tbl_beruf.Be_Nr = tbl_klasse.Be_Nr Order By tbl_klasse.Kl_Nr asc");       //Daten der Query in Datatable
                     saveCSVFile.FileName = "Klasse.csv";                                                    // default Filename
                     break;
 
@@ -98,7 +98,7 @@ namespace M158_SMPD.Forms
                     break;
 
                 case "BtnLehrzeitenCSV":
-                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_lehrzeiten ORDER BY Lj_Nr ASC");   //Daten der Query in Datatable
+                    dtblQuery = mysql.getSQLStatement("SELECT tbl_lehrling.Lj_Nr, Lj_Bis, Ll_Nr, Name, Vorname FROM tbl_lehrzeiten JOIN tbl_lehrling on tbl_lehrling.Lj_Nr = tbl_lehrzeiten.Lj_Nr Order By tbl_lehrling.Lj_Nr asc");   //Daten der Query in Datatable
                     saveCSVFile.FileName = "Lehrzeiten.csv";                                                // default Filename
                     break;
 
@@ -118,6 +118,15 @@ namespace M158_SMPD.Forms
                 string fileName = saveCSVFile.FileName;
                 dtblQuery.ToCSV(fileName);                                                                  //Funktionsaufruf "ToCSV" -> Siehe CSVUtil.cs, Exportierung nach definiertem Pfad/Namen in Dialog
             }
+        }
+
+        private void FrmReview_Load(object sender, EventArgs e)
+        {
+            MySQLCon mysql = new MySQLCon();
+            DataTable chartdata;
+            //ChrReview.Series[""]
+            chartdata = mysql.getSQLStatement("SELECT * FROM tbl_beruf");
+            
         }
     }
 }

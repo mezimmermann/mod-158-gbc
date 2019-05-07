@@ -21,10 +21,10 @@ namespace M158_SMPD
 
         private void FrmReviewLehrzeiten_Load(object sender, EventArgs e)                                                               
         {
-            DataTable TableLehrzeiten = mysql.getSQLStatement("SELECT * FROM tbl_lehrzeiten ORDER BY Lj_Nr ASC");                   //MySQL Query für Tabelle "Lehrzeiten"
-            TableLehrzeiten.Columns[0].ColumnName = "Lehrlings Nr";                                                                 //Umgänglicher Name für Spalte 1
-            TableLehrzeiten.Columns[1].ColumnName = "Von";                                                                          //""                           2
-            TableLehrzeiten.Columns[2].ColumnName = "Bis";                                                                          //""                           3
+            DataTable TableLehrzeiten = mysql.getSQLStatement("SELECT tbl_lehrling.Lj_Nr, Lj_Bis, Ll_Nr, Name, Vorname FROM tbl_lehrzeiten JOIN tbl_lehrling on tbl_lehrling.Lj_Nr = tbl_lehrzeiten.Lj_Nr Order By tbl_lehrling.Lj_Nr asc");                   //MySQL Query für Tabelle "Lehrzeiten"
+            TableLehrzeiten.Columns[0].ColumnName = "Lehrjahres Nr";                                                                //Umgänglicher Name für Spalte 1
+            TableLehrzeiten.Columns[1].ColumnName = "Bis";                                                                          //""                           2
+            TableLehrzeiten.Columns[2].ColumnName = "Lehrlings Nr";                                                                 //""                           3
 
             DgvLehrzeiten.DataSource = TableLehrzeiten;                                                                             //DataGridView mit Daten der oben definierten Query befüllen
 

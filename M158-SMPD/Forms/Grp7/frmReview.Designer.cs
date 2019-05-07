@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.LblReviewTitle = new System.Windows.Forms.Label();
             this.BtnBeruf = new System.Windows.Forms.Button();
             this.BtnFaecher = new System.Windows.Forms.Button();
@@ -49,6 +52,8 @@
             this.BtnLehrlingCSV = new System.Windows.Forms.Button();
             this.BtnLehrzeitenCSV = new System.Windows.Forms.Button();
             this.BtnSemesterCSV = new System.Windows.Forms.Button();
+            this.ChrReview = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.ChrReview)).BeginInit();
             this.SuspendLayout();
             // 
             // LblReviewTitle
@@ -250,11 +255,28 @@
             this.BtnSemesterCSV.UseVisualStyleBackColor = true;
             this.BtnSemesterCSV.Click += new System.EventHandler(this.CsvExport_Click);
             // 
-            // frmReview
+            // ChrReview
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.ChrReview.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ChrReview.Legends.Add(legend1);
+            this.ChrReview.Location = new System.Drawing.Point(470, 42);
+            this.ChrReview.Name = "ChrReview";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.ChrReview.Series.Add(series1);
+            this.ChrReview.Size = new System.Drawing.Size(392, 417);
+            this.ChrReview.TabIndex = 22;
+            this.ChrReview.Text = "chart1";
+            // 
+            // FrmReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 388);
+            this.ClientSize = new System.Drawing.Size(874, 493);
+            this.Controls.Add(this.ChrReview);
             this.Controls.Add(this.BtnSemesterCSV);
             this.Controls.Add(this.BtnLehrzeitenCSV);
             this.Controls.Add(this.BtnLehrlingCSV);
@@ -276,8 +298,10 @@
             this.Controls.Add(this.BtnFaecher);
             this.Controls.Add(this.BtnBeruf);
             this.Controls.Add(this.LblReviewTitle);
-            this.Name = "frmReview";
+            this.Name = "FrmReview";
             this.Text = "frmReview";
+            this.Load += new System.EventHandler(this.FrmReview_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ChrReview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +330,6 @@
         private System.Windows.Forms.Button BtnLehrlingCSV;
         private System.Windows.Forms.Button BtnLehrzeitenCSV;
         private System.Windows.Forms.Button BtnSemesterCSV;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChrReview;
     }
 }
