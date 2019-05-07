@@ -13,22 +13,22 @@ namespace M158_SMPD
 {
     public partial class FrmReviewLehrzeiten : Form
     {
-        MySQLCon mysql = new MySQLCon();
+        MySQLCon mysql = new MySQLCon();                                //MySQL Connection initialisieren
         public FrmReviewLehrzeiten()
         {
             InitializeComponent();
         }
 
-        private void FrmReviewLehrzeiten_Load(object sender, EventArgs e)
+        private void FrmReviewLehrzeiten_Load(object sender, EventArgs e)                                                               
         {
-            DataTable TableLehrzeiten = mysql.getSQLStatement("SELECT * FROM tbl_lehrzeiten ORDER BY Lj_Nr ASC");
-            TableLehrzeiten.Columns[0].ColumnName = "Lehrlings Nr";
-            TableLehrzeiten.Columns[1].ColumnName = "Von";
-            TableLehrzeiten.Columns[2].ColumnName = "Bis";
+            DataTable TableLehrzeiten = mysql.getSQLStatement("SELECT * FROM tbl_lehrzeiten ORDER BY Lj_Nr ASC");                   //MySQL Query für Tabelle "Lehrzeiten"
+            TableLehrzeiten.Columns[0].ColumnName = "Lehrlings Nr";                                                                 //Umgänglicher Name für Spalte 1
+            TableLehrzeiten.Columns[1].ColumnName = "Von";                                                                          //""                           2
+            TableLehrzeiten.Columns[2].ColumnName = "Bis";                                                                          //""                           3
 
-            DgvLehrzeiten.DataSource = TableLehrzeiten;
+            DgvLehrzeiten.DataSource = TableLehrzeiten;                                                                             //DataGridView mit Daten der oben definierten Query befüllen
 
-            foreach (DataGridViewColumn col in DgvLehrzeiten.Columns)
+            foreach (DataGridViewColumn col in DgvLehrzeiten.Columns)                                                               //ForEach-Schlaufe um alle Spalten dem breitesten Element automatisch anzupassen
             {
                 col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
