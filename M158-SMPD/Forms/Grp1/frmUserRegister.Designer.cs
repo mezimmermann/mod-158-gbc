@@ -72,7 +72,6 @@
             this.TbxFirstname.Name = "TbxFirstname";
             this.TbxFirstname.Size = new System.Drawing.Size(121, 20);
             this.TbxFirstname.TabIndex = 2;
-            this.TbxFirstname.TextChanged += new System.EventHandler(this.TbxName_TextChanged);
             // 
             // TbxSurname
             // 
@@ -198,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 302);
+            this.ClientSize = new System.Drawing.Size(354, 351);
             this.Controls.Add(this.LblComments);
             this.Controls.Add(this.LblAddUser);
             this.Controls.Add(this.BtnBreak);
@@ -218,7 +217,6 @@
             this.Controls.Add(this.LblName);
             this.Name = "frmUserRegister";
             this.Text = "frmUserRegister";
-            this.Load += new System.EventHandler(this.frmUserRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
