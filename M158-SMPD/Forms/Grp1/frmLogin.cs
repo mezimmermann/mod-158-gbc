@@ -19,6 +19,7 @@ namespace M158_SMPD
         }
 
         public static DataTable DtUserdetails = new DataTable();
+        public static bool BoolExit = false;
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
@@ -66,6 +67,7 @@ namespace M158_SMPD
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            BoolExit = true;
             Application.Exit();
         }
     }

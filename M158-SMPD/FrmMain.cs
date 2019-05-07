@@ -15,11 +15,12 @@ namespace M158_SMPD
     {
         public FrmMain()
         {
+            InitializeComponent();
             // Adminberechtigung
-            if (frmLogin.DtUserdetails.Rows[0][5].ToString() == "True")
+            if ((frmLogin.BoolExit == false) && (frmLogin.DtUserdetails.Rows[0][5].ToString() == "True"))
             {
-                //TsmiRegistration.Visible = true;
-                //TsmiSeperator.Visible = true;
+                TsmiRegistration.Visible = true;
+                TsmiSeperator.Visible = true;
             }
         }
 
