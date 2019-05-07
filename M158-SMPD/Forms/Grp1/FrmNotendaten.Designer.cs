@@ -109,6 +109,7 @@
             this.LbxSemester.Name = "LbxSemester";
             this.LbxSemester.Size = new System.Drawing.Size(120, 485);
             this.LbxSemester.TabIndex = 7;
+            this.LbxSemester.SelectedIndexChanged += new System.EventHandler(this.LbxSemester_SelectedIndexChanged);
             // 
             // LbxFach
             // 
