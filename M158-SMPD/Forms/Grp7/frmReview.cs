@@ -73,7 +73,7 @@ namespace M158_SMPD.Forms
             switch (BtnSender.Name)                                         //Switch-Case Funktion mit case nach Buttonnamen
             {
                 case "BtnBerufCSV":
-                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_lehrzeiten ORDER BY Lj_Nr ASC");   //Daten der Query in Datatable
+                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_beruf ORDER BY Be_Nr ASC");   //Daten der Query in Datatable
                     saveCSVFile.FileName = "Beruf.csv";                                                     // default Filename
                     break;
 
