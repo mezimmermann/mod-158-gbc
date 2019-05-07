@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace M158_SMPD.Forms
 {
-    public partial class frmReview : Form
+    public partial class FrmReview : Form
     {
-        public frmReview()
+        public FrmReview()
         {
             MySQLCon mysql = new MySQLCon();                            //MySQL-Connection initialisieren
 

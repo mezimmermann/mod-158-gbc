@@ -51,11 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSVUtil.cs" />
-    <Compile Include="Forms\Grp7\frmReview.cs">
+    <Compile Include="Forms\Grp7\FrmReview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Grp7\frmReview.Designer.cs">
-      <DependentUpon>frmReview.cs</DependentUpon>
+    <Compile Include="Forms\Grp7\FrmReview.Designer.cs">
+      <DependentUpon>FrmReview.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Grp2\frmFaecherzuteilung.cs">
       <SubType>Form</SubType>
@@ -162,8 +162,8 @@
     <Compile Include="MySQLCon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Grp7\frmReview.resx">
-      <DependentUpon>frmReview.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Grp7\FrmReview.resx">
+      <DependentUpon>FrmReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Grp7\FrmReviewBeruf.resx">
       <DependentUpon>FrmReviewBeruf.cs</DependentUpon>

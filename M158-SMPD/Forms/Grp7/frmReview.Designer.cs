@@ -1,6 +1,6 @@
 ﻿namespace M158_SMPD.Forms
 {
-    partial class frmReview
+    partial class FrmReview
     {
         /// <summary>
         /// Required designer variable.
