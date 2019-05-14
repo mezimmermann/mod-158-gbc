@@ -37,5 +37,21 @@ namespace M158_SMPD
             }
 
         }
+
+        public void Wait(int ms)
+        {
+            DateTime start = DateTime.Now;
+            while ((DateTime.Now - start).TotalMilliseconds < ms)
+                Application.DoEvents();
+
+        }
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            FrmLoading frmLoading = new FrmLoading();
+            frmLoading.Show();
+            Wait(3000);
+            frmLoading.Close();
+
+        }
     }
 }
