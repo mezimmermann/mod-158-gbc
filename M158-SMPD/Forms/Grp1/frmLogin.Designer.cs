@@ -40,7 +40,7 @@
             // LblUsername
             // 
             this.LblUsername.AutoSize = true;
-            this.LblUsername.Location = new System.Drawing.Point(32, 50);
+            this.LblUsername.Location = new System.Drawing.Point(32, 84);
             this.LblUsername.Name = "LblUsername";
             this.LblUsername.Size = new System.Drawing.Size(78, 13);
             this.LblUsername.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // TbxUsername
             // 
-            this.TbxUsername.Location = new System.Drawing.Point(35, 66);
+            this.TbxUsername.Location = new System.Drawing.Point(116, 81);
             this.TbxUsername.Name = "TbxUsername";
             this.TbxUsername.Size = new System.Drawing.Size(137, 20);
             this.TbxUsername.TabIndex = 1;
@@ -56,7 +56,7 @@
             // LblPassword
             // 
             this.LblPassword.AutoSize = true;
-            this.LblPassword.Location = new System.Drawing.Point(32, 101);
+            this.LblPassword.Location = new System.Drawing.Point(60, 110);
             this.LblPassword.Name = "LblPassword";
             this.LblPassword.Size = new System.Drawing.Size(50, 13);
             this.LblPassword.TabIndex = 2;
@@ -64,26 +64,28 @@
             // 
             // TbxPassword
             // 
-            this.TbxPassword.Location = new System.Drawing.Point(35, 117);
+            this.TbxPassword.Location = new System.Drawing.Point(116, 107);
             this.TbxPassword.Name = "TbxPassword";
             this.TbxPassword.PasswordChar = '*';
             this.TbxPassword.Size = new System.Drawing.Size(137, 20);
             this.TbxPassword.TabIndex = 3;
+            this.TbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxPassword_KeyPress);
             // 
             // LblTitle
             // 
             this.LblTitle.AutoSize = true;
-            this.LblTitle.Location = new System.Drawing.Point(13, 13);
+            this.LblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitle.Location = new System.Drawing.Point(28, 9);
             this.LblTitle.Name = "LblTitle";
-            this.LblTitle.Size = new System.Drawing.Size(82, 13);
+            this.LblTitle.Size = new System.Drawing.Size(299, 42);
             this.LblTitle.TabIndex = 4;
             this.LblTitle.Text = "Notenprogramm";
             // 
             // BtnLogin
             // 
-            this.BtnLogin.Location = new System.Drawing.Point(199, 66);
+            this.BtnLogin.Location = new System.Drawing.Point(35, 149);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(127, 20);
+            this.BtnLogin.Size = new System.Drawing.Size(127, 42);
             this.BtnLogin.TabIndex = 5;
             this.BtnLogin.Text = "Login";
             this.BtnLogin.UseVisualStyleBackColor = true;
@@ -91,9 +93,9 @@
             // 
             // BtnClose
             // 
-            this.BtnClose.Location = new System.Drawing.Point(199, 117);
+            this.BtnClose.Location = new System.Drawing.Point(168, 149);
             this.BtnClose.Name = "BtnClose";
-            this.BtnClose.Size = new System.Drawing.Size(127, 20);
+            this.BtnClose.Size = new System.Drawing.Size(127, 42);
             this.BtnClose.TabIndex = 6;
             this.BtnClose.Text = "Schliessen";
             this.BtnClose.UseVisualStyleBackColor = true;
@@ -103,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 160);
+            this.ClientSize = new System.Drawing.Size(355, 221);
             this.ControlBox = false;
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.BtnLogin);

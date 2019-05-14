@@ -88,5 +88,13 @@ namespace M158_SMPD
             frmLoading.Close();
 
         }
+
+        private void TbxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (Int32)Keys.Enter)
+            {
+                BtnLogin.PerformClick();
+            }
+        }
     }
 }

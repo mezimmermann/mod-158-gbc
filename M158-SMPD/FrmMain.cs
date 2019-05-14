@@ -19,8 +19,7 @@ namespace M158_SMPD
             // Adminberechtigung
             if ((frmLogin.BoolExit == false) && (frmLogin.DtUserdetails.Rows[0][5].ToString() == "True"))
             {
-                TsmiRegistration.Visible = true;
-                TsmiSeperator.Visible = true;
+                BtnCreateUser.Enabled = true;
             }
         }
 
@@ -34,6 +33,20 @@ namespace M158_SMPD
         {
             FrmNotendaten Notendaten = new FrmNotendaten();
             Notendaten.Show();
+        }
+
+        private void BtnReports_Click(object sender, EventArgs e)
+        {
+            Forms.FrmReview frmReview = new Forms.FrmReview();
+            frmReview.MdiParent = this;
+            frmReview.Show();
+        }
+
+        private void BtnCreateUser_Click(object sender, EventArgs e)
+        {
+            frmUserRegister frmuserreg = new frmUserRegister();
+            frmuserreg.MdiParent = this;
+            frmuserreg.Show();
         }
     }
 }
