@@ -28,75 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LblTitle = new System.Windows.Forms.Label();
+            this.lblClass = new System.Windows.Forms.Label();
+            this.lblSemester = new System.Windows.Forms.Label();
+            this.LblSubject = new System.Windows.Forms.Label();
+            this.LblGrades = new System.Windows.Forms.Label();
+            this.BtnPrint = new System.Windows.Forms.Button();
             this.LbxBeruf = new System.Windows.Forms.ListBox();
             this.LbxSemester = new System.Windows.Forms.ListBox();
             this.LbxFach = new System.Windows.Forms.ListBox();
+            this.DgvGrade = new System.Windows.Forms.DataGridView();
+            this.DgvAverage = new System.Windows.Forms.DataGridView();
+            this.DgvAverages = new System.Windows.Forms.DataGridView();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvGrade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvAverage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvAverages)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // LblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.LblTitle.AutoSize = true;
+            this.LblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitle.Location = new System.Drawing.Point(13, 13);
+            this.LblTitle.Name = "LblTitle";
+            this.LblTitle.Size = new System.Drawing.Size(292, 26);
+            this.LblTitle.TabIndex = 0;
+            this.LblTitle.Text = "Noten erfassen/bearbeiten";
             // 
-            // label2
+            // lblClass
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.lblClass.AutoSize = true;
+            this.lblClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClass.Location = new System.Drawing.Point(13, 72);
+            this.lblClass.Name = "lblClass";
+            this.lblClass.Size = new System.Drawing.Size(44, 13);
+            this.lblClass.TabIndex = 1;
+            this.lblClass.Text = "Klasse";
             // 
-            // label3
+            // lblSemester
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(159, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.lblSemester.AutoSize = true;
+            this.lblSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSemester.Location = new System.Drawing.Point(143, 72);
+            this.lblSemester.Name = "lblSemester";
+            this.lblSemester.Size = new System.Drawing.Size(59, 13);
+            this.lblSemester.TabIndex = 2;
+            this.lblSemester.Text = "Semester";
             // 
-            // label4
+            // LblSubject
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(314, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.LblSubject.AutoSize = true;
+            this.LblSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSubject.Location = new System.Drawing.Point(269, 72);
+            this.LblSubject.Name = "LblSubject";
+            this.LblSubject.Size = new System.Drawing.Size(35, 13);
+            this.LblSubject.TabIndex = 3;
+            this.LblSubject.Text = "Fach";
             // 
-            // label5
+            // LblGrades
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(437, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
+            this.LblGrades.AutoSize = true;
+            this.LblGrades.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblGrades.Location = new System.Drawing.Point(406, 72);
+            this.LblGrades.Name = "LblGrades";
+            this.LblGrades.Size = new System.Drawing.Size(73, 13);
+            this.LblGrades.TabIndex = 4;
+            this.LblGrades.Text = "Notendaten";
             // 
-            // button1
+            // BtnPrint
             // 
-            this.button1.Location = new System.Drawing.Point(758, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnPrint.Location = new System.Drawing.Point(1242, 67);
+            this.BtnPrint.Name = "BtnPrint";
+            this.BtnPrint.Size = new System.Drawing.Size(139, 23);
+            this.BtnPrint.TabIndex = 5;
+            this.BtnPrint.Text = "Notenblatt drucken";
+            this.BtnPrint.UseVisualStyleBackColor = true;
+            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
             // 
             // LbxBeruf
             // 
             this.LbxBeruf.FormattingEnabled = true;
-            this.LbxBeruf.Location = new System.Drawing.Point(20, 115);
+            this.LbxBeruf.Location = new System.Drawing.Point(16, 115);
             this.LbxBeruf.Name = "LbxBeruf";
             this.LbxBeruf.Size = new System.Drawing.Size(120, 485);
             this.LbxBeruf.TabIndex = 6;
@@ -118,39 +132,92 @@
             this.LbxFach.Name = "LbxFach";
             this.LbxFach.Size = new System.Drawing.Size(120, 485);
             this.LbxFach.TabIndex = 8;
+            this.LbxFach.SelectedIndexChanged += new System.EventHandler(this.LbxFach_SelectedIndexChanged);
+            // 
+            // DgvGrade
+            // 
+            this.DgvGrade.AllowUserToAddRows = false;
+            this.DgvGrade.AllowUserToDeleteRows = false;
+            this.DgvGrade.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DgvGrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvGrade.Location = new System.Drawing.Point(409, 115);
+            this.DgvGrade.Name = "DgvGrade";
+            this.DgvGrade.Size = new System.Drawing.Size(817, 436);
+            this.DgvGrade.TabIndex = 9;
+            this.DgvGrade.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGrade_CellValueChanged);
+            // 
+            // DgvAverage
+            // 
+            this.DgvAverage.AllowUserToAddRows = false;
+            this.DgvAverage.AllowUserToDeleteRows = false;
+            this.DgvAverage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DgvAverage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvAverage.Location = new System.Drawing.Point(1242, 115);
+            this.DgvAverage.Name = "DgvAverage";
+            this.DgvAverage.Size = new System.Drawing.Size(139, 436);
+            this.DgvAverage.TabIndex = 10;
+            // 
+            // DgvAverages
+            // 
+            this.DgvAverages.AllowUserToAddRows = false;
+            this.DgvAverages.AllowUserToDeleteRows = false;
+            this.DgvAverages.AllowUserToOrderColumns = true;
+            this.DgvAverages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvAverages.Location = new System.Drawing.Point(409, 557);
+            this.DgvAverages.Name = "DgvAverages";
+            this.DgvAverages.Size = new System.Drawing.Size(817, 43);
+            this.DgvAverages.TabIndex = 11;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage_1);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
             // 
             // FrmNotendaten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 673);
+            this.ClientSize = new System.Drawing.Size(1408, 627);
+            this.Controls.Add(this.DgvAverages);
+            this.Controls.Add(this.DgvAverage);
+            this.Controls.Add(this.DgvGrade);
             this.Controls.Add(this.LbxFach);
             this.Controls.Add(this.LbxSemester);
             this.Controls.Add(this.LbxBeruf);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BtnPrint);
+            this.Controls.Add(this.LblGrades);
+            this.Controls.Add(this.LblSubject);
+            this.Controls.Add(this.lblSemester);
+            this.Controls.Add(this.lblClass);
+            this.Controls.Add(this.LblTitle);
             this.Name = "FrmNotendaten";
             this.Text = "FrmNotendaten";
             this.Load += new System.EventHandler(this.FrmNotendaten_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvGrade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvAverage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvAverages)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblClass;
+        private System.Windows.Forms.Label lblSemester;
+        private System.Windows.Forms.Label LblSubject;
+        private System.Windows.Forms.Label LblGrades;
+        private System.Windows.Forms.Button BtnPrint;
         private System.Windows.Forms.ListBox LbxBeruf;
         private System.Windows.Forms.ListBox LbxSemester;
         private System.Windows.Forms.ListBox LbxFach;
+        private System.Windows.Forms.DataGridView DgvGrade;
+        private System.Windows.Forms.Label LblTitle;
+        private System.Windows.Forms.DataGridView DgvAverage;
+        private System.Windows.Forms.DataGridView DgvAverages;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }

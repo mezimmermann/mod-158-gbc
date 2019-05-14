@@ -166,7 +166,6 @@ namespace M158_SMPD
                 return;
             }
         }
-
         //DataTable changes = ((DataTable)dataGridView1.DataSource).GetChanges();
         //    if (changes == null)
         //    {

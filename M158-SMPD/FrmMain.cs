@@ -29,5 +29,11 @@ namespace M158_SMPD
             frmUserRegister Registration = new frmUserRegister();
             Registration.Show();
         }
+
+        private void TsmiNotendaten_Click(object sender, EventArgs e)
+        {
+            FrmNotendaten Notendaten = new FrmNotendaten();
+            Notendaten.Show();
+        }
     }
 }

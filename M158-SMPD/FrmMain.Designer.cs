@@ -75,6 +75,7 @@
             this.TsmiNotendaten.Name = "TsmiNotendaten";
             this.TsmiNotendaten.Size = new System.Drawing.Size(180, 22);
             this.TsmiNotendaten.Text = "Notendaten";
+            this.TsmiNotendaten.Click += new System.EventHandler(this.TsmiNotendaten_Click);
             // 
             // FrmMain
             // 
