@@ -60,9 +60,10 @@ namespace M158_SMPD.Forms.Grp1
                 {
                     if (StrPassword == StrConfirmPassword)
                     {
-                        string specialChar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";
+                        // Überprüfung nach Sonderzeichen
+                        string StrspecialChar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";
                         bool BoolSonderzeichen = false;
-                        foreach (var item in specialChar)
+                        foreach (var item in StrspecialChar)
                         {
                             if ((StrFirstname.Contains(item) == true) || (StrUsername.Contains(item) == true) || (StrSurname.Contains(item) == true))
                             {
