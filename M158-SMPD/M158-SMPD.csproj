@@ -311,7 +311,6 @@
     <None Include="Resources\btman.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\settings.png" />
     <None Include="Resources\settingsico.png" />
     <None Include="Resources\notendaten.png" />
     <Content Include="RibbonMarkup.xml" />

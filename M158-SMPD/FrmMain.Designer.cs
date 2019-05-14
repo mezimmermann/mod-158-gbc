@@ -100,7 +100,10 @@
             // 
             // BtnNotendaten
             // 
+            this.BtnNotendaten.Image = global::M158_SMPD.Properties.Resources.notendaten;
+            this.BtnNotendaten.LargeImage = global::M158_SMPD.Properties.Resources.notendaten;
             this.BtnNotendaten.Name = "BtnNotendaten";
+            this.BtnNotendaten.SmallImage = global::M158_SMPD.Properties.Resources.notendaten;
             this.BtnNotendaten.Text = "Notendaten";
             // 
             // ribbonTab2
