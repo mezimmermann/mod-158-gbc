@@ -124,11 +124,11 @@
     <Compile Include="Forms\Grp7\FrmReview.Designer.cs">
       <DependentUpon>FrmReview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Grp2\frmFaecherzuteilung.cs">
+    <Compile Include="Forms\Grp2\FrmFaecherzuteilung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Grp2\frmFaecherzuteilung.Designer.cs">
-      <DependentUpon>frmFaecherzuteilung.cs</DependentUpon>
+    <Compile Include="Forms\Grp2\FrmFaecherzuteilung.Designer.cs">
+      <DependentUpon>FrmFaecherzuteilung.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Grp1\frmLogin.cs">
       <SubType>Form</SubType>

@@ -1,4 +1,4 @@
-﻿namespace M158_SMPD.Forms
+﻿namespace M158_SMPD.Forms.Grp7
 {
     partial class FrmReview
     {

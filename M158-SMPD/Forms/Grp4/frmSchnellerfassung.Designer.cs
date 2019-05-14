@@ -1,4 +1,4 @@
-﻿namespace M158_SMPD.Forms
+﻿namespace M158_SMPD.Forms.Grp4
 {
     partial class frmSchnellerfassung
     {

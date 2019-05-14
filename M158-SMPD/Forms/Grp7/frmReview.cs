@@ -11,7 +11,7 @@ using System.Windows.Forms;
 //using System.Web.UI.DataVisualization.Charting;
 using System.Windows.Forms.DataVisualization.Charting;
 
-namespace M158_SMPD.Forms
+namespace M158_SMPD.Forms.Grp7
 {
     public partial class FrmReview : Form
     {

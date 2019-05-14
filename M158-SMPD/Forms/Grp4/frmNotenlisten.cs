@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 using M158_SMPD.Forms.Grp6;
 using M158_SMPD.Forms.Grp5;
 
-namespace M158_SMPD.Forms
+namespace M158_SMPD.Forms.Grp4
 {
     public partial class frmNotenlisten : Form
     {

@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 using M158_SMPD.Forms.Grp6;
 using M158_SMPD.Forms.Grp5;
 
-namespace M158_SMPD.Forms
+namespace M158_SMPD.Forms.Grp4
 {
     public partial class frmSchnellerfassung : Form
     {
@@ -69,8 +69,8 @@ namespace M158_SMPD.Forms
         private void btn_subjects_Click(object sender, EventArgs e)
         {
             //Fächer öffnen
-            frmStammdaten faecher = new frmStammdaten();
-            faecher.ShowDialog();
+            //frmStammdaten faecher = new frmStammdaten();
+            //faecher.ShowDialog();
         }
 
 

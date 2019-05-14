@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using MySql.Data.MySqlClient;
 
-namespace Schnellerfassung
+namespace M158_SMPD.Forms.Grp3
 {
     public partial class frmClassMgmt : Form
     {
@@ -94,7 +94,7 @@ namespace Schnellerfassung
                 {
                     studnr = row["Ll_Nr"].ToString();
                 }
-                var student = new Schüler_Studenten_Lehrlinge.frmStudMgmt();
+                var student = new M158_SMPD.Forms.Grp3.frmStudMgmt();
                 student.getexdata(studnr);
             }
             catch

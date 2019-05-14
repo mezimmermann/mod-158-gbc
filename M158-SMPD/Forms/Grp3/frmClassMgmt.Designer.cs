@@ -1,4 +1,4 @@
-﻿namespace Schnellerfassung
+﻿namespace M158_SMPD.Forms.Grp3
 {
     partial class frmClassMgmt
     {
