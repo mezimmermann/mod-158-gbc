@@ -99,7 +99,7 @@
             // 
             // BtnPrint
             // 
-            this.BtnPrint.Location = new System.Drawing.Point(1242, 67);
+            this.BtnPrint.Location = new System.Drawing.Point(1087, 62);
             this.BtnPrint.Name = "BtnPrint";
             this.BtnPrint.Size = new System.Drawing.Size(139, 23);
             this.BtnPrint.TabIndex = 5;
@@ -145,7 +145,7 @@
             this.DgvGrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvGrade.Location = new System.Drawing.Point(409, 115);
             this.DgvGrade.Name = "DgvGrade";
-            this.DgvGrade.Size = new System.Drawing.Size(817, 436);
+            this.DgvGrade.Size = new System.Drawing.Size(672, 436);
             this.DgvGrade.TabIndex = 9;
             this.DgvGrade.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGrade_CellValueChanged);
             // 
@@ -155,7 +155,7 @@
             this.DgvAverage.AllowUserToDeleteRows = false;
             this.DgvAverage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DgvAverage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvAverage.Location = new System.Drawing.Point(1242, 115);
+            this.DgvAverage.Location = new System.Drawing.Point(1087, 115);
             this.DgvAverage.Name = "DgvAverage";
             this.DgvAverage.Size = new System.Drawing.Size(139, 436);
             this.DgvAverage.TabIndex = 10;
@@ -183,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1408, 627);
+            this.ClientSize = new System.Drawing.Size(1250, 627);
             this.Controls.Add(this.DgvAverages);
             this.Controls.Add(this.DgvAverage);
             this.Controls.Add(this.DgvGrade);

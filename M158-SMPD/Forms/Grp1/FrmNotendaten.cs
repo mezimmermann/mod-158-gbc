@@ -19,6 +19,7 @@ namespace M158_SMPD.Forms.Grp1
             InitializeComponent();
         }
 
+        // alle Daten von tbl_Klasse in einen DataTable speichern und in ein Dictionary
         private void FrmNotendaten_Load(object sender, EventArgs e)
         {
             MySQLCon conn = new MySQLCon();
@@ -34,6 +35,7 @@ namespace M158_SMPD.Forms.Grp1
             LbxBeruf.ValueMember = "Value";
         }
 
+        // Berufe auslesen und die ListBox Beruf anpassen wenn eine Klasse ausgewählt wurde
         private void LbxBeruf_SelectedIndexChanged(object sender, EventArgs e)
         {
             var KvpClasspair = (KeyValuePair<string, int>)LbxBeruf.SelectedItem;
@@ -52,7 +54,8 @@ namespace M158_SMPD.Forms.Grp1
             LbxSemester.DisplayMember = "Key";
             LbxSemester.ValueMember = "Value";
         }
-        
+
+        //  Semester auslesen und die ListBox Semester anpassen wenn ein Beruf ausgewählt wurde
         private void LbxSemester_SelectedIndexChanged(object sender, EventArgs e)
         {
             var KvpSubject = (KeyValuePair<string, int>)LbxSemester.SelectedItem;
@@ -111,15 +114,16 @@ namespace M158_SMPD.Forms.Grp1
             }
         }
 
+        //  Fach auslesen und die ListBox Fach anpassen wenn ein Semester ausgewählt wurde
         private void IndexChangedFach()
         {
             var KvpSubject = (KeyValuePair<string, int>)LbxSemester.SelectedItem;
             string StrSemester = KvpSubject.Value.ToString();
             var KvpFach = (KeyValuePair<string, int>)LbxFach.SelectedItem;
             string StrFach = KvpFach.Value.ToString();
-            DataTable DtbAverage = new DataTable();
+            DataTable DtbAverage = new DataTable(); // Durchschnitt der einzelnen Personen
             DtbAverage.Columns.Add("Durchschnitt");
-            DataTable DtbAverages = new DataTable();
+            DataTable DtbAverages = new DataTable(); // Klassendurchschnitt
 
             double DoubleCells;
             double DoubleDurchschnitt1 = 0;
@@ -136,11 +140,13 @@ namespace M158_SMPD.Forms.Grp1
             double DoubleAverage = 0;
             double DoubleAverages = 0;
 
+            //Auslesen der Daten
             MySQLCon conn = new MySQLCon();
             DataTable DtbGrade = conn.getSQLStatement("select concat(Name, ' ', Vorname) AS Name, Note_1, GewN1, Note_2, GewN2, Note_3, GewN3, Note_4, GewN4, Note_5, GewN5, No_Nr from tbl_noten join tbl_lehrling on tbl_noten.Ll_Nr = tbl_lehrling.Ll_Nr where Fae_Nr = " + StrFach + " and Se_Nr = " + StrSemester + ";");
             DataTable DtbCountCells = conn.getSQLStatement("select Count(*) from tbl_noten where Fae_Nr = " + StrFach + " and Se_Nr = " + StrSemester + ";");
             DoubleCells = Convert.ToInt16(DtbCountCells.Rows[0][0].ToString());
 
+            // Überprüfung der Daten auf Null Werte und Fehlerbehandlung fehlender Werte
             for (int i = 0; DoubleCells > i; i++)
             {
                 if (DtbGrade.Rows[i][1] is DBNull)
@@ -238,7 +244,8 @@ namespace M158_SMPD.Forms.Grp1
                 {
                     DoubleDurchschnitt5 = 0;
                 }
-
+                
+                //Berechnung Durchschnitt
                 DoubleGewichtung = DoubleGewichtung1 + DoubleGewichtung2 + DoubleGewichtung3 + DoubleGewichtung4 + DoubleGewichtung5;
                 DoubleAverage = (DoubleDurchschnitt1 + DoubleDurchschnitt2 + DoubleDurchschnitt3 + DoubleDurchschnitt4 + DoubleDurchschnitt5) / DoubleGewichtung;
                 DtbAverage.Rows.Add(DoubleAverage.ToString("0.00"));
@@ -253,6 +260,8 @@ namespace M158_SMPD.Forms.Grp1
             DgvAverage.DataSource = DtbAverage;
             DgvAverages.DataSource = DtbAverages;
             DgvGrade.Columns["No_Nr"].Visible = false;
+
+            // Spalten nicht sortierbar machen
             foreach (DataGridViewColumn DgvcColumnGrade in DgvGrade.Columns)
             {
                 DgvcColumnGrade.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -267,17 +276,20 @@ namespace M158_SMPD.Forms.Grp1
             }
         }
 
+        // Bilder zeichnen von den DataGridViews
         private void printDocument1_PrintPage_1(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Bitmap BmBitmapGrade = new Bitmap(this.DgvGrade.Width, this.DgvGrade.Height);
             DgvGrade.DrawToBitmap(BmBitmapGrade, new Rectangle(0, 0, this.DgvGrade.Width, this.DgvGrade.Height));
             e.Graphics.DrawImage(BmBitmapGrade, 0, 0);
+
             Bitmap BmBitmapAverage = new Bitmap(this.DgvAverage.Width, this.DgvAverage.Height);
             DgvAverage.DrawToBitmap(BmBitmapAverage, new Rectangle(0, 0, this.DgvAverage.Width, this.DgvAverage.Height));
-            e.Graphics.DrawImage(BmBitmapAverage, 0, 0);
+            e.Graphics.DrawImage(BmBitmapAverage, DgvGrade.Width + 10, 0);
+
             Bitmap BmBitmapAverages = new Bitmap(this.DgvAverages.Width, this.DgvAverages.Height);
             DgvAverages.DrawToBitmap(BmBitmapAverages, new Rectangle(0, 0, this.DgvAverages.Width, this.DgvAverages.Height));
-            e.Graphics.DrawImage(BmBitmapAverages, 0, 0);
+            e.Graphics.DrawImage(BmBitmapAverages, 0, DgvGrade.Height + 10);
         }
     }
 }

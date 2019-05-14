@@ -168,6 +168,7 @@ namespace M158_SMPD
                 return;
             }
         }
+        //<summary>
         //DataTable changes = ((DataTable)dataGridView1.DataSource).GetChanges();
         //    if (changes == null)
         //    {
@@ -175,5 +176,6 @@ namespace M158_SMPD
         //    }
         //    conn.SendDataTable(changes, "tbl_semester");
         //    ((DataTable) dataGridView1.DataSource).AcceptChanges();
+        //</summary>
     }
 }
