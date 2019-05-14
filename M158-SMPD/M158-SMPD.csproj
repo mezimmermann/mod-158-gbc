@@ -313,6 +313,7 @@
   <ItemGroup>
     <None Include="Resources\settings.png" />
     <None Include="Resources\settingsico.png" />
+    <None Include="Resources\notendaten.png" />
     <Content Include="RibbonMarkup.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

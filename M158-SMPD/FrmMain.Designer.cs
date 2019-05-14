@@ -31,7 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.RbnMain = new System.Windows.Forms.Ribbon();
             this.BtnCreateUser = new System.Windows.Forms.RibbonOrbMenuItem();
-            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
+            this.RbtbNotendaten = new System.Windows.Forms.RibbonTab();
+            this.RibPanNotendaten = new System.Windows.Forms.RibbonPanel();
+            this.BtnNotendaten = new System.Windows.Forms.RibbonButton();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
@@ -60,9 +62,9 @@
             this.RbnMain.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
             this.RbnMain.OrbText = "Start";
             this.RbnMain.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.RbnMain.Size = new System.Drawing.Size(1235, 97);
+            this.RbnMain.Size = new System.Drawing.Size(1235, 117);
             this.RbnMain.TabIndex = 1;
-            this.RbnMain.Tabs.Add(this.ribbonTab1);
+            this.RbnMain.Tabs.Add(this.RbtbNotendaten);
             this.RbnMain.Tabs.Add(this.ribbonTab2);
             this.RbnMain.Tabs.Add(this.ribbonTab3);
             this.RbnMain.Tabs.Add(this.ribbonTab4);
@@ -82,10 +84,24 @@
             this.BtnCreateUser.Text = "Benutzer erstellen";
             this.BtnCreateUser.Click += new System.EventHandler(this.BtnCreateUser_Click);
             // 
-            // ribbonTab1
+            // RbtbNotendaten
             // 
-            this.ribbonTab1.Name = "ribbonTab1";
-            this.ribbonTab1.Text = "ribbonTab1";
+            this.RbtbNotendaten.Name = "RbtbNotendaten";
+            this.RbtbNotendaten.Panels.Add(this.RibPanNotendaten);
+            this.RbtbNotendaten.Text = "Notendaten";
+            // 
+            // RibPanNotendaten
+            // 
+            this.RibPanNotendaten.ButtonMoreEnabled = false;
+            this.RibPanNotendaten.ButtonMoreVisible = false;
+            this.RibPanNotendaten.Items.Add(this.BtnNotendaten);
+            this.RibPanNotendaten.Name = "RibPanNotendaten";
+            this.RibPanNotendaten.Text = "Notendaten";
+            // 
+            // BtnNotendaten
+            // 
+            this.BtnNotendaten.Name = "BtnNotendaten";
+            this.BtnNotendaten.Text = "Notendaten";
             // 
             // ribbonTab2
             // 
@@ -149,7 +165,7 @@
         #endregion
 
         private System.Windows.Forms.Ribbon RbnMain;
-        private System.Windows.Forms.RibbonTab ribbonTab1;
+        private System.Windows.Forms.RibbonTab RbtbNotendaten;
         private System.Windows.Forms.RibbonTab ribbonTab2;
         private System.Windows.Forms.RibbonTab ribbonTab3;
         private System.Windows.Forms.RibbonTab ribbonTab4;
@@ -158,6 +174,8 @@
         private System.Windows.Forms.RibbonPanel RibPan;
         private System.Windows.Forms.RibbonButton BtnReports;
         private System.Windows.Forms.RibbonOrbMenuItem BtnCreateUser;
+        private System.Windows.Forms.RibbonPanel RibPanNotendaten;
+        private System.Windows.Forms.RibbonButton BtnNotendaten;
     }
 }
 

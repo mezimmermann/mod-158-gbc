@@ -82,6 +82,16 @@ namespace M158_SMPD.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap notendaten {
+            get {
+                object obj = ResourceManager.GetObject("notendaten", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap settingsico {
             get {
                 object obj = ResourceManager.GetObject("settingsico", resourceCulture);
