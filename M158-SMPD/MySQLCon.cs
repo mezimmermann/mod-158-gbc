@@ -150,6 +150,7 @@ namespace M158_SMPD
                 //Create Command
                 if(changedTable == null)
                 {
+                    //close connection
                     this.CloseConnection();
                     return;
                 }
