@@ -32,7 +32,7 @@ namespace M158_SMPD
 
         {
 
-            server = "192.168.2.88";
+            server = "192.168.2.88";    //IP My-SQL Server
             database = "access";
             uid = "remote";
             password = "remote";
