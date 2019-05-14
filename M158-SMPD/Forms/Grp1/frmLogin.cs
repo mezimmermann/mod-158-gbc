@@ -29,10 +29,10 @@ namespace M158_SMPD
             try
             {
                 MySQLCon MysqlconUser = new MySQLCon();
-
-                //string password = Cryption.encrypt("test");
+                
                 StrPasswordDB = MysqlconUser.getSQLStatement("SELECT Passwort FROM user WHERE Benutzername=\"" + StrUsername + "\"").Rows[0][0].ToString();
-
+                
+                // Überprüfung der Passwörter (eingegebenes und DB-PW)
                 if (Cryption.checkPwd(StrPasswordDB, TbxPassword.Text.ToString()) == true)
                 {
                     LoginSuccessful(StrUsername);
@@ -55,6 +55,7 @@ namespace M158_SMPD
                 MySQLCon MysqlconUser = new MySQLCon();
 
                 //string password = Cryption.encrypt("test");
+                //liest Berechtigungen des eingeloggten Users aus
                 DtUserdetails = MysqlconUser.getSQLStatement("SELECT * FROM user JOIN benutzergruppen on user.IdBenutzergruppen=benutzergruppen.idbenutzergruppen WHERE Benutzername=\"" + StrUsername + "\"");
 
                 this.Close();
@@ -65,6 +66,7 @@ namespace M158_SMPD
             }
         }
 
+        // Login Schliessen und true schliessen für Main-Form
         private void BtnClose_Click(object sender, EventArgs e)
         {
             BoolExit = true;
