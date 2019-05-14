@@ -141,5 +141,41 @@ namespace M158_SMPD
                 return data;
             }
         }
+
+        public void SendDataTable(DataTable changedTable, string table)
+        {
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                if(changedTable == null)
+                {
+                    //close connection
+                    this.CloseConnection();
+                    return;
+                }
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM " + table,connection);
+                MySqlCommandBuilder mcb = new MySqlCommandBuilder(mySqlDataAdapter);
+                mySqlDataAdapter.UpdateCommand = mcb.GetUpdateCommand();
+                mySqlDataAdapter.Update(changedTable);
+
+                //close connection
+                this.CloseConnection();
+
+            }
+            else
+            {
+                return;
+            }
+        }
+        //<summary>
+        //DataTable changes = ((DataTable)dataGridView1.DataSource).GetChanges();
+        //    if (changes == null)
+        //    {
+        //        return;
+        //    }
+        //    conn.SendDataTable(changes, "tbl_semester");
+        //    ((DataTable) dataGridView1.DataSource).AcceptChanges();
+        //</summary>
     }
 }

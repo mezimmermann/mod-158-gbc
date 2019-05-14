@@ -31,6 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.LblReviewTitle = new System.Windows.Forms.Label();
             this.BtnBeruf = new System.Windows.Forms.Button();
             this.BtnFaecher = new System.Windows.Forms.Button();
             this.BtnFirma = new System.Windows.Forms.Button();
@@ -54,6 +55,15 @@
             this.chr_auswertung = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chr_auswertung)).BeginInit();
             this.SuspendLayout();
+            // 
+            // LblReviewTitle
+            // 
+            this.LblReviewTitle.AutoSize = true;
+            this.LblReviewTitle.Location = new System.Drawing.Point(13, 13);
+            this.LblReviewTitle.Name = "LblReviewTitle";
+            this.LblReviewTitle.Size = new System.Drawing.Size(51, 13);
+            this.LblReviewTitle.TabIndex = 0;
+            this.LblReviewTitle.Text = "Reviews:";
             // 
             // BtnBeruf
             // 
@@ -293,10 +303,19 @@
             this.Load += new System.EventHandler(this.FrmReview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chr_auswertung)).EndInit();
             this.ResumeLayout(false);
+            this.Controls.Add(this.LblReviewTitle);
+            this.Name = "FrmReview";
+            this.Text = "frmReview";
+            this.Load += new System.EventHandler(this.FrmReview_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.chr_auswertung)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label LblReviewTitle;
         private System.Windows.Forms.Button BtnBeruf;
         private System.Windows.Forms.Button BtnFaecher;
         private System.Windows.Forms.Button BtnFirma;
