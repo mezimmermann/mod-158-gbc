@@ -243,6 +243,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Folder Include="Forms\Grp7\" />
   </ItemGroup>
@@ -253,6 +254,5 @@
     <None Include="Resources\btman.wav" />
   </ItemGroup>
   <ItemGroup />
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
