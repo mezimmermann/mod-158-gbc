@@ -62,8 +62,26 @@
     </Compile>
     <Compile Include="Forms\Grp1\frmUserRegister.Designer.cs">
       <DependentUpon>frmUserRegister.cs</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="CSVUtil.cs" />
+    <Compile Include="Forms\Grp5\FrmAnrede.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp5\FrmAnrede.Designer.cs">
+      <DependentUpon>FrmAnrede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp5\FrmFach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp5\FrmFach.Designer.cs">
+      <DependentUpon>FrmFach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp5\FrmOrt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp5\FrmOrt.Designer.cs">
+      <DependentUpon>FrmOrt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Grp7\FrmReview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,12 +129,6 @@
     </Compile>
     <Compile Include="Forms\Grp3\frmStudLehr.Designer.cs">
       <DependentUpon>frmStudLehr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Grp5\frmStammdaten.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Grp5\frmStammdaten.Designer.cs">
-      <DependentUpon>frmStammdaten.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Grp6\frmKlassen.cs">
       <SubType>Form</SubType>
@@ -190,9 +202,18 @@
     <EmbeddedResource Include="Forms\Grp1\frmUserRegister.resx">
       <DependentUpon>frmUserRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp5\FrmAnrede.resx">
+      <DependentUpon>FrmAnrede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp5\FrmFach.resx">
+      <DependentUpon>FrmFach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp5\FrmOrt.resx">
+      <DependentUpon>FrmOrt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLoading.resx">
       <DependentUpon>FrmLoading.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Grp7\FrmReview.resx">
       <DependentUpon>FrmReview.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,9 +264,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Grp7\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\3453038.gif" />
   </ItemGroup>
@@ -253,6 +272,5 @@
     <None Include="Resources\btman.wav" />
   </ItemGroup>
   <ItemGroup />
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
