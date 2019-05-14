@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using System.Web.UI.DataVisualization.Charting;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace M158_SMPD.Forms
 {
@@ -110,7 +112,7 @@ namespace M158_SMPD.Forms
                 default:
                     return;
             }
- 
+
             saveCSVFile.Filter = "Comma Seperated Values (*.csv)|*.csv";                                    //Filter, damit nur als CSV-File abgespeichert werden kann                                 
 
             if (saveCSVFile.ShowDialog() == DialogResult.OK)
@@ -123,10 +125,68 @@ namespace M158_SMPD.Forms
         private void FrmReview_Load(object sender, EventArgs e)
         {
             MySQLCon mysql = new MySQLCon();
-            DataTable chartdata;
-            //ChrReview.Series[""]
-            chartdata = mysql.getSQLStatement("SELECT * FROM tbl_beruf");
+
+            BarAuswertung();                                                                            //Funktionaufruf
+
+
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void BarAuswertung()                                                                     //Function der Chart
+        {
+            MySQLCon mysql = new MySQLCon();                                                            // MySQL Connection initialisieren
+
+            DataTable countberuf;                                                                       //Datatable für Count der Beruf-Datensätze
+            DataTable countfaecher;                                                                     //Datatable für Count der Fächer-Datensätze
+            DataTable countfirma;                                                                       //Datatable für Count der Firma-Datensätze
+            DataTable countklasse;                                                                      //Datatable für Count der Klassen-Datensätze
+            DataTable countlehrling;                                                                    //Datatable für Count der Lehrling-Datensätze
+            DataTable countlehrzeiten;                                                                  //Datatable für Count der Lehrzeiten-Datensätze
+            DataTable countsemester;                                                                    //Datatable für Count der Semester-Datensätze
+
+            int berufcount;                                                                             // Int der Anzahl Datensäzue (Beruf)
+            int faechercount;                                                                           // Int der Anzahl Datensäzue (Fächer)
+            int firmacount;                                                                             // Int der Anzahl Datensäzue (Firma)
+            int klassecount;                                                                            // Int der Anzahl Datensäzue (Klasse)
+            int lehrlingcount;                                                                          // Int der Anzahl Datensäzue (Lehrling)
+            int lehrzeitencount;                                                                        // Int der Anzahl Datensäzue (Lehrzeiten)
+            int semestercount;                                                                          // Int der Anzahl Datensäzue (Semester)
+
+            countberuf = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_beruf");                       // Count Query für Beruf
+            countfaecher = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_faecher");                   // Count Query für Fächer
+            countfirma = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_firma");                       // Count Query für Firma
+            countklasse = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_klasse");                     // Count Query für Klasse
+            countlehrling = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_lehrling");                 // Count Query für Lehrling
+            countlehrzeiten = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_lehrzeiten");             // Count Query für Lehrzeiten
+            countsemester = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_semester");                 // Count Query für Semester
+
+            berufcount = int.Parse(countberuf.Rows[0][0].ToString());                                   // Ausgabe in String konvertieren
+            faechercount = int.Parse(countfaecher.Rows[0][0].ToString());                               // " "
+            firmacount = int.Parse(countfirma.Rows[0][0].ToString());                                   // " "
+            klassecount = int.Parse(countklasse.Rows[0][0].ToString());                                 // " "
+            lehrlingcount = int.Parse(countlehrling.Rows[0][0].ToString());                             // " "
+            lehrzeitencount = int.Parse(countlehrzeiten.Rows[0][0].ToString());                         // " "
+            semestercount = int.Parse(countsemester.Rows[0][0].ToString());                             // " "
+
+            this.chr_auswertung.Series.Clear();
             
+            string[] seriesArray = { "Beruf", "Fächer", "Firma", "Klasse", "Lehrling", "Lehrzeiten", "Semester" };                          // Balken des Diagrams
+            int[] pointsArray = { berufcount, faechercount, firmacount, klassecount, lehrlingcount, lehrzeitencount, semestercount };       // als Datenpunkte dienen die Resultate der Count Querys
+
+            this.chr_auswertung.Palette = ChartColorPalette.Fire;                                                                           // Farbdesign der Balken
+
+            this.chr_auswertung.Titles.Add("Anzahl Datensätze");                                                                            // Titel
+
+            for (int i = 0; i < seriesArray.Length; i++)                                                                                    // Daten ins Diagramm einfügen
+            {
+                Series series = this.chr_auswertung.Series.Add(seriesArray[i]);
+                series.Points.Add(pointsArray[i]);
+            }
         }
     }
 }
