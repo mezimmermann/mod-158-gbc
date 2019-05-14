@@ -84,7 +84,7 @@ namespace M158_SMPD
         {
             FrmLoading frmLoading = new FrmLoading();
             frmLoading.Show();
-            Wait(3000);
+            Wait(1400);
             frmLoading.Close();
 
         }
