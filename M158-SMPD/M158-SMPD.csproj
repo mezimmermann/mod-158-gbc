@@ -266,6 +266,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Folder Include="Forms\Grp7\" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\3453038.gif" />
   </ItemGroup>
   <ItemGroup>

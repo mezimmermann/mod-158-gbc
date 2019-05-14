@@ -69,6 +69,7 @@
             // TbxFirstname
             // 
             this.TbxFirstname.Location = new System.Drawing.Point(154, 54);
+            this.TbxFirstname.MaxLength = 20;
             this.TbxFirstname.Name = "TbxFirstname";
             this.TbxFirstname.Size = new System.Drawing.Size(121, 20);
             this.TbxFirstname.TabIndex = 2;
@@ -76,6 +77,7 @@
             // TbxSurname
             // 
             this.TbxSurname.Location = new System.Drawing.Point(154, 80);
+            this.TbxSurname.MaxLength = 20;
             this.TbxSurname.Name = "TbxSurname";
             this.TbxSurname.Size = new System.Drawing.Size(121, 20);
             this.TbxSurname.TabIndex = 3;
@@ -83,6 +85,7 @@
             // TbxUsername
             // 
             this.TbxUsername.Location = new System.Drawing.Point(154, 106);
+            this.TbxUsername.MaxLength = 20;
             this.TbxUsername.Name = "TbxUsername";
             this.TbxUsername.Size = new System.Drawing.Size(121, 20);
             this.TbxUsername.TabIndex = 4;
@@ -90,6 +93,7 @@
             // TbxPassword
             // 
             this.TbxPassword.Location = new System.Drawing.Point(154, 132);
+            this.TbxPassword.MaxLength = 14;
             this.TbxPassword.Name = "TbxPassword";
             this.TbxPassword.Size = new System.Drawing.Size(121, 20);
             this.TbxPassword.TabIndex = 5;
@@ -98,6 +102,7 @@
             // TbxConfirmPassword
             // 
             this.TbxConfirmPassword.Location = new System.Drawing.Point(154, 158);
+            this.TbxConfirmPassword.MaxLength = 14;
             this.TbxConfirmPassword.Name = "TbxConfirmPassword";
             this.TbxConfirmPassword.Size = new System.Drawing.Size(121, 20);
             this.TbxConfirmPassword.TabIndex = 6;
