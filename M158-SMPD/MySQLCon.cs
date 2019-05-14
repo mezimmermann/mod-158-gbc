@@ -32,19 +32,19 @@ namespace M158_SMPD
 
         {
 
-            server = "192.168.2.88";    //IP My-SQL Server
-            database = "access";
-            uid = "remote";
-            password = "remote";
-            
-            
+            server = Properties.Settings.Default.DBServer;
+            database = Properties.Settings.Default.DBName;
+            uid = Properties.Settings.Default.DBUser;
+            password = Properties.Settings.Default.DBPassword;
+
+
             string connectionString;
 
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
 
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
-            
+
             connection = new MySqlConnection(connectionString);
         }
 
@@ -98,7 +98,7 @@ namespace M158_SMPD
                 return false;
             }
         }
-        
+
         //Insert statement
         public void setSQLStatement(string query)
         {
@@ -148,13 +148,13 @@ namespace M158_SMPD
             if (this.OpenConnection() == true)
             {
                 //Create Command
-                if(changedTable == null)
+                if (changedTable == null)
                 {
                     //close connection
                     this.CloseConnection();
                     return;
                 }
-                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM " + table,connection);
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM " + table, connection);
                 MySqlCommandBuilder mcb = new MySqlCommandBuilder(mySqlDataAdapter);
                 mySqlDataAdapter.UpdateCommand = mcb.GetUpdateCommand();
                 mySqlDataAdapter.Update(changedTable);

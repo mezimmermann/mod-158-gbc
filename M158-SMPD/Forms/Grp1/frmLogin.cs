@@ -44,7 +44,8 @@ namespace M158_SMPD
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show("Benutzername oder Passwort inkorrekt.");
             }
 
         }
@@ -63,6 +64,7 @@ namespace M158_SMPD
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show("Benutzername oder Passwort inkorrekt.");
             }
         }
 
@@ -95,6 +97,12 @@ namespace M158_SMPD
             {
                 BtnLogin.PerformClick();
             }
+        }
+
+        private void BtnSettings_Click(object sender, EventArgs e)
+        {
+            FrmDBSettings dbset = new FrmDBSettings();
+            dbset.Show();
         }
     }
 }

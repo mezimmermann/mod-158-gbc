@@ -35,11 +35,11 @@
             this.btnclasses = new System.Windows.Forms.Button();
             this.btnsubj = new System.Windows.Forms.Button();
             this.lbxstudents = new System.Windows.Forms.ListBox();
-            this.noten_2019DataSet = new Schnellerfassung.Noten_2019DataSet();
-            this.tblAnredeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbl_AnredeTableAdapter = new Schnellerfassung.Noten_2019DataSetTableAdapters.tbl_AnredeTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.noten_2019DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblAnredeBindingSource)).BeginInit();
+            //this.noten_2019DataSet = new Schnellerfassung.Noten_2019DataSet();
+            //this.tblAnredeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            //this.tbl_AnredeTableAdapter = new Schnellerfassung.Noten_2019DataSetTableAdapters.tbl_AnredeTableAdapter();
+            //((System.ComponentModel.ISupportInitialize)(this.noten_2019DataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.tblAnredeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbltitle
@@ -100,17 +100,17 @@
             // 
             // noten_2019DataSet
             // 
-            this.noten_2019DataSet.DataSetName = "Noten_2019DataSet";
-            this.noten_2019DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.noten_2019DataSet.DataSetName = "Noten_2019DataSet";
+            //this.noten_2019DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tblAnredeBindingSource
             // 
-            this.tblAnredeBindingSource.DataMember = "tbl_Anrede";
-            this.tblAnredeBindingSource.DataSource = this.noten_2019DataSet;
+            //this.tblAnredeBindingSource.DataMember = "tbl_Anrede";
+            //this.tblAnredeBindingSource.DataSource = this.noten_2019DataSet;
             // 
             // tbl_AnredeTableAdapter
             // 
-            this.tbl_AnredeTableAdapter.ClearBeforeFill = true;
+            //this.tbl_AnredeTableAdapter.ClearBeforeFill = true;
             // 
             // frmClassMgmt
             // 
@@ -125,8 +125,6 @@
             this.Controls.Add(this.lbltitle);
             this.Name = "frmClassMgmt";
             this.Text = "Klassenverwaltung";
-            ((System.ComponentModel.ISupportInitialize)(this.noten_2019DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblAnredeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,9 +138,6 @@
         private System.Windows.Forms.Button btnclasses;
         private System.Windows.Forms.Button btnsubj;
         private System.Windows.Forms.ListBox lbxstudents;
-        private Noten_2019DataSet noten_2019DataSet;
-        private System.Windows.Forms.BindingSource tblAnredeBindingSource;
-        private Noten_2019DataSetTableAdapters.tbl_AnredeTableAdapter tbl_AnredeTableAdapter;
     }
 }
 

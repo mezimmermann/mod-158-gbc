@@ -76,6 +76,24 @@
       <DependentUpon>frmUserRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="CSVUtil.cs" />
+    <Compile Include="Forms\Grp3\frmClassMgmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp3\frmClassMgmt.Designer.cs">
+      <DependentUpon>frmClassMgmt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp3\frmCompData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp3\frmCompData.Designer.cs">
+      <DependentUpon>frmCompData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp3\frmStudMgmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp3\frmStudMgmt.Designer.cs">
+      <DependentUpon>frmStudMgmt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Grp5\FrmAnrede.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,12 +130,6 @@
     <Compile Include="Forms\Grp2\frmFaecherzuteilung.Designer.cs">
       <DependentUpon>frmFaecherzuteilung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Grp3\frmFirmDat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Grp3\frmFirmDat.Designer.cs">
-      <DependentUpon>frmFirmDat.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Grp1\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,17 +154,17 @@
     <Compile Include="Forms\Grp4\frmSchnellerfassung.Designer.cs">
       <DependentUpon>frmSchnellerfassung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Grp3\frmStudLehr.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Grp3\frmStudLehr.Designer.cs">
-      <DependentUpon>frmStudLehr.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Grp6\frmKlassen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Grp6\frmKlassen.Designer.cs">
       <DependentUpon>frmKlassen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDBSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDBSettings.Designer.cs">
+      <DependentUpon>FrmDBSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLoading.cs">
       <SubType>Form</SubType>
@@ -211,6 +223,7 @@
     <Compile Include="MySQLCon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <EmbeddedResource Include="Forms\Grp1\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Grp6\frmKlassen.resx">
       <DependentUpon>frmKlassen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDBSettings.resx">
+      <DependentUpon>FrmDBSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLoading.resx">
       <DependentUpon>FrmLoading.cs</DependentUpon>
@@ -295,6 +311,8 @@
     <None Include="Resources\btman.wav" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\settingsico.png" />
     <Content Include="RibbonMarkup.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

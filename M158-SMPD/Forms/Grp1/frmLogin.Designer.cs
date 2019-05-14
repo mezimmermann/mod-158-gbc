@@ -35,12 +35,13 @@
             this.LblTitle = new System.Windows.Forms.Label();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.BtnClose = new System.Windows.Forms.Button();
+            this.BtnSettings = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LblUsername
             // 
             this.LblUsername.AutoSize = true;
-            this.LblUsername.Location = new System.Drawing.Point(32, 84);
+            this.LblUsername.Location = new System.Drawing.Point(16, 76);
             this.LblUsername.Name = "LblUsername";
             this.LblUsername.Size = new System.Drawing.Size(78, 13);
             this.LblUsername.TabIndex = 0;
@@ -48,7 +49,7 @@
             // 
             // TbxUsername
             // 
-            this.TbxUsername.Location = new System.Drawing.Point(116, 81);
+            this.TbxUsername.Location = new System.Drawing.Point(100, 73);
             this.TbxUsername.Name = "TbxUsername";
             this.TbxUsername.Size = new System.Drawing.Size(137, 20);
             this.TbxUsername.TabIndex = 1;
@@ -56,7 +57,7 @@
             // LblPassword
             // 
             this.LblPassword.AutoSize = true;
-            this.LblPassword.Location = new System.Drawing.Point(60, 110);
+            this.LblPassword.Location = new System.Drawing.Point(44, 102);
             this.LblPassword.Name = "LblPassword";
             this.LblPassword.Size = new System.Drawing.Size(50, 13);
             this.LblPassword.TabIndex = 2;
@@ -64,18 +65,18 @@
             // 
             // TbxPassword
             // 
-            this.TbxPassword.Location = new System.Drawing.Point(116, 107);
+            this.TbxPassword.Location = new System.Drawing.Point(100, 99);
             this.TbxPassword.Name = "TbxPassword";
-            this.TbxPassword.PasswordChar = '*';
             this.TbxPassword.Size = new System.Drawing.Size(137, 20);
             this.TbxPassword.TabIndex = 3;
+            this.TbxPassword.UseSystemPasswordChar = true;
             this.TbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxPassword_KeyPress);
             // 
             // LblTitle
             // 
             this.LblTitle.AutoSize = true;
             this.LblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitle.Location = new System.Drawing.Point(28, 9);
+            this.LblTitle.Location = new System.Drawing.Point(12, 20);
             this.LblTitle.Name = "LblTitle";
             this.LblTitle.Size = new System.Drawing.Size(299, 42);
             this.LblTitle.TabIndex = 4;
@@ -83,7 +84,7 @@
             // 
             // BtnLogin
             // 
-            this.BtnLogin.Location = new System.Drawing.Point(35, 149);
+            this.BtnLogin.Location = new System.Drawing.Point(18, 133);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(127, 42);
             this.BtnLogin.TabIndex = 5;
@@ -93,7 +94,7 @@
             // 
             // BtnClose
             // 
-            this.BtnClose.Location = new System.Drawing.Point(168, 149);
+            this.BtnClose.Location = new System.Drawing.Point(151, 133);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(127, 42);
             this.BtnClose.TabIndex = 6;
@@ -101,12 +102,23 @@
             this.BtnClose.UseVisualStyleBackColor = true;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // BtnSettings
+            // 
+            this.BtnSettings.Image = global::M158_SMPD.Properties.Resources.settingsico;
+            this.BtnSettings.Location = new System.Drawing.Point(293, 4);
+            this.BtnSettings.Name = "BtnSettings";
+            this.BtnSettings.Size = new System.Drawing.Size(25, 25);
+            this.BtnSettings.TabIndex = 7;
+            this.BtnSettings.UseVisualStyleBackColor = true;
+            this.BtnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 221);
+            this.ClientSize = new System.Drawing.Size(322, 187);
             this.ControlBox = false;
+            this.Controls.Add(this.BtnSettings);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.LblTitle);
@@ -118,6 +130,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
+            this.ShowInTaskbar = false;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
@@ -134,5 +147,6 @@
         private System.Windows.Forms.Label LblTitle;
         private System.Windows.Forms.Button BtnLogin;
         private System.Windows.Forms.Button BtnClose;
+        private System.Windows.Forms.Button BtnSettings;
     }
 }

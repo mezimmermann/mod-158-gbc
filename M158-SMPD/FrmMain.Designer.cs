@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.RbnMain = new System.Windows.Forms.Ribbon();
+            this.BtnCreateUser = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
@@ -38,7 +39,6 @@
             this.rbtBerichte = new System.Windows.Forms.RibbonTab();
             this.RibPan = new System.Windows.Forms.RibbonPanel();
             this.BtnReports = new System.Windows.Forms.RibbonButton();
-            this.BtnCreateUser = new System.Windows.Forms.RibbonOrbMenuItem();
             this.SuspendLayout();
             // 
             // RbnMain
@@ -60,7 +60,7 @@
             this.RbnMain.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
             this.RbnMain.OrbText = "Start";
             this.RbnMain.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.RbnMain.Size = new System.Drawing.Size(854, 97);
+            this.RbnMain.Size = new System.Drawing.Size(1235, 97);
             this.RbnMain.TabIndex = 1;
             this.RbnMain.Tabs.Add(this.ribbonTab1);
             this.RbnMain.Tabs.Add(this.ribbonTab2);
@@ -70,6 +70,17 @@
             this.RbnMain.Tabs.Add(this.rbtBerichte);
             this.RbnMain.TabsMargin = new System.Windows.Forms.Padding(5, 2, 20, 0);
             this.RbnMain.TabSpacing = 4;
+            // 
+            // BtnCreateUser
+            // 
+            this.BtnCreateUser.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.BtnCreateUser.Enabled = false;
+            this.BtnCreateUser.Image = ((System.Drawing.Image)(resources.GetObject("BtnCreateUser.Image")));
+            this.BtnCreateUser.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnCreateUser.LargeImage")));
+            this.BtnCreateUser.Name = "BtnCreateUser";
+            this.BtnCreateUser.SmallImage = ((System.Drawing.Image)(resources.GetObject("BtnCreateUser.SmallImage")));
+            this.BtnCreateUser.Text = "Benutzer erstellen";
+            this.BtnCreateUser.Click += new System.EventHandler(this.BtnCreateUser_Click);
             // 
             // ribbonTab1
             // 
@@ -120,22 +131,12 @@
             this.BtnReports.Text = "Auswertungen anzeigen";
             this.BtnReports.Click += new System.EventHandler(this.BtnReports_Click);
             // 
-            // BtnCreateUser
-            // 
-            this.BtnCreateUser.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.BtnCreateUser.Enabled = false;
-            this.BtnCreateUser.Image = ((System.Drawing.Image)(resources.GetObject("BtnCreateUser.Image")));
-            this.BtnCreateUser.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnCreateUser.LargeImage")));
-            this.BtnCreateUser.Name = "BtnCreateUser";
-            this.BtnCreateUser.SmallImage = ((System.Drawing.Image)(resources.GetObject("BtnCreateUser.SmallImage")));
-            this.BtnCreateUser.Text = "Benutzer erstellen";
-            this.BtnCreateUser.Click += new System.EventHandler(this.BtnCreateUser_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 463);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1235, 659);
             this.Controls.Add(this.RbnMain);
             this.IsMdiContainer = true;
             this.KeyPreview = true;
