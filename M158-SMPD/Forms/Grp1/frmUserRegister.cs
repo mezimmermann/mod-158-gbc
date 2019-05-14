@@ -60,20 +60,39 @@ namespace M158_SMPD.Forms.Grp1
                 {
                     if (StrPassword == StrConfirmPassword)
                     {
-                        StrPasswordhash = Cryption.encrypt(StrPassword);
-                        foreach (DataRow DtrBenutzergruppen in DtGroups.Rows)
+                        string specialChar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";
+                        bool BoolSonderzeichen = false;
+                        foreach (var item in specialChar)
                         {
-                            if (DtrBenutzergruppen[1].ToString() == StrUserGroup)
+                            if ((StrFirstname.Contains(item) == true) || (StrUsername.Contains(item) == true) || (StrSurname.Contains(item) == true))
                             {
-                                StrUsergroupid = DtrBenutzergruppen[0].ToString();
+                                BoolSonderzeichen = true;
                             }
                         }
-                        string StrSqlCreateUser = "INSERT INTO `user` (`Name`, `Vorname`, `Benutzername`, `Passwort`, `Admin`, `idBenutzergruppen`) VALUES ('" + StrSurname + "', '" + StrFirstname + "', '" + StrUsername + "', '" + StrPasswordhash + "', '" + StrBooladm + "', '" + StrUsergroupid + "');";
-                        MySQLCon MySQLConBenutzergruppen = new MySQLCon();
-                        MySQLConBenutzergruppen.setSQLStatement(StrSqlCreateUser);
-                        LblComments.Text = "Der Benutzer wurde hinzugefügt";
-                        LblComments.ForeColor = Color.Green;
-                        LblComments.Visible = true;
+                        if (BoolSonderzeichen == false)
+                        {
+                            StrPasswordhash = Cryption.encrypt(StrPassword);
+                            foreach (DataRow DtrBenutzergruppen in DtGroups.Rows)
+                            {
+                                if (DtrBenutzergruppen[1].ToString() == StrUserGroup)
+                                {
+                                    StrUsergroupid = DtrBenutzergruppen[0].ToString();
+                                }
+                            }
+                            string StrSqlCreateUser = "INSERT INTO `user` (`Name`, `Vorname`, `Benutzername`, `Passwort`, `Admin`, `idBenutzergruppen`) VALUES ('" + StrSurname + "', '" + StrFirstname + "', '" + StrUsername + "', '" + StrPasswordhash + "', '" + StrBooladm + "', '" + StrUsergroupid + "');";
+                            MySQLCon MySQLConBenutzergruppen = new MySQLCon();
+                            MySQLConBenutzergruppen.setSQLStatement(StrSqlCreateUser);
+                            LblComments.Text = "Der Benutzer wurde hinzugefügt";
+                            LblComments.ForeColor = Color.Green;
+                            LblComments.Visible = true;
+                        }
+                        else
+                        {
+                            //Passwörter nicht identisch
+                            LblComments.Text = " Bitte Benutzen Sie in den Feldern Vorname, \n\r Nachname und Benutzername keine Sonderzeichen.";
+                            LblComments.ForeColor = Color.Red;
+                            LblComments.Visible = true;
+                        }
                     }
                     else
                     {

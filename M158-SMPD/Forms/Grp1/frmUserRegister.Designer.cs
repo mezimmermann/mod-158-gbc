@@ -93,6 +93,7 @@
             this.TbxPassword.Name = "TbxPassword";
             this.TbxPassword.Size = new System.Drawing.Size(121, 20);
             this.TbxPassword.TabIndex = 5;
+            this.TbxPassword.UseSystemPasswordChar = true;
             // 
             // TbxConfirmPassword
             // 
@@ -100,6 +101,7 @@
             this.TbxConfirmPassword.Name = "TbxConfirmPassword";
             this.TbxConfirmPassword.Size = new System.Drawing.Size(121, 20);
             this.TbxConfirmPassword.TabIndex = 6;
+            this.TbxConfirmPassword.UseSystemPasswordChar = true;
             // 
             // CmxUserGroups
             // 
