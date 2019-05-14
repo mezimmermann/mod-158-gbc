@@ -150,6 +150,8 @@ namespace M158_SMPD
                 //Create Command
                 if(changedTable == null)
                 {
+                    //close connection
+                    this.CloseConnection();
                     return;
                 }
                 MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM " + table,connection);
