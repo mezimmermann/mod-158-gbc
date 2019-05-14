@@ -110,6 +110,7 @@
             // LbxBeruf
             // 
             this.LbxBeruf.FormattingEnabled = true;
+            this.LbxBeruf.HorizontalScrollbar = true;
             this.LbxBeruf.Location = new System.Drawing.Point(16, 115);
             this.LbxBeruf.Name = "LbxBeruf";
             this.LbxBeruf.Size = new System.Drawing.Size(120, 485);
@@ -119,6 +120,7 @@
             // LbxSemester
             // 
             this.LbxSemester.FormattingEnabled = true;
+            this.LbxSemester.HorizontalScrollbar = true;
             this.LbxSemester.Location = new System.Drawing.Point(146, 115);
             this.LbxSemester.Name = "LbxSemester";
             this.LbxSemester.Size = new System.Drawing.Size(120, 485);
@@ -128,9 +130,10 @@
             // LbxFach
             // 
             this.LbxFach.FormattingEnabled = true;
+            this.LbxFach.HorizontalScrollbar = true;
             this.LbxFach.Location = new System.Drawing.Point(272, 115);
             this.LbxFach.Name = "LbxFach";
-            this.LbxFach.Size = new System.Drawing.Size(120, 485);
+            this.LbxFach.Size = new System.Drawing.Size(121, 485);
             this.LbxFach.TabIndex = 8;
             this.LbxFach.SelectedIndexChanged += new System.EventHandler(this.LbxFach_SelectedIndexChanged);
             // 
