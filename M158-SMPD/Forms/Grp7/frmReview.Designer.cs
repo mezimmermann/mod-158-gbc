@@ -298,14 +298,9 @@
             this.Controls.Add(this.BtnFirma);
             this.Controls.Add(this.BtnFaecher);
             this.Controls.Add(this.BtnBeruf);
-            this.Name = "FrmReview";
-            this.Text = "Berichte";
-            this.Load += new System.EventHandler(this.FrmReview_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.chr_auswertung)).EndInit();
-            this.ResumeLayout(false);
             this.Controls.Add(this.LblReviewTitle);
             this.Name = "FrmReview";
-            this.Text = "frmReview";
+            this.Text = "Auswertungen";
             this.Load += new System.EventHandler(this.FrmReview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chr_auswertung)).EndInit();
             this.ResumeLayout(false);

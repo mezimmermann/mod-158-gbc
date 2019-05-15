@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using M158_SMPD.Forms.Grp6;
 
 namespace M158_SMPD.Forms.Grp6
 {
@@ -31,17 +23,17 @@ namespace M158_SMPD.Forms.Grp6
         public FrmBerufe()
         {
             InitializeComponent();
-            Filllcombo();
+            FillCombo();
             Filllistbox();
-            checkkürzel();
+            CheckKuerzel();
             //Form Klassen wird gleichzeitig geöffnet
             fk.Show();
         }
 
         //Prüfung ob Textbox Kürzel und Berufe leer sind
-        void checkkürzel()
+        void CheckKuerzel()
         {
-            if ((tbxKuerzel.Text != String.Empty) && (tbxBerufe.Text != String.Empty))
+            if ((TbxKuerzel.Text != String.Empty) && (TbxBerufe.Text != String.Empty))
             {
                 btnAdd.Enabled = true;
                 btnEdit.Enabled = true;
@@ -54,7 +46,7 @@ namespace M158_SMPD.Forms.Grp6
         }
 
         //Combobox Berufe mit Daten füllen
-        void Filllcombo()
+        void FillCombo()
         {
             cmxBerufe.Items.Clear();
             
@@ -107,7 +99,7 @@ namespace M158_SMPD.Forms.Grp6
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             //MySQL Insert Command
-            Query = "insert into tbl_beruf (Beruf,Kürzel) values('" + this.tbxBerufe.Text + "','" + this.tbxKuerzel.Text + "') ;";
+            Query = "insert into tbl_beruf (Beruf,Kürzel) values('" + this.TbxBerufe.Text + "','" + this.TbxKuerzel.Text + "') ;";
             MySqlConnection conDataBase = new MySqlConnection(constring);
             MySqlCommand cmdDataBase = new MySqlCommand(Query, conDataBase);
             MySqlDataReader myReader;
@@ -128,7 +120,7 @@ namespace M158_SMPD.Forms.Grp6
             }
             //Aktualisierung der List und Comboboxen sowie der Kürzel in der Klassen Form
             Filllistbox();
-            Filllcombo();
+            FillCombo();
             fk.FillcmxKuerzel();
 
         }
@@ -136,7 +128,7 @@ namespace M158_SMPD.Forms.Grp6
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             //MySQL update Command
-            Query = "update tbl_beruf set Beruf='" + this.tbxBerufe.Text + "',Kürzel='" + this.tbxKuerzel.Text + "' where + Be_Nr='" + this.tbxBerufNr.Text + "'; ";
+            Query = "update tbl_beruf set Beruf='" + this.TbxBerufe.Text + "',Kürzel='" + this.TbxKuerzel.Text + "' where + Be_Nr='" + this.tbxBerufNr.Text + "'; ";
             MySqlConnection conDataBase = new MySqlConnection(constring);
             MySqlCommand cmdDataBase = new MySqlCommand(Query, conDataBase);
             MySqlDataReader myReader;
@@ -157,14 +149,14 @@ namespace M158_SMPD.Forms.Grp6
             }
             //Aktualisierung der List und Comboboxen sowie der Kürzel in der Klassen Form
             Filllistbox();
-            Filllcombo();
+            FillCombo();
             fk.FillcmxKuerzel();
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             //MySQL delete Command
-            Query = "delete from tbl_beruf where Beruf='" + this.tbxBerufe.Text +"'; ";
+            Query = "delete from tbl_beruf where Beruf='" + this.TbxBerufe.Text +"'; ";
             MySqlConnection conDataBase = new MySqlConnection(constring);
             MySqlCommand cmdDataBase = new MySqlCommand(Query, conDataBase);
             MySqlDataReader myReader;
@@ -185,11 +177,11 @@ namespace M158_SMPD.Forms.Grp6
             }
             //Aktualisierung der List und Comboboxen sowie der Kürzel in der Klassen Form
             Filllistbox();
-            Filllcombo();
+            FillCombo();
             fk.FillcmxKuerzel();
         }
 
-        private void cmxBerufe_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmxBerufe_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Daten werden abgerufen
             Query = "select * from tbl_beruf where Beruf='"+ cmxBerufe.Text + "'; ";
@@ -208,9 +200,9 @@ namespace M158_SMPD.Forms.Grp6
                     sKuerzel = myReader.GetString("Kürzel");
                     sBerufNr = myReader.GetString("Be_Nr");
 
-                    tbxBerufe.Text = sBeruf;
+                    TbxBerufe.Text = sBeruf;
                     lbxBerufe.Text = sBeruf;
-                    tbxKuerzel.Text = sKuerzel;
+                    TbxKuerzel.Text = sKuerzel;
                     tbxBerufNr.Text = sBerufNr;
                 }
                 
@@ -222,14 +214,14 @@ namespace M158_SMPD.Forms.Grp6
         }
 
         //Sobald sich Textboxen ändern wird der Check ob sie leer sind ausgeführt
-        private void tbxKuerzel_TextChanged(object sender, EventArgs e)
+        private void TbxKuerzel_TextChanged(object sender, EventArgs e)
         {
-            checkkürzel();
+            CheckKuerzel();
         }
 
         private void TbxBerufe_TextChanged(object sender, EventArgs e)
         {
-            checkkürzel();
+            CheckKuerzel();
         }
     }
 }

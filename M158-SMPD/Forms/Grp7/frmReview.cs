@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Web.UI.DataVisualization.Charting;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace M158_SMPD.Forms.Grp7
@@ -75,37 +67,37 @@ namespace M158_SMPD.Forms.Grp7
             switch (BtnSender.Name)                                         //Switch-Case Funktion mit case nach Buttonnamen
             {
                 case "BtnBerufCSV":
-                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_beruf ORDER BY Be_Nr ASC");   //Daten der Query in Datatable
+                    dtblQuery = mysql.GetSqlStatement("SELECT * FROM tbl_beruf ORDER BY Be_Nr ASC");   //Daten der Query in Datatable
                     saveCSVFile.FileName = "Beruf.csv";                                                     // default Filename
                     break;
 
                 case "BtnFaecherCSV":
-                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_faecher ORDER BY Fae_Nr ASC");     //Daten der Query in Datatable
+                    dtblQuery = mysql.GetSqlStatement("SELECT * FROM tbl_faecher ORDER BY Fae_Nr ASC");     //Daten der Query in Datatable
                     saveCSVFile.FileName = "Faecher.csv";                                                   // default Filename
                     break;
 
                 case "BtnFirmaCSV":
-                    dtblQuery = mysql.getSQLStatement("SELECT Fi_Nr, F_Name, Anrede, F_Vorname, F_Nachname, Ort, F_Strasse, F_Ansprechperson, F_Zusatz, F_Telefon, F_Fax FROM tbl_firma JOIN tbl_anrede on tbl_anrede.An_Nr = tbl_firma.An_Nr JOIN tbl_ort on tbl_ort.Or_Nr = tbl_firma.Or_Nr");        //Daten der Query in Datatable
+                    dtblQuery = mysql.GetSqlStatement("SELECT Fi_Nr, F_Name, Anrede, F_Vorname, F_Nachname, Ort, F_Strasse, F_Ansprechperson, F_Zusatz, F_Telefon, F_Fax FROM tbl_firma JOIN tbl_anrede on tbl_anrede.An_Nr = tbl_firma.An_Nr JOIN tbl_ort on tbl_ort.Or_Nr = tbl_firma.Or_Nr");        //Daten der Query in Datatable
                     saveCSVFile.FileName = "Firma.csv";                                                                                                                                                                                                                                                 // default Filename
                     break;
 
                 case "BtnKlasseCSV":
-                    dtblQuery = mysql.getSQLStatement("SELECT Kl_Nr, Klasse,  Beruf, Kürzel, tbl_klasse.Be_Nr FROM tbl_klasse JOIN tbl_beruf on tbl_beruf.Be_Nr = tbl_klasse.Be_Nr Order By tbl_klasse.Kl_Nr asc");       //Daten der Query in Datatable
+                    dtblQuery = mysql.GetSqlStatement("SELECT Kl_Nr, Klasse,  Beruf, Kürzel, tbl_klasse.Be_Nr FROM tbl_klasse JOIN tbl_beruf on tbl_beruf.Be_Nr = tbl_klasse.Be_Nr Order By tbl_klasse.Kl_Nr asc");       //Daten der Query in Datatable
                     saveCSVFile.FileName = "Klasse.csv";                                                    // default Filename
                     break;
 
                 case "BtnLehrlingCSV":
-                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_lehrling ORDER BY Ll_Nr ASC");     //Daten der Query in Datatable
+                    dtblQuery = mysql.GetSqlStatement("SELECT * FROM tbl_lehrling ORDER BY Ll_Nr ASC");     //Daten der Query in Datatable
                     saveCSVFile.FileName = "Lehrling.csv";                                                  // default Filename
                     break;
 
                 case "BtnLehrzeitenCSV":
-                    dtblQuery = mysql.getSQLStatement("SELECT tbl_lehrling.Lj_Nr, Lj_Bis, Ll_Nr, Name, Vorname FROM tbl_lehrzeiten JOIN tbl_lehrling on tbl_lehrling.Lj_Nr = tbl_lehrzeiten.Lj_Nr Order By tbl_lehrling.Lj_Nr asc");   //Daten der Query in Datatable
+                    dtblQuery = mysql.GetSqlStatement("SELECT tbl_lehrling.Lj_Nr, Lj_Bis, Ll_Nr, Name, Vorname FROM tbl_lehrzeiten JOIN tbl_lehrling on tbl_lehrling.Lj_Nr = tbl_lehrzeiten.Lj_Nr Order By tbl_lehrling.Lj_Nr asc");   //Daten der Query in Datatable
                     saveCSVFile.FileName = "Lehrzeiten.csv";                                                // default Filename
                     break;
 
                 case "BtnSemesterCSV":
-                    dtblQuery = mysql.getSQLStatement("SELECT * FROM tbl_semester ORDER BY Se_Nr ASC");     //Daten der Query in Datatable
+                    dtblQuery = mysql.GetSqlStatement("SELECT * FROM tbl_semester ORDER BY Se_Nr ASC");     //Daten der Query in Datatable
                     saveCSVFile.FileName = "Semester.csv";                                                  //default Filename
                     break;
 
@@ -157,13 +149,13 @@ namespace M158_SMPD.Forms.Grp7
             int lehrzeitencount;                                                                        // Int der Anzahl Datensäzue (Lehrzeiten)
             int semestercount;                                                                          // Int der Anzahl Datensäzue (Semester)
 
-            countberuf = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_beruf");                       // Count Query für Beruf
-            countfaecher = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_faecher");                   // Count Query für Fächer
-            countfirma = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_firma");                       // Count Query für Firma
-            countklasse = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_klasse");                     // Count Query für Klasse
-            countlehrling = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_lehrling");                 // Count Query für Lehrling
-            countlehrzeiten = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_lehrzeiten");             // Count Query für Lehrzeiten
-            countsemester = mysql.getSQLStatement("SELECT COUNT(*) FROM tbl_semester");                 // Count Query für Semester
+            countberuf = mysql.GetSqlStatement("SELECT COUNT(*) FROM tbl_beruf");                       // Count Query für Beruf
+            countfaecher = mysql.GetSqlStatement("SELECT COUNT(*) FROM tbl_faecher");                   // Count Query für Fächer
+            countfirma = mysql.GetSqlStatement("SELECT COUNT(*) FROM tbl_firma");                       // Count Query für Firma
+            countklasse = mysql.GetSqlStatement("SELECT COUNT(*) FROM tbl_klasse");                     // Count Query für Klasse
+            countlehrling = mysql.GetSqlStatement("SELECT COUNT(*) FROM tbl_lehrling");                 // Count Query für Lehrling
+            countlehrzeiten = mysql.GetSqlStatement("SELECT COUNT(*) FROM tbl_lehrzeiten");             // Count Query für Lehrzeiten
+            countsemester = mysql.GetSqlStatement("SELECT COUNT(*) FROM tbl_semester");                 // Count Query für Semester
 
             berufcount = int.Parse(countberuf.Rows[0][0].ToString());                                   // Ausgabe in String konvertieren
             faechercount = int.Parse(countfaecher.Rows[0][0].ToString());                               // " "

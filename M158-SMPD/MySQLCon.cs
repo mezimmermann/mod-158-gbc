@@ -1,15 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace M158_SMPD
 {
-    class MySQLCon
+    class MySQLCon: IDisposable
     {
         private MySqlConnection connection;
         private string server;
@@ -72,6 +68,10 @@ namespace M158_SMPD
                         MessageBox.Show("Cannot connect to server.  Contact administrator");
                         break;
 
+                    case 1042:
+                        MessageBox.Show("Connection timeout. Please check connection settings.");
+                        break;
+
                     case 1045:
                         MessageBox.Show("Invalid username/password, please try again");
                         break;
@@ -100,7 +100,7 @@ namespace M158_SMPD
         }
 
         //Insert statement
-        public void setSQLStatement(string query)
+        public void SetSQLStatement(string query)
         {
             //open connection
             if (this.OpenConnection() == true)
@@ -120,7 +120,7 @@ namespace M158_SMPD
 
         //Select statement
 
-        public DataTable getSQLStatement(string query)
+        public DataTable GetSqlStatement(string query)
         {
             DataTable data = new DataTable();
 
@@ -177,5 +177,21 @@ namespace M158_SMPD
         //    conn.SendDataTable(changes, "tbl_semester");
         //    ((DataTable) dataGridView1.DataSource).AcceptChanges();
         //</summary>
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                // dispose managed resources
+                connection.Close();
+            }
+            // free native resources
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
     }
 }

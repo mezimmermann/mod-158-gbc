@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using MySql.Data.MySqlClient;
 
 namespace M158_SMPD.Forms.Grp3
@@ -26,7 +20,7 @@ namespace M158_SMPD.Forms.Grp3
             {
                 cmxclass.Items.Clear();
                 var classquerry = new M158_SMPD.MySQLCon();
-                DataTable DtClass = classquerry.getSQLStatement("SELECT `Klasse` FROM `tbl_klasse` WHERE 1");
+                DataTable DtClass = classquerry.GetSqlStatement("SELECT `Klasse` FROM `tbl_klasse` WHERE 1");
                 foreach (DataRow row in DtClass.Rows)
                 {
                     cmxclass.Items.Add(row["Klasse"].ToString());
@@ -89,7 +83,7 @@ namespace M158_SMPD.Forms.Grp3
                 int namelength = start - preneamelength;
                 name = lbxstudentsindex.Substring(preneamelength + 1, namelength-1);
                 var classquerry = new M158_SMPD.MySQLCon();
-                DataTable DtClass = classquerry.getSQLStatement("SELECT `Ll_Nr` FROM `tbl_lehrling` WHERE `Vorname` = '" + prename + "' AND `Name` = '" + name + "'");
+                DataTable DtClass = classquerry.GetSqlStatement("SELECT `Ll_Nr` FROM `tbl_lehrling` WHERE `Vorname` = '" + prename + "' AND `Name` = '" + name + "'");
                 foreach (DataRow row in DtClass.Rows)
                 {
                     studnr = row["Ll_Nr"].ToString();
@@ -109,13 +103,13 @@ namespace M158_SMPD.Forms.Grp3
             {
                 lbxstudents.Items.Clear();
                 var classquerry = new M158_SMPD.MySQLCon();
-                DataTable DtClass = classquerry.getSQLStatement("SELECT `Kl_Nr` FROM `tbl_klasse` WHERE `Klasse` = '" + cmxclass.Text + "'");
+                DataTable DtClass = classquerry.GetSqlStatement("SELECT `Kl_Nr` FROM `tbl_klasse` WHERE `Klasse` = '" + cmxclass.Text + "'");
                 foreach (DataRow row in DtClass.Rows)
                 {
                     klnr = Convert.ToInt16(row["Kl_Nr"]);
                 }
 
-                DataTable DtClass2 = classquerry.getSQLStatement("SELECT `Vorname`,`Name` FROM `tbl_lehrling` WHERE `Kl_Nr` = " + klnr);
+                DataTable DtClass2 = classquerry.GetSqlStatement("SELECT `Vorname`,`Name` FROM `tbl_lehrling` WHERE `Kl_Nr` = " + klnr);
                 foreach (DataRow row in DtClass2.Rows)
                 {
                     lbxstudents.Items.Add(row["Vorname"].ToString() + "\t" + row["Name"].ToString() + "\t");

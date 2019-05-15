@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace M158_SMPD.Forms.Grp1
@@ -19,7 +15,7 @@ namespace M158_SMPD.Forms.Grp1
             InitializeComponent();
 
             MySQLCon MySQLConBenutzergruppen = new MySQLCon();
-            DtGroups = MySQLConBenutzergruppen.getSQLStatement("SELECT * FROM benutzergruppen");
+            DtGroups = MySQLConBenutzergruppen.GetSqlStatement("SELECT * FROM benutzergruppen");
             foreach (DataRow DtrBenutzergruppen in DtGroups.Rows)
             {
                 CmxUserGroups.Items.Add(DtrBenutzergruppen[1].ToString());
@@ -82,7 +78,7 @@ namespace M158_SMPD.Forms.Grp1
                             }
                             string StrSqlCreateUser = "INSERT INTO `user` (`Name`, `Vorname`, `Benutzername`, `Passwort`, `Admin`, `idBenutzergruppen`) VALUES ('" + StrSurname + "', '" + StrFirstname + "', '" + StrUsername + "', '" + StrPasswordhash + "', '" + StrBooladm + "', '" + StrUsergroupid + "');";
                             MySQLCon MySQLConBenutzergruppen = new MySQLCon();
-                            MySQLConBenutzergruppen.setSQLStatement(StrSqlCreateUser);
+                            MySQLConBenutzergruppen.SetSQLStatement(StrSqlCreateUser);
                             LblComments.Text = "Der Benutzer wurde hinzugefügt";
                             LblComments.ForeColor = Color.Green;
                             LblComments.Visible = true;

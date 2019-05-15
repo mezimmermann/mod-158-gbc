@@ -1,8 +1,4 @@
-﻿using M158_SMPD.Forms.Grp1;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace M158_SMPD

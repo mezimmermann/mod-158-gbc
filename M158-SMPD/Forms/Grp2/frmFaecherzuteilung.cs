@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 using System.Windows.Forms;
 
 namespace M158_SMPD.Forms
@@ -28,18 +22,18 @@ namespace M158_SMPD.Forms
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void frmFaecherzuteilung_Load(object sender, EventArgs e)               //Laden der Form
         {
-            DataTable DtDatatable = mysql.getSQLStatement("SELECT DISTINCT Kl_Nr FROM tbl_fae_kla_sem");            //Aus der Tabelle "tbl_fae_kla_sem" werden alle Klassen ausgewählt
+            DataTable DtDatatable = mysql.GetSqlStatement("SELECT DISTINCT Kl_Nr FROM tbl_fae_kla_sem");            //Aus der Tabelle "tbl_fae_kla_sem" werden alle Klassen ausgewählt
             ArrDatatable = DtDatatable.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
             for (int i = 0; i < ArrDatatable.Length; i++)                                                           //i=0 wenn ArrDatatable grösser als 0 wird die ausgewählte Klasse angezeigt
             {
                 if (i > 0)
                 {
-                    DtClass = mysql.getSQLStatement("SELECT klasse FROM tbl_klasse WHERE Kl_Nr = " + ArrDatatable[i]);      //Hier werden alle Klassen entsprechend der Kl_Nr angezeigt ansonsten passiert da gleiche
+                    DtClass = mysql.GetSqlStatement("SELECT klasse FROM tbl_klasse WHERE Kl_Nr = " + ArrDatatable[i]);      //Hier werden alle Klassen entsprechend der Kl_Nr angezeigt ansonsten passiert da gleiche
                     DtClassTotal.Merge(DtClass);
                 }
                 else
                 {
-                    DtClassTotal= mysql.getSQLStatement("SELECT klasse FROM tbl_klasse WHERE Kl_Nr = " + ArrDatatable[i]);      //Hier werden nochmal alle Klassen entsprechend der Kl_Nr angezeigt
+                    DtClassTotal= mysql.GetSqlStatement("SELECT klasse FROM tbl_klasse WHERE Kl_Nr = " + ArrDatatable[i]);      //Hier werden nochmal alle Klassen entsprechend der Kl_Nr angezeigt
                 }
             }
             ArrClass = DtClassTotal.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
@@ -51,7 +45,7 @@ namespace M158_SMPD.Forms
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void CmxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataTable DtGrid = mysql.getSQLStatement("SELECT * FROM faecherzuteilung WHERE Klasse = '" + CmxClass.Text + "'");      //Statement welches die Informationen aus "faecherzuteilung" auswählt, welche man über die CmxClass ausgewählt hat
+            DataTable DtGrid = mysql.GetSqlStatement("SELECT * FROM faecherzuteilung WHERE Klasse = '" + CmxClass.Text + "'");      //Statement welches die Informationen aus "faecherzuteilung" auswählt, welche man über die CmxClass ausgewählt hat
             DgvView.DataSource = DtGrid;
             DgvView.Columns["Se_Nr"].Visible = false;
             DgvView.Columns["Klasse"].Visible = false;
@@ -73,7 +67,7 @@ namespace M158_SMPD.Forms
                 {
                     StrQuery = "UPDATE tbl_faecher SET Fach='" + DgvView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + "' WHERE Fae_Nr=" + DgvView.Rows[e.RowIndex].Cells[4].Value.ToString();
                 }
-                mysql.setSQLStatement(StrQuery);
+                mysql.SetSQLStatement(StrQuery);
             }
             else
             {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using M158_SMPD.Forms;
 
 namespace M158_SMPD
 {
@@ -16,6 +15,10 @@ namespace M158_SMPD
             }
         }
 
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            this.Icon = M158_SMPD.Properties.Resources.dataico;
+        }
 
         private void BtnReports_Click(object sender, EventArgs e)
         {

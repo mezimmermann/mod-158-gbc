@@ -313,6 +313,17 @@
   <ItemGroup>
     <None Include="Resources\settingsico.png" />
     <None Include="Resources\notendaten.png" />
+    <None Include="Resources\stammdatenico.png" />
+    <None Include="Resources\classico.png" />
+    <None Include="Resources\locico.png" />
+    <None Include="Resources\erfassenico.png" />
+    <None Include="Resources\reportico.png" />
+    <None Include="Resources\List-Icon.svg.png" />
+    <None Include="Resources\jobico.png" />
+    <None Include="Resources\notdatico.png" />
+    <None Include="Resources\periodico.png" />
+    <None Include="Resources\classesico.png" />
+    <None Include="Resources\dataico.ico" />
     <Content Include="RibbonMarkup.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

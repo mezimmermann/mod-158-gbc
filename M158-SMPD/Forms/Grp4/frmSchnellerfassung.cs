@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using M158_SMPD.Forms.Grp6;
-using M158_SMPD.Forms.Grp5;
 
 namespace M158_SMPD.Forms.Grp4
 {
@@ -38,7 +31,7 @@ namespace M158_SMPD.Forms.Grp4
 
                 DataTable tablesql = new DataTable();
 
-                tablesql = conn.getSQLStatement(sqlstatement);
+                tablesql = conn.GetSqlStatement(sqlstatement);
 
                 mysqlbinder.DataSource = tablesql;
 
@@ -81,7 +74,7 @@ namespace M158_SMPD.Forms.Grp4
                 //Klasse im Drop Down Menü
                 string auswahl = "SELECT * FROM tbl_klasse";
 
-                DataTable _table = conn.getSQLStatement(auswahl);
+                DataTable _table = conn.GetSqlStatement(auswahl);
                 foreach (DataRow row in _table.Rows)
                 {
                     cmx_class.Items.Add(row[1].ToString());
@@ -120,7 +113,7 @@ namespace M158_SMPD.Forms.Grp4
             {
                 //Daten im DB direkt eintragen und speichern
                 var sqlstatement = "UPDATE tbl_lehrling SET " + dgvchoseclass.Columns[e.ColumnIndex].Name + "='" + dgvchoseclass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + "' WHERE Ll_Nr=" + dgvchoseclass.Rows[e.RowIndex].Cells[0].Value.ToString();
-                conn.setSQLStatement(sqlstatement);
+                conn.SetSQLStatement(sqlstatement);
 
             }
             catch (Exception ex)

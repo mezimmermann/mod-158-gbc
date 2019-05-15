@@ -118,16 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="3453038" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="locico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\locico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reportico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reportico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="erfassenico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\erfassenico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="startlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3453038.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settingsico" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settingsico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="notdatico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notdatico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="periodico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\periodico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="classico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\classico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btman" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btman.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="marklistico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\List-Icon.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="notendaten" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notendaten.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jobico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jobico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stammdatenico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stammdatenico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settingsico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settingsico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="classesico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\classesico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dataico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dataico.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

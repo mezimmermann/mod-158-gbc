@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace M158_SMPD.Forms
@@ -31,18 +26,18 @@ namespace M158_SMPD.Forms
         private void NotenperiodeLoadList()
         {
             CbxDrop.Items.Clear();
-            DataTable DtDatatable = mysql.getSQLStatement("SELECT DISTINCT * FROM tbl_semester");       //Alle Notenperioden werden ausgewählt
+            DataTable DtDatatable = mysql.GetSqlStatement("SELECT DISTINCT * FROM tbl_semester");       //Alle Notenperioden werden ausgewählt
             ArrDatatable = DtDatatable.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
             for (int i = 0; i < ArrDatatable.Length; i++)
             {
                 if (i > 0)
                 {
-                    DtClass = mysql.getSQLStatement("SELECT Semester FROM tbl_semester WHERE Se_Nr = " + ArrDatatable[i]);      //Hier werden alle Semester entsprechend der SE_Nr angezeigt
+                    DtClass = mysql.GetSqlStatement("SELECT Semester FROM tbl_semester WHERE Se_Nr = " + ArrDatatable[i]);      //Hier werden alle Semester entsprechend der SE_Nr angezeigt
                     DtClassTotal.Merge(DtClass);
                 }
                 else
                 {
-                    DtClassTotal = mysql.getSQLStatement("SELECT Semester FROM tbl_semester WHERE Se_Nr = " + ArrDatatable[i]);     //Hier werden alle Semester entsprechend der SE_Nr angezeigt
+                    DtClassTotal = mysql.GetSqlStatement("SELECT Semester FROM tbl_semester WHERE Se_Nr = " + ArrDatatable[i]);     //Hier werden alle Semester entsprechend der SE_Nr angezeigt
                 }
             }
             ArrClass = DtClassTotal.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
@@ -60,10 +55,10 @@ namespace M158_SMPD.Forms
         private void button1_Click(object sender, EventArgs e)      //SAVE-Button: Was geschieht wenn der "Speicher-Button" geklickt wird.
         {
             string StrQuery1 = "Select Se_Nr FROM tbl_semester where Semester = '" + CbxDrop.Text + "'";        
-            DataTable Dtresult = mysql.getSQLStatement(StrQuery1);
+            DataTable Dtresult = mysql.GetSqlStatement(StrQuery1);
             int Intresult = Convert.ToInt16(Dtresult.Rows[0][0]);
             string StrQuery2 = "UPDATE tbl_semester SET Semester='" + TbxEdit.Text + "' WHERE Se_Nr=" + Intresult;
-            mysql.setSQLStatement(StrQuery2);
+            mysql.SetSQLStatement(StrQuery2);
             NotenperiodeLoadList();
             CbxDrop.Text = TbxEdit.Text;
             MessageBox.Show("Semestername wurde zu " + TbxEdit.Text + " geändert!");       //Als Information für den Benutzer "Die Werte wurden geändert"

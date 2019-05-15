@@ -200,11 +200,11 @@
             this.LblComments.TabIndex = 16;
             this.LblComments.Visible = false;
             // 
-            // frmUserRegister
+            // FrmUserRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 351);
+            this.ClientSize = new System.Drawing.Size(354, 299);
             this.Controls.Add(this.LblComments);
             this.Controls.Add(this.LblAddUser);
             this.Controls.Add(this.BtnBreak);
@@ -222,8 +222,9 @@
             this.Controls.Add(this.TbxFirstname);
             this.Controls.Add(this.CbxAdm);
             this.Controls.Add(this.LblName);
-            this.Name = "frmUserRegister";
-            this.Text = "frmUserRegister";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "FrmUserRegister";
+            this.Text = "Benutzer erstellen";
             this.ResumeLayout(false);
             this.PerformLayout();
 

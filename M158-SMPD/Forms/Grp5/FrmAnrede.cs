@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace M158_SMPD.Forms.Grp5
 {
@@ -16,7 +15,7 @@ namespace M158_SMPD.Forms.Grp5
             string sql = " SELECT * FROM tbl_anrede";//SQL Query wird erstellt
             DataTable table = new DataTable(); // Datatable wird erstellt
 
-            table = MYSQLconn.getSQLStatement(sql); //Abfrage wird mit MySQLCon.cs durchgeführt
+            table = MYSQLconn.GetSqlStatement(sql); //Abfrage wird mit MySQLCon.cs durchgeführt
             BSbinder.DataSource = table;//Daten werden Formatiert
             DgvFrmanrededisplay.DataSource = BSbinder; //Daten werden in Data Grid View gelesen
 
@@ -29,7 +28,7 @@ namespace M158_SMPD.Forms.Grp5
             string sql = " SELECT * FROM tbl_anrede WHERE tbl_anrede.Anrede LIKE '" + tbxcontent + "' OR tbl_anrede.An_Nr LIKE '" + tbxcontent + "'";//SQL Query wird erstellt
             DataTable table = new DataTable();// Datatable wird erstellt
 
-            table = MYSQLconn.getSQLStatement(sql); //Abfrage wird mit MySQLCon.cs durchgeführt
+            table = MYSQLconn.GetSqlStatement(sql); //Abfrage wird mit MySQLCon.cs durchgeführt
             BSbinder.DataSource = table;//Daten werden Formatiert
             DgvFrmanrededisplay.DataSource = BSbinder; //Daten werden in Data Grid View gelesen
 

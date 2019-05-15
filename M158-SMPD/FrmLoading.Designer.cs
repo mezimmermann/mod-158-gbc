@@ -34,7 +34,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::M158_SMPD.Properties.Resources._3453038;
+            this.pictureBox1.Image = global::M158_SMPD.Properties.Resources.startlogo;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(283, 102);

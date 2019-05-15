@@ -102,7 +102,7 @@
             this.cmxKlasse.Name = "cmxKlasse";
             this.cmxKlasse.Size = new System.Drawing.Size(286, 21);
             this.cmxKlasse.TabIndex = 26;
-            this.cmxKlasse.SelectedIndexChanged += new System.EventHandler(this.cmxKlasse_SelectedIndexChanged);
+            this.cmxKlasse.SelectedIndexChanged += new System.EventHandler(this.CmxKlasse_SelectedIndexChanged);
             // 
             // btnAdd
             // 

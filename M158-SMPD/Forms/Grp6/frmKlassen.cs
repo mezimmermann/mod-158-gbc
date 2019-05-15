@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -35,11 +28,11 @@ namespace M158_SMPD.Forms.Grp6
             Filllcombo();
             Filllistbox();
             FillcmxKuerzel();
-            checkklasse();
+            CheckKlasse();
         }
 
         //Prüfung ob Textbox Klasse leer ist
-        void checkklasse()
+        void CheckKlasse()
         {
             if ((tbxKlasse.Text != String.Empty))
             {
@@ -239,7 +232,7 @@ namespace M158_SMPD.Forms.Grp6
             Filllistbox();
         }
 
-        private void cmxKlasse_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmxKlasse_SelectedIndexChanged(object sender, EventArgs e)
         {
             Query = "select * from tbl_klasse where Klasse='" + cmxKlasse.Text + "'; ";
             MySqlConnection conDataBase = new MySqlConnection(constring);
@@ -302,7 +295,7 @@ namespace M158_SMPD.Forms.Grp6
         //Wenn sich Textbox ändern wird gecheckt, ob sie leer ist
         private void TbxKlasse_TextChanged(object sender, EventArgs e)
         {
-            checkklasse();
+            CheckKlasse();
         }
     }
 }

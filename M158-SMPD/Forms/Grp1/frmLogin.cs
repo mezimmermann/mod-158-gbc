@@ -1,12 +1,6 @@
 ﻿using M158_SMPD.Forms.Grp1;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace M158_SMPD
@@ -30,7 +24,7 @@ namespace M158_SMPD
             {
                 MySQLCon MysqlconUser = new MySQLCon();
                 
-                StrPasswordDB = MysqlconUser.getSQLStatement("SELECT Passwort FROM user WHERE Benutzername=\"" + StrUsername + "\"").Rows[0][0].ToString();
+                StrPasswordDB = MysqlconUser.GetSqlStatement("SELECT Passwort FROM user WHERE Benutzername=\"" + StrUsername + "\"").Rows[0][0].ToString();
                 
                 // Überprüfung der Passwörter (eingegebenes und DB-PW)
                 if (Cryption.checkPwd(StrPasswordDB, TbxPassword.Text.ToString()) == true)
@@ -42,9 +36,8 @@ namespace M158_SMPD
                     MessageBox.Show("Benutzername oder Passwort inkorrekt.");
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                //MessageBox.Show(ex.Message.ToString());
                 MessageBox.Show("Benutzername oder Passwort inkorrekt.");
             }
 
@@ -55,15 +48,13 @@ namespace M158_SMPD
             {
                 MySQLCon MysqlconUser = new MySQLCon();
 
-                //string password = Cryption.encrypt("test");
                 //liest Berechtigungen des eingeloggten Users aus
-                DtUserdetails = MysqlconUser.getSQLStatement("SELECT * FROM user JOIN benutzergruppen on user.IdBenutzergruppen=benutzergruppen.idbenutzergruppen WHERE Benutzername=\"" + StrUsername + "\"");
+                DtUserdetails = MysqlconUser.GetSqlStatement("SELECT * FROM user JOIN benutzergruppen on user.IdBenutzergruppen=benutzergruppen.idbenutzergruppen WHERE Benutzername=\"" + StrUsername + "\"");
 
                 this.Close();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message.ToString());
                 MessageBox.Show("Benutzername oder Passwort inkorrekt.");
             }
         }

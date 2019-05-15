@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql;
 
 namespace M158_SMPD
 {
@@ -21,7 +14,7 @@ namespace M158_SMPD
 
         private void FrmReviewFaecher_Load(object sender, EventArgs e)
         {
-            DataTable TableFaecher = mysql.getSQLStatement("SELECT * FROM tbl_faecher ORDER BY Fae_Nr ASC");    //MySQL Query  für Auswertung der Table "Faecher"
+            DataTable TableFaecher = mysql.GetSqlStatement("SELECT * FROM tbl_faecher ORDER BY Fae_Nr ASC");    //MySQL Query  für Auswertung der Table "Faecher"
             TableFaecher.Columns[0].ColumnName = "Fach Nr";                                                     //Umgängliche Beschriftung der Spalte 1
             TableFaecher.Columns[1].ColumnName = "Fach Name";                                                   //Umgängliche Beschriftung der Spalte 2
             DgvFaecher.DataSource = TableFaecher;                                                               //Daten der oben ausgeführten Query 

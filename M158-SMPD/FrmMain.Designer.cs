@@ -35,26 +35,25 @@
             this.RibPanNotendaten = new System.Windows.Forms.RibbonPanel();
             this.BtnNotendaten = new System.Windows.Forms.RibbonButton();
             this.RibTabSemesterdaten = new System.Windows.Forms.RibbonTab();
-            this.RibTabStammdaten = new System.Windows.Forms.RibbonTab();
-            this.ribbonTab5 = new System.Windows.Forms.RibbonTab();
-            this.rbtBerichte = new System.Windows.Forms.RibbonTab();
-            this.RibPan = new System.Windows.Forms.RibbonPanel();
-            this.BtnReports = new System.Windows.Forms.RibbonButton();
             this.RibPanSemesterdaten = new System.Windows.Forms.RibbonPanel();
             this.BtnFaecherzuteilung = new System.Windows.Forms.RibbonButton();
             this.BtnNotenperiode = new System.Windows.Forms.RibbonButton();
+            this.RibTabStammdaten = new System.Windows.Forms.RibbonTab();
             this.RibPanAdressen = new System.Windows.Forms.RibbonPanel();
             this.BtnSSL = new System.Windows.Forms.RibbonButton();
             this.BtnFirmendaten = new System.Windows.Forms.RibbonButton();
             this.BtnSchnellerfassung = new System.Windows.Forms.RibbonButton();
-            this.RibPanListen = new System.Windows.Forms.RibbonPanel();
-            this.btnNotenlisten = new System.Windows.Forms.RibbonButton();
             this.RibPanOtherStd = new System.Windows.Forms.RibbonPanel();
             this.BtnAnrede = new System.Windows.Forms.RibbonButton();
             this.BtnFaecher = new System.Windows.Forms.RibbonButton();
             this.BtnOrte = new System.Windows.Forms.RibbonButton();
             this.BtnKlassen = new System.Windows.Forms.RibbonButton();
             this.BtnBerufe = new System.Windows.Forms.RibbonButton();
+            this.rbtBerichte = new System.Windows.Forms.RibbonTab();
+            this.RibPan = new System.Windows.Forms.RibbonPanel();
+            this.BtnReports = new System.Windows.Forms.RibbonButton();
+            this.RibPanListen = new System.Windows.Forms.RibbonPanel();
+            this.btnNotenlisten = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // RbnMain
@@ -76,12 +75,11 @@
             this.RbnMain.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
             this.RbnMain.OrbText = "Start";
             this.RbnMain.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.RbnMain.Size = new System.Drawing.Size(1235, 122);
+            this.RbnMain.Size = new System.Drawing.Size(1235, 117);
             this.RbnMain.TabIndex = 1;
             this.RbnMain.Tabs.Add(this.RbtbNotendaten);
             this.RbnMain.Tabs.Add(this.RibTabSemesterdaten);
             this.RbnMain.Tabs.Add(this.RibTabStammdaten);
-            this.RbnMain.Tabs.Add(this.ribbonTab5);
             this.RbnMain.Tabs.Add(this.rbtBerichte);
             this.RbnMain.TabsMargin = new System.Windows.Forms.Padding(5, 2, 20, 0);
             this.RbnMain.TabSpacing = 4;
@@ -113,10 +111,10 @@
             // 
             // BtnNotendaten
             // 
-            this.BtnNotendaten.Image = global::M158_SMPD.Properties.Resources.notendaten;
-            this.BtnNotendaten.LargeImage = global::M158_SMPD.Properties.Resources.notendaten;
+            this.BtnNotendaten.Image = global::M158_SMPD.Properties.Resources.notdatico;
+            this.BtnNotendaten.LargeImage = global::M158_SMPD.Properties.Resources.notdatico;
             this.BtnNotendaten.Name = "BtnNotendaten";
-            this.BtnNotendaten.SmallImage = global::M158_SMPD.Properties.Resources.notendaten;
+            this.BtnNotendaten.SmallImage = global::M158_SMPD.Properties.Resources.notdatico;
             this.BtnNotendaten.Text = "Notendaten";
             this.BtnNotendaten.Click += new System.EventHandler(this.BtnNotendaten_Click);
             // 
@@ -125,42 +123,6 @@
             this.RibTabSemesterdaten.Name = "RibTabSemesterdaten";
             this.RibTabSemesterdaten.Panels.Add(this.RibPanSemesterdaten);
             this.RibTabSemesterdaten.Text = "Semesterdaten";
-            // 
-            // RibTabStammdaten
-            // 
-            this.RibTabStammdaten.Name = "RibTabStammdaten";
-            this.RibTabStammdaten.Panels.Add(this.RibPanAdressen);
-            this.RibTabStammdaten.Panels.Add(this.RibPanOtherStd);
-            this.RibTabStammdaten.Text = "Stammdaten";
-            // 
-            // ribbonTab5
-            // 
-            this.ribbonTab5.Name = "ribbonTab5";
-            this.ribbonTab5.Text = "ribbonTab5";
-            // 
-            // rbtBerichte
-            // 
-            this.rbtBerichte.Name = "rbtBerichte";
-            this.rbtBerichte.Panels.Add(this.RibPan);
-            this.rbtBerichte.Panels.Add(this.RibPanListen);
-            this.rbtBerichte.Text = "Berichte";
-            // 
-            // RibPan
-            // 
-            this.RibPan.ButtonMoreEnabled = false;
-            this.RibPan.ButtonMoreVisible = false;
-            this.RibPan.Items.Add(this.BtnReports);
-            this.RibPan.Name = "RibPan";
-            this.RibPan.Text = "Auswertungsfenster";
-            // 
-            // BtnReports
-            // 
-            this.BtnReports.Image = ((System.Drawing.Image)(resources.GetObject("BtnReports.Image")));
-            this.BtnReports.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnReports.LargeImage")));
-            this.BtnReports.Name = "BtnReports";
-            this.BtnReports.SmallImage = ((System.Drawing.Image)(resources.GetObject("BtnReports.SmallImage")));
-            this.BtnReports.Text = "Auswertungen anzeigen";
-            this.BtnReports.Click += new System.EventHandler(this.BtnReports_Click);
             // 
             // RibPanSemesterdaten
             // 
@@ -173,21 +135,28 @@
             // 
             // BtnFaecherzuteilung
             // 
-            this.BtnFaecherzuteilung.Image = ((System.Drawing.Image)(resources.GetObject("BtnFaecherzuteilung.Image")));
-            this.BtnFaecherzuteilung.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnFaecherzuteilung.LargeImage")));
+            this.BtnFaecherzuteilung.Image = global::M158_SMPD.Properties.Resources.classesico;
+            this.BtnFaecherzuteilung.LargeImage = global::M158_SMPD.Properties.Resources.classesico;
             this.BtnFaecherzuteilung.Name = "BtnFaecherzuteilung";
-            this.BtnFaecherzuteilung.SmallImage = ((System.Drawing.Image)(resources.GetObject("BtnFaecherzuteilung.SmallImage")));
+            this.BtnFaecherzuteilung.SmallImage = global::M158_SMPD.Properties.Resources.classesico;
             this.BtnFaecherzuteilung.Text = "Fächerzuteilung";
             this.BtnFaecherzuteilung.Click += new System.EventHandler(this.BtnFaecherzuteilung_Click);
             // 
             // BtnNotenperiode
             // 
-            this.BtnNotenperiode.Image = ((System.Drawing.Image)(resources.GetObject("BtnNotenperiode.Image")));
-            this.BtnNotenperiode.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnNotenperiode.LargeImage")));
+            this.BtnNotenperiode.Image = global::M158_SMPD.Properties.Resources.periodico;
+            this.BtnNotenperiode.LargeImage = global::M158_SMPD.Properties.Resources.periodico;
             this.BtnNotenperiode.Name = "BtnNotenperiode";
-            this.BtnNotenperiode.SmallImage = ((System.Drawing.Image)(resources.GetObject("BtnNotenperiode.SmallImage")));
+            this.BtnNotenperiode.SmallImage = global::M158_SMPD.Properties.Resources.periodico;
             this.BtnNotenperiode.Text = "Notenperiode";
             this.BtnNotenperiode.Click += new System.EventHandler(this.BtnNotenperiode_Click);
+            // 
+            // RibTabStammdaten
+            // 
+            this.RibTabStammdaten.Name = "RibTabStammdaten";
+            this.RibTabStammdaten.Panels.Add(this.RibPanAdressen);
+            this.RibTabStammdaten.Panels.Add(this.RibPanOtherStd);
+            this.RibTabStammdaten.Text = "Stammdaten";
             // 
             // RibPanAdressen
             // 
@@ -223,27 +192,12 @@
             // 
             // BtnSchnellerfassung
             // 
-            this.BtnSchnellerfassung.Image = ((System.Drawing.Image)(resources.GetObject("BtnSchnellerfassung.Image")));
-            this.BtnSchnellerfassung.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnSchnellerfassung.LargeImage")));
+            this.BtnSchnellerfassung.Image = global::M158_SMPD.Properties.Resources.erfassenico;
+            this.BtnSchnellerfassung.LargeImage = global::M158_SMPD.Properties.Resources.erfassenico;
             this.BtnSchnellerfassung.Name = "BtnSchnellerfassung";
-            this.BtnSchnellerfassung.SmallImage = ((System.Drawing.Image)(resources.GetObject("BtnSchnellerfassung.SmallImage")));
+            this.BtnSchnellerfassung.SmallImage = global::M158_SMPD.Properties.Resources.erfassenico;
             this.BtnSchnellerfassung.Text = "Schnellerfassung (SSL)";
             this.BtnSchnellerfassung.Click += new System.EventHandler(this.BtnSchnellerfassung_Click);
-            // 
-            // RibPanListen
-            // 
-            this.RibPanListen.Items.Add(this.btnNotenlisten);
-            this.RibPanListen.Name = "RibPanListen";
-            this.RibPanListen.Text = "Listen";
-            // 
-            // btnNotenlisten
-            // 
-            this.btnNotenlisten.Image = ((System.Drawing.Image)(resources.GetObject("btnNotenlisten.Image")));
-            this.btnNotenlisten.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNotenlisten.LargeImage")));
-            this.btnNotenlisten.Name = "btnNotenlisten";
-            this.btnNotenlisten.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnNotenlisten.SmallImage")));
-            this.btnNotenlisten.Text = "Notenlisten";
-            this.btnNotenlisten.Click += new System.EventHandler(this.BtnNotenlisten_Click);
             // 
             // RibPanOtherStd
             // 
@@ -259,12 +213,12 @@
             // 
             // BtnAnrede
             // 
-            this.BtnAnrede.Image = ((System.Drawing.Image)(resources.GetObject("BtnAnrede.Image")));
-            this.BtnAnrede.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnAnrede.LargeImage")));
+            this.BtnAnrede.Image = global::M158_SMPD.Properties.Resources.stammdatenico;
+            this.BtnAnrede.LargeImage = global::M158_SMPD.Properties.Resources.stammdatenico;
             this.BtnAnrede.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
             this.BtnAnrede.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
             this.BtnAnrede.Name = "BtnAnrede";
-            this.BtnAnrede.SmallImage = ((System.Drawing.Image)(resources.GetObject("BtnAnrede.SmallImage")));
+            this.BtnAnrede.SmallImage = global::M158_SMPD.Properties.Resources.stammdatenico;
             this.BtnAnrede.Text = "Anrede";
             this.BtnAnrede.Click += new System.EventHandler(this.BtnAnrede_Click);
             // 
@@ -275,7 +229,7 @@
             this.BtnFaecher.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
             this.BtnFaecher.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
             this.BtnFaecher.Name = "BtnFaecher";
-            this.BtnFaecher.SmallImage = ((System.Drawing.Image)(resources.GetObject("BtnFaecher.SmallImage")));
+            this.BtnFaecher.SmallImage = global::M158_SMPD.Properties.Resources.stammdatenico;
             this.BtnFaecher.Text = "Fächer";
             this.BtnFaecher.Click += new System.EventHandler(this.BtnFaecher_Click);
             // 
@@ -286,7 +240,7 @@
             this.BtnOrte.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
             this.BtnOrte.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
             this.BtnOrte.Name = "BtnOrte";
-            this.BtnOrte.SmallImage = ((System.Drawing.Image)(resources.GetObject("BtnOrte.SmallImage")));
+            this.BtnOrte.SmallImage = global::M158_SMPD.Properties.Resources.locico;
             this.BtnOrte.Text = "Orte";
             this.BtnOrte.Click += new System.EventHandler(this.BtnOrte_Click);
             // 
@@ -297,20 +251,59 @@
             this.BtnKlassen.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
             this.BtnKlassen.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
             this.BtnKlassen.Name = "BtnKlassen";
-            this.BtnKlassen.SmallImage = ((System.Drawing.Image)(resources.GetObject("BtnKlassen.SmallImage")));
+            this.BtnKlassen.SmallImage = global::M158_SMPD.Properties.Resources.classico;
             this.BtnKlassen.Text = "Klassen";
             this.BtnKlassen.Click += new System.EventHandler(this.BtnKlassen_Click);
             // 
             // BtnBerufe
             // 
-            this.BtnBerufe.Image = ((System.Drawing.Image)(resources.GetObject("BtnBerufe.Image")));
-            this.BtnBerufe.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnBerufe.LargeImage")));
+            this.BtnBerufe.Image = global::M158_SMPD.Properties.Resources.jobico;
+            this.BtnBerufe.LargeImage = global::M158_SMPD.Properties.Resources.jobico;
             this.BtnBerufe.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
             this.BtnBerufe.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
             this.BtnBerufe.Name = "BtnBerufe";
-            this.BtnBerufe.SmallImage = ((System.Drawing.Image)(resources.GetObject("BtnBerufe.SmallImage")));
+            this.BtnBerufe.SmallImage = global::M158_SMPD.Properties.Resources.jobico;
             this.BtnBerufe.Text = "Berufe";
             this.BtnBerufe.Click += new System.EventHandler(this.BtnBerufe_Click);
+            // 
+            // rbtBerichte
+            // 
+            this.rbtBerichte.Name = "rbtBerichte";
+            this.rbtBerichte.Panels.Add(this.RibPan);
+            this.rbtBerichte.Panels.Add(this.RibPanListen);
+            this.rbtBerichte.Text = "Berichte";
+            // 
+            // RibPan
+            // 
+            this.RibPan.ButtonMoreEnabled = false;
+            this.RibPan.ButtonMoreVisible = false;
+            this.RibPan.Items.Add(this.BtnReports);
+            this.RibPan.Name = "RibPan";
+            this.RibPan.Text = "Auswertungsfenster";
+            // 
+            // BtnReports
+            // 
+            this.BtnReports.Image = global::M158_SMPD.Properties.Resources.reportico;
+            this.BtnReports.LargeImage = global::M158_SMPD.Properties.Resources.reportico;
+            this.BtnReports.Name = "BtnReports";
+            this.BtnReports.SmallImage = ((System.Drawing.Image)(resources.GetObject("BtnReports.SmallImage")));
+            this.BtnReports.Text = "Auswertungen anzeigen";
+            this.BtnReports.Click += new System.EventHandler(this.BtnReports_Click);
+            // 
+            // RibPanListen
+            // 
+            this.RibPanListen.Items.Add(this.btnNotenlisten);
+            this.RibPanListen.Name = "RibPanListen";
+            this.RibPanListen.Text = "Listen";
+            // 
+            // btnNotenlisten
+            // 
+            this.btnNotenlisten.Image = global::M158_SMPD.Properties.Resources.marklistico;
+            this.btnNotenlisten.LargeImage = global::M158_SMPD.Properties.Resources.marklistico;
+            this.btnNotenlisten.Name = "btnNotenlisten";
+            this.btnNotenlisten.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnNotenlisten.SmallImage")));
+            this.btnNotenlisten.Text = "Notenlisten";
+            this.btnNotenlisten.Click += new System.EventHandler(this.BtnNotenlisten_Click);
             // 
             // FrmMain
             // 
@@ -323,6 +316,7 @@
             this.KeyPreview = true;
             this.Name = "FrmMain";
             this.Text = "Hauptmaske";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.ResumeLayout(false);
 
         }
@@ -333,7 +327,6 @@
         private System.Windows.Forms.RibbonTab RbtbNotendaten;
         private System.Windows.Forms.RibbonTab RibTabSemesterdaten;
         private System.Windows.Forms.RibbonTab RibTabStammdaten;
-        private System.Windows.Forms.RibbonTab ribbonTab5;
         private System.Windows.Forms.RibbonTab rbtBerichte;
         private System.Windows.Forms.RibbonPanel RibPan;
         private System.Windows.Forms.RibbonButton BtnReports;

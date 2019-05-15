@@ -1,13 +1,7 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace M158_SMPD.Forms.Grp1
@@ -25,7 +19,7 @@ namespace M158_SMPD.Forms.Grp1
             try
             {
                 MySQLCon conn = new MySQLCon();
-                DataTable dtbKlasse = conn.getSQLStatement("SELECT * FROM tbl_klasse");
+                DataTable dtbKlasse = conn.GetSqlStatement("SELECT * FROM tbl_klasse");
                 var choices_kl = new Dictionary<string, int>();
 
                 foreach (DataRow row_kl in dtbKlasse.Rows)
@@ -51,7 +45,7 @@ namespace M158_SMPD.Forms.Grp1
                 string StrClass = KvpClasspair.Value.ToString();
 
                 MySQLCon conn = new MySQLCon();
-                DataTable dtbSemester = conn.getSQLStatement("SELECT tbl_semester.Se_Nr ,tbl_semester.Semester FROM tbl_semester JOIN tbl_fae_kla_sem ON tbl_fae_kla_sem.Se_Nr = tbl_semester.Se_Nr WHERE tbl_fae_kla_sem.Kl_Nr =" + StrClass + " GROUP BY Se_Nr;");
+                DataTable dtbSemester = conn.GetSqlStatement("SELECT tbl_semester.Se_Nr ,tbl_semester.Semester FROM tbl_semester JOIN tbl_fae_kla_sem ON tbl_fae_kla_sem.Se_Nr = tbl_semester.Se_Nr WHERE tbl_fae_kla_sem.Kl_Nr =" + StrClass + " GROUP BY Se_Nr;");
                 var choices_se = new Dictionary<string, int>();
 
                 foreach (DataRow row_se in dtbSemester.Rows)
@@ -80,7 +74,7 @@ namespace M158_SMPD.Forms.Grp1
                 string StrClass = KvpClasspair.Value.ToString();
 
                 MySQLCon conn = new MySQLCon();
-                DataTable dtbFach = conn.getSQLStatement("select tbl_faecher.Fach, tbl_fae_kla_sem.Fae_Nr from tbl_fae_kla_sem join tbl_semester on tbl_semester.Se_Nr = tbl_fae_kla_sem.Se_Nr join tbl_faecher on tbl_faecher.Fae_Nr = tbl_fae_kla_sem.Fae_Nr where tbl_fae_kla_sem.Kl_Nr = " + StrClass + " and tbl_fae_kla_sem.Se_Nr = " + StrSemester + ";");
+                DataTable dtbFach = conn.GetSqlStatement("select tbl_faecher.Fach, tbl_fae_kla_sem.Fae_Nr from tbl_fae_kla_sem join tbl_semester on tbl_semester.Se_Nr = tbl_fae_kla_sem.Se_Nr join tbl_faecher on tbl_faecher.Fae_Nr = tbl_fae_kla_sem.Fae_Nr where tbl_fae_kla_sem.Kl_Nr = " + StrClass + " and tbl_fae_kla_sem.Se_Nr = " + StrSemester + ";");
                 var choices_fa = new Dictionary<string, int>();
 
                 foreach (DataRow row_fa in dtbFach.Rows)
@@ -124,7 +118,7 @@ namespace M158_SMPD.Forms.Grp1
                     string StrSqlstatement = "UPDATE tbl_noten SET "+ DgvGrade.Columns[e.ColumnIndex].Name + "=" + DgvGrade.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + " WHERE No_Nr=" + DgvGrade.Rows[e.RowIndex].Cells[11].Value.ToString();
 
                     MySQLCon conn = new MySQLCon();
-                    conn.setSQLStatement(StrSqlstatement);
+                    conn.SetSQLStatement(StrSqlstatement);
 
                     IndexChangedFach();
                 }
@@ -165,8 +159,8 @@ namespace M158_SMPD.Forms.Grp1
 
                 //Auslesen der Daten
                 MySQLCon conn = new MySQLCon();
-                DataTable DtbGrade = conn.getSQLStatement("select concat(Name, ' ', Vorname) AS Name, Note_1, GewN1, Note_2, GewN2, Note_3, GewN3, Note_4, GewN4, Note_5, GewN5, No_Nr from tbl_noten join tbl_lehrling on tbl_noten.Ll_Nr = tbl_lehrling.Ll_Nr where Fae_Nr = " + StrFach + " and Se_Nr = " + StrSemester + ";");
-                DataTable DtbCountCells = conn.getSQLStatement("select Count(*) from tbl_noten where Fae_Nr = " + StrFach + " and Se_Nr = " + StrSemester + ";");
+                DataTable DtbGrade = conn.GetSqlStatement("select concat(Name, ' ', Vorname) AS Name, Note_1, GewN1, Note_2, GewN2, Note_3, GewN3, Note_4, GewN4, Note_5, GewN5, No_Nr from tbl_noten join tbl_lehrling on tbl_noten.Ll_Nr = tbl_lehrling.Ll_Nr where Fae_Nr = " + StrFach + " and Se_Nr = " + StrSemester + ";");
+                DataTable DtbCountCells = conn.GetSqlStatement("select Count(*) from tbl_noten where Fae_Nr = " + StrFach + " and Se_Nr = " + StrSemester + ";");
                 DoubleCells = Convert.ToInt16(DtbCountCells.Rows[0][0].ToString());
 
                 // Überprüfung der Daten auf Null Werte und Fehlerbehandlung fehlender Werte
@@ -275,7 +269,7 @@ namespace M158_SMPD.Forms.Grp1
                     DoubleAverages += DoubleAverage;
                 }
                 DtbAverages.Columns.Add("Klassendurchschnitt");
-                DtbAverages = conn.getSQLStatement("select ROUND(AVG(Note_1), 2) AS Note1, ROUND(AVG(Note_2), 2) AS Note2, ROUND(AVG(Note_3), 2) AS Note3, ROUND(AVG(Note_4), 2) AS Note4, ROUND(AVG(Note_5), 2) AS Note5 from tbl_noten join tbl_lehrling on tbl_noten.Ll_Nr = tbl_lehrling.Ll_Nr where Fae_Nr = " + StrFach + " and Se_Nr = " + StrSemester + ";");
+                DtbAverages = conn.GetSqlStatement("select ROUND(AVG(Note_1), 2) AS Note1, ROUND(AVG(Note_2), 2) AS Note2, ROUND(AVG(Note_3), 2) AS Note3, ROUND(AVG(Note_4), 2) AS Note4, ROUND(AVG(Note_5), 2) AS Note5 from tbl_noten join tbl_lehrling on tbl_noten.Ll_Nr = tbl_lehrling.Ll_Nr where Fae_Nr = " + StrFach + " and Se_Nr = " + StrSemester + ";");
                 DtbAverages.Columns.Add("Gesamt"); ;
                 DtbAverages.Rows[0]["Gesamt"] = (DoubleAverages / DoubleCells).ToString("0.00");
 

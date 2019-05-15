@@ -42,7 +42,7 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(210, 160);
+            this.BtnSave.Location = new System.Drawing.Point(163, 132);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(94, 23);
             this.BtnSave.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             // BtnExit
             // 
-            this.BtnExit.Location = new System.Drawing.Point(129, 160);
+            this.BtnExit.Location = new System.Drawing.Point(82, 132);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(75, 23);
             this.BtnExit.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             // TbxDBServer
             // 
-            this.TbxDBServer.Location = new System.Drawing.Point(129, 36);
+            this.TbxDBServer.Location = new System.Drawing.Point(97, 12);
             this.TbxDBServer.Name = "TbxDBServer";
             this.TbxDBServer.Size = new System.Drawing.Size(160, 20);
             this.TbxDBServer.TabIndex = 2;
@@ -70,7 +70,7 @@
             // LblDBSrv
             // 
             this.LblDBSrv.AutoSize = true;
-            this.LblDBSrv.Location = new System.Drawing.Point(67, 39);
+            this.LblDBSrv.Location = new System.Drawing.Point(35, 15);
             this.LblDBSrv.Name = "LblDBSrv";
             this.LblDBSrv.Size = new System.Drawing.Size(56, 13);
             this.LblDBSrv.TabIndex = 5;
@@ -79,7 +79,7 @@
             // LblDBUsr
             // 
             this.LblDBUsr.AutoSize = true;
-            this.LblDBUsr.Location = new System.Drawing.Point(76, 91);
+            this.LblDBUsr.Location = new System.Drawing.Point(44, 67);
             this.LblDBUsr.Name = "LblDBUsr";
             this.LblDBUsr.Size = new System.Drawing.Size(47, 13);
             this.LblDBUsr.TabIndex = 7;
@@ -87,7 +87,7 @@
             // 
             // TbxDBUser
             // 
-            this.TbxDBUser.Location = new System.Drawing.Point(129, 88);
+            this.TbxDBUser.Location = new System.Drawing.Point(97, 64);
             this.TbxDBUser.Name = "TbxDBUser";
             this.TbxDBUser.Size = new System.Drawing.Size(160, 20);
             this.TbxDBUser.TabIndex = 6;
@@ -95,7 +95,7 @@
             // lblDBPass
             // 
             this.lblDBPass.AutoSize = true;
-            this.lblDBPass.Location = new System.Drawing.Point(52, 117);
+            this.lblDBPass.Location = new System.Drawing.Point(20, 93);
             this.lblDBPass.Name = "lblDBPass";
             this.lblDBPass.Size = new System.Drawing.Size(71, 13);
             this.lblDBPass.TabIndex = 9;
@@ -103,7 +103,7 @@
             // 
             // TbxDBPass
             // 
-            this.TbxDBPass.Location = new System.Drawing.Point(129, 114);
+            this.TbxDBPass.Location = new System.Drawing.Point(97, 90);
             this.TbxDBPass.Name = "TbxDBPass";
             this.TbxDBPass.Size = new System.Drawing.Size(160, 20);
             this.TbxDBPass.TabIndex = 8;
@@ -112,7 +112,7 @@
             // LblDBName
             // 
             this.LblDBName.AutoSize = true;
-            this.LblDBName.Location = new System.Drawing.Point(63, 65);
+            this.LblDBName.Location = new System.Drawing.Point(31, 41);
             this.LblDBName.Name = "LblDBName";
             this.LblDBName.Size = new System.Drawing.Size(60, 13);
             this.LblDBName.TabIndex = 11;
@@ -120,7 +120,7 @@
             // 
             // TbxDBName
             // 
-            this.TbxDBName.Location = new System.Drawing.Point(129, 62);
+            this.TbxDBName.Location = new System.Drawing.Point(97, 38);
             this.TbxDBName.Name = "TbxDBName";
             this.TbxDBName.Size = new System.Drawing.Size(160, 20);
             this.TbxDBName.TabIndex = 10;
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 201);
+            this.ClientSize = new System.Drawing.Size(278, 169);
             this.Controls.Add(this.LblDBName);
             this.Controls.Add(this.TbxDBName);
             this.Controls.Add(this.lblDBPass);

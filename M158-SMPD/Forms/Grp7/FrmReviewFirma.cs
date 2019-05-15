@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql;
 
 namespace M158_SMPD
 {
@@ -21,7 +14,7 @@ namespace M158_SMPD
 
         private void FrmReviewFirma_Load(object sender, EventArgs e)
         {
-            DataTable TableFirma = mysql.getSQLStatement("SELECT Fi_Nr, F_Name, Anrede, F_Vorname, F_Nachname, Ort, F_Strasse, F_Ansprechperson, F_Zusatz, F_Telefon, F_Fax FROM tbl_firma JOIN tbl_anrede on tbl_anrede.An_Nr = tbl_firma.An_Nr JOIN tbl_ort on tbl_ort.Or_Nr = tbl_firma.Or_Nr;");                 //MySQL Query für Tabelle "Firma"
+            DataTable TableFirma = mysql.GetSqlStatement("SELECT Fi_Nr, F_Name, Anrede, F_Vorname, F_Nachname, Ort, F_Strasse, F_Ansprechperson, F_Zusatz, F_Telefon, F_Fax FROM tbl_firma JOIN tbl_anrede on tbl_anrede.An_Nr = tbl_firma.An_Nr JOIN tbl_ort on tbl_ort.Or_Nr = tbl_firma.Or_Nr;");                 //MySQL Query für Tabelle "Firma"
             TableFirma.Columns[0].ColumnName = "Firmen Nr";                                                             //Umgängliche Beschriftung für Spalte 1
             TableFirma.Columns[1].ColumnName = "Firmen Name";                                                           //Umgängliche Beschriftung für Spalte 2
             TableFirma.Columns[2].ColumnName = "Anrede";                                                                //Umgängliche Beschriftung für Spalte 3

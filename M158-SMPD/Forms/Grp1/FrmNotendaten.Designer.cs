@@ -197,7 +197,7 @@
             this.Controls.Add(this.lblClass);
             this.Controls.Add(this.LblTitle);
             this.Name = "FrmNotendaten";
-            this.Text = "FrmNotendaten";
+            this.Text = "Notendaten";
             this.Load += new System.EventHandler(this.FrmNotendaten_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvGrade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAverage)).EndInit();

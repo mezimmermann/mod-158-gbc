@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql;
 
 namespace M158_SMPD
 {
@@ -21,7 +14,7 @@ namespace M158_SMPD
 
         private void FrmReviewLehrling_Load(object sender, EventArgs e)
         {
-            DataTable TableLehrling = mysql.getSQLStatement("SELECT * FROM tbl_lehrling ORDER BY Ll_Nr ASC");           //MySQL Query für Tabelle "Lehrling"
+            DataTable TableLehrling = mysql.GetSqlStatement("SELECT * FROM tbl_lehrling ORDER BY Ll_Nr ASC");           //MySQL Query für Tabelle "Lehrling"
             TableLehrling.Columns[0].ColumnName = "Lehrlings Nr";                                                       //Umgänglicher Name für Spalte 1
             TableLehrling.Columns[1].ColumnName = "Firmen Nr";                                                          //""                           2
             TableLehrling.Columns[2].ColumnName = "Anrede";                                                             //""                           3

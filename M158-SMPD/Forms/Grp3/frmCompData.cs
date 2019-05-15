@@ -36,7 +36,7 @@ namespace M158_SMPD.Forms.Grp3
             try
             {
                 var classquerry = new M158_SMPD.MySQLCon();
-                DataTable DtClass = classquerry.getSQLStatement("SELECT `F_Name` FROM `tbl_firma` WHERE 1");
+                DataTable DtClass = classquerry.GetSqlStatement("SELECT `F_Name` FROM `tbl_firma` WHERE 1");
                 foreach (DataRow row in DtClass.Rows)
                 {
                     cmxcompsrc.Items.Add(row["F_Name"].ToString());
@@ -51,7 +51,7 @@ namespace M158_SMPD.Forms.Grp3
             try
             {
                 var classquerry = new M158_SMPD.MySQLCon();
-                DataTable DtClass = classquerry.getSQLStatement("SELECT `Anrede` FROM `tbl_anrede` WHERE 1");
+                DataTable DtClass = classquerry.GetSqlStatement("SELECT `Anrede` FROM `tbl_anrede` WHERE 1");
                 foreach (DataRow row in DtClass.Rows)
                 {
                     cmxsal.Items.Add(row["Anrede"].ToString());
@@ -66,7 +66,7 @@ namespace M158_SMPD.Forms.Grp3
             try
             {
                 var classquerry = new M158_SMPD.MySQLCon();
-                DataTable DtClass = classquerry.getSQLStatement("SELECT `PLZ`, `Ort` FROM `tbl_ort` WHERE 1");
+                DataTable DtClass = classquerry.GetSqlStatement("SELECT `PLZ`, `Ort` FROM `tbl_ort` WHERE 1");
                 foreach (DataRow row in DtClass.Rows)
                 {
                     cmxtown.Items.Add(row["Ort"].ToString());
@@ -85,12 +85,12 @@ namespace M158_SMPD.Forms.Grp3
             try
             {
                 var classquerry = new M158_SMPD.MySQLCon();
-                classquerry.setSQLStatement("DELETE FROM `tbl_firma` WHERE `F_Name` LIKE '" + cmxcompsrc.Text + "'");
+                classquerry.SetSQLStatement("DELETE FROM `tbl_firma` WHERE `F_Name` LIKE '" + cmxcompsrc.Text + "'");
 
                 cmxcompsrc.Items.Clear();
                 cmxcompsrc.Text = "";
 
-                DataTable DtClass = classquerry.getSQLStatement("SELECT `F_Name` FROM `tbl_firma` WHERE 1");
+                DataTable DtClass = classquerry.GetSqlStatement("SELECT `F_Name` FROM `tbl_firma` WHERE 1");
                 foreach (DataRow row in DtClass.Rows)
                 {
                     cmxcompsrc.Items.Add(row["F_Name"].ToString());
@@ -126,7 +126,7 @@ namespace M158_SMPD.Forms.Grp3
                     decimal existent = 0;
 
                     var classquerry = new M158_SMPD.MySQLCon();
-                    DataTable DtClass = classquerry.getSQLStatement("SELECT `F_Name` FROM `tbl_firma` WHERE 1");
+                    DataTable DtClass = classquerry.GetSqlStatement("SELECT `F_Name` FROM `tbl_firma` WHERE 1");
                     foreach (DataRow row in DtClass.Rows)
                     {
                         if (Convert.ToString(row["F_Name"]) == tbxcomp.Text)
@@ -138,37 +138,37 @@ namespace M158_SMPD.Forms.Grp3
 
                     if (existent == 0)
                     {
-                        DtClass = classquerry.getSQLStatement("SELECT `An_Nr` FROM `tbl_anrede` WHERE `Anrede` = '" + cmxsal.Text + "'");
+                        DtClass = classquerry.GetSqlStatement("SELECT `An_Nr` FROM `tbl_anrede` WHERE `Anrede` = '" + cmxsal.Text + "'");
                         foreach (DataRow row in DtClass.Rows)
                         {
                             sal = Convert.ToInt16(row["An_Nr"]);
                         }
 
-                        DtClass = classquerry.getSQLStatement("SELECT `Or_Nr` FROM `tbl_ort` WHERE `PLZ` = " + cmxplz.Text);
+                        DtClass = classquerry.GetSqlStatement("SELECT `Or_Nr` FROM `tbl_ort` WHERE `PLZ` = " + cmxplz.Text);
                         foreach (DataRow row in DtClass.Rows)
                         {
                             plz = Convert.ToInt16(row["Or_Nr"]);
                         }
 
-                        classquerry.setSQLStatement("INSERT INTO `tbl_firma` (`Fi_Nr`, `F_Name`, `F_Vorname`, `F_Nachname`, `F_Strasse`, `An_Nr`, `Or_Nr`, `F_Ansprechperson`, `F_Zusatz`, `F_Telefon`, `F_Fax`, `F_Aktiv`) VALUES(NULL, '" + tbxcomp.Text + "', '" + tbxprename.Text + "', '" + tbxname.Text + "', '" + tbxstreet.Text + "', '" + sal + "', '" + plz + "', '" + tbxcontact.Text + "', '" + tbxadd.Text + "', '" + tbxtel.Text + "', '" + tbxfax.Text + "', '1')");
+                        classquerry.SetSQLStatement("INSERT INTO `tbl_firma` (`Fi_Nr`, `F_Name`, `F_Vorname`, `F_Nachname`, `F_Strasse`, `An_Nr`, `Or_Nr`, `F_Ansprechperson`, `F_Zusatz`, `F_Telefon`, `F_Fax`, `F_Aktiv`) VALUES(NULL, '" + tbxcomp.Text + "', '" + tbxprename.Text + "', '" + tbxname.Text + "', '" + tbxstreet.Text + "', '" + sal + "', '" + plz + "', '" + tbxcontact.Text + "', '" + tbxadd.Text + "', '" + tbxtel.Text + "', '" + tbxfax.Text + "', '1')");
                     }
                 }
                 else
                 {
                     var classquerry = new M158_SMPD.MySQLCon();
-                    DataTable DtClass = classquerry.getSQLStatement("SELECT `An_Nr` FROM `tbl_anrede` WHERE `Anrede` = '" + cmxsal.Text + "'");
+                    DataTable DtClass = classquerry.GetSqlStatement("SELECT `An_Nr` FROM `tbl_anrede` WHERE `Anrede` = '" + cmxsal.Text + "'");
                     foreach (DataRow row in DtClass.Rows)
                     {
                         sal = Convert.ToInt16(row["An_Nr"]);
                     }
 
-                    DtClass = classquerry.getSQLStatement("SELECT `Or_Nr` FROM `tbl_ort` WHERE `PLZ` = " + cmxplz.Text);
+                    DtClass = classquerry.GetSqlStatement("SELECT `Or_Nr` FROM `tbl_ort` WHERE `PLZ` = " + cmxplz.Text);
                     foreach (DataRow row in DtClass.Rows)
                     {
                         plz = Convert.ToInt16(row["Or_Nr"]);
                     }
 
-                    classquerry.setSQLStatement("UPDATE `tbl_firma` SET `F_Name`= '" + tbxcomp.Text + "', `F_Vorname`= '" + tbxprename.Text + "', `F_Nachname`= '" + tbxname.Text + "',`F_Strasse`= '" + tbxstreet.Text + "', `An_Nr`= '" + sal + "', `Or_Nr`= '" + plz + "',`F_Ansprechperson`= '" + tbxcontact.Text + "',`F_Zusatz`= '" + tbxadd.Text + "',`F_Telefon`= '" + tbxtel.Text + "',`F_Fax`= '" + tbxfax.Text + "' WHERE `F_Name` = '" + cmxcompsrc.Text + "'");
+                    classquerry.SetSQLStatement("UPDATE `tbl_firma` SET `F_Name`= '" + tbxcomp.Text + "', `F_Vorname`= '" + tbxprename.Text + "', `F_Nachname`= '" + tbxname.Text + "',`F_Strasse`= '" + tbxstreet.Text + "', `An_Nr`= '" + sal + "', `Or_Nr`= '" + plz + "',`F_Ansprechperson`= '" + tbxcontact.Text + "',`F_Zusatz`= '" + tbxadd.Text + "',`F_Telefon`= '" + tbxtel.Text + "',`F_Fax`= '" + tbxfax.Text + "' WHERE `F_Name` = '" + cmxcompsrc.Text + "'");
                 }
             }
             catch
@@ -199,7 +199,7 @@ namespace M158_SMPD.Forms.Grp3
                 if (cmxcompsrc.Text != "Neue Firma")
                 {
                     var classquerry = new M158_SMPD.MySQLCon();
-                    DataTable DtClass = classquerry.getSQLStatement("SELECT * FROM `tbl_firma` WHERE `F_Name` LIKE '" + firmasuchen + "'");
+                    DataTable DtClass = classquerry.GetSqlStatement("SELECT * FROM `tbl_firma` WHERE `F_Name` LIKE '" + firmasuchen + "'");
                     foreach (DataRow row in DtClass.Rows)
                     {
                         tbxcomp.Text += Convert.ToString(row["F_Name"].ToString());
@@ -218,13 +218,13 @@ namespace M158_SMPD.Forms.Grp3
                         }
                     }
 
-                    DtClass = classquerry.getSQLStatement("SELECT `Anrede` FROM `tbl_anrede` WHERE `An_Nr` = " + sal);
+                    DtClass = classquerry.GetSqlStatement("SELECT `Anrede` FROM `tbl_anrede` WHERE `An_Nr` = " + sal);
                     foreach (DataRow row in DtClass.Rows)
                     {
                         cmxsal.Text = Convert.ToString(row["Anrede"]);
                     }
 
-                    DtClass = classquerry.getSQLStatement("SELECT * FROM `tbl_ort` WHERE `Or_Nr` = " + plz);
+                    DtClass = classquerry.GetSqlStatement("SELECT * FROM `tbl_ort` WHERE `Or_Nr` = " + plz);
                     foreach (DataRow row in DtClass.Rows)
                     {
                         cmxplz.Text = Convert.ToString(row["PLZ"]);
@@ -243,7 +243,7 @@ namespace M158_SMPD.Forms.Grp3
             try
             {
                 var classquerry = new M158_SMPD.MySQLCon();
-                DataTable DtClass = classquerry.getSQLStatement("SELECT `Ort` FROM `tbl_ort` WHERE `PLZ` = " + plz);
+                DataTable DtClass = classquerry.GetSqlStatement("SELECT `Ort` FROM `tbl_ort` WHERE `PLZ` = " + plz);
                 foreach (DataRow row in DtClass.Rows)
                 {
                     cmxtown.Text = Convert.ToString(row["Ort"]);
@@ -260,7 +260,7 @@ namespace M158_SMPD.Forms.Grp3
             try
             {
                 var classquerry = new M158_SMPD.MySQLCon();
-                DataTable DtClass = classquerry.getSQLStatement("SELECT `PLZ` FROM `tbl_ort` WHERE `Ort` = '" + cmxtown.Text + "'");
+                DataTable DtClass = classquerry.GetSqlStatement("SELECT `PLZ` FROM `tbl_ort` WHERE `Ort` = '" + cmxtown.Text + "'");
                 foreach (DataRow row in DtClass.Rows)
                 {
                     cmxplz.Text = Convert.ToString(row["PLZ"]);

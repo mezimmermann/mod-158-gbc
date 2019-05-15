@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using M158_SMPD.Forms.Grp6;
-using M158_SMPD.Forms.Grp5;
 
 namespace M158_SMPD.Forms.Grp4
 {
@@ -35,7 +27,7 @@ namespace M158_SMPD.Forms.Grp4
                 string auswahl_subject = "SELECT Fach FROM tbl_faecher  INNER JOIN tbl_fae_kla_sem ON tbl_fae_kla_sem.Fae_Nr = tbl_faecher.Fae_Nr INNER JOIN tbl_klasse ON tbl_klasse.Kl_Nr = tbl_fae_kla_sem.Kl_Nr WHERE Klasse  = '" + auswahlclass + "'";
 
 
-                DataTable table = conn.getSQLStatement(auswahl_subject);
+                DataTable table = conn.GetSqlStatement(auswahl_subject);
                 foreach (DataRow row in table.Rows)
                 {
                     cmx_subject.Items.Add(row[0].ToString());
@@ -62,7 +54,7 @@ namespace M158_SMPD.Forms.Grp4
 
                 DataTable tablesql = new DataTable();
 
-                tablesql = conn.getSQLStatement(sqlstatement);
+                tablesql = conn.GetSqlStatement(sqlstatement);
 
                 mysqlbinder.DataSource = tablesql;
 
@@ -86,7 +78,7 @@ namespace M158_SMPD.Forms.Grp4
                 //Drop Drawn Menü
                 string auswahl_class = "SELECT * FROM tbl_klasse";
 
-                DataTable _table = conn.getSQLStatement(auswahl_class);
+                DataTable _table = conn.GetSqlStatement(auswahl_class);
                 foreach (DataRow row in _table.Rows)
                 {
                     cmx_class.Items.Add(row[1].ToString());

@@ -32,8 +32,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.cmxBerufe = new System.Windows.Forms.ComboBox();
             this.lbxBerufe = new System.Windows.Forms.ListBox();
-            this.tbxBerufe = new System.Windows.Forms.TextBox();
-            this.tbxKuerzel = new System.Windows.Forms.TextBox();
+            this.TbxBerufe = new System.Windows.Forms.TextBox();
+            this.TbxKuerzel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             this.cmxBerufe.Name = "cmxBerufe";
             this.cmxBerufe.Size = new System.Drawing.Size(286, 21);
             this.cmxBerufe.TabIndex = 16;
-            this.cmxBerufe.SelectedIndexChanged += new System.EventHandler(this.cmxBerufe_SelectedIndexChanged);
+            this.cmxBerufe.SelectedIndexChanged += new System.EventHandler(this.CmxBerufe_SelectedIndexChanged);
             // 
             // lbxBerufe
             // 
@@ -81,19 +81,19 @@
             // 
             // tbxBerufe
             // 
-            this.tbxBerufe.Location = new System.Drawing.Point(12, 93);
-            this.tbxBerufe.Name = "tbxBerufe";
-            this.tbxBerufe.Size = new System.Drawing.Size(174, 20);
-            this.tbxBerufe.TabIndex = 18;
-            this.tbxBerufe.TextChanged += new System.EventHandler(this.TbxBerufe_TextChanged);
+            this.TbxBerufe.Location = new System.Drawing.Point(12, 93);
+            this.TbxBerufe.Name = "tbxBerufe";
+            this.TbxBerufe.Size = new System.Drawing.Size(174, 20);
+            this.TbxBerufe.TabIndex = 18;
+            this.TbxBerufe.TextChanged += new System.EventHandler(this.TbxBerufe_TextChanged);
             // 
             // tbxKuerzel
             // 
-            this.tbxKuerzel.Location = new System.Drawing.Point(192, 93);
-            this.tbxKuerzel.Name = "tbxKuerzel";
-            this.tbxKuerzel.Size = new System.Drawing.Size(106, 20);
-            this.tbxKuerzel.TabIndex = 19;
-            this.tbxKuerzel.TextChanged += new System.EventHandler(this.tbxKuerzel_TextChanged);
+            this.TbxKuerzel.Location = new System.Drawing.Point(192, 93);
+            this.TbxKuerzel.Name = "tbxKuerzel";
+            this.TbxKuerzel.Size = new System.Drawing.Size(106, 20);
+            this.TbxKuerzel.TabIndex = 19;
+            this.TbxKuerzel.TextChanged += new System.EventHandler(this.TbxKuerzel_TextChanged);
             // 
             // label1
             // 
@@ -150,8 +150,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbxKuerzel);
-            this.Controls.Add(this.tbxBerufe);
+            this.Controls.Add(this.TbxKuerzel);
+            this.Controls.Add(this.TbxBerufe);
             this.Controls.Add(this.lbxBerufe);
             this.Controls.Add(this.cmxBerufe);
             this.Controls.Add(this.btnDelete);
@@ -170,8 +170,8 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ComboBox cmxBerufe;
         private System.Windows.Forms.ListBox lbxBerufe;
-        private System.Windows.Forms.TextBox tbxBerufe;
-        private System.Windows.Forms.TextBox tbxKuerzel;
+        private System.Windows.Forms.TextBox TbxBerufe;
+        private System.Windows.Forms.TextBox TbxKuerzel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
