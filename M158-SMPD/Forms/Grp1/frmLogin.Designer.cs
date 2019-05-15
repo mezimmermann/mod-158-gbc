@@ -133,6 +133,7 @@
             this.ShowInTaskbar = false;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.Shown += new System.EventHandler(this.frmLogin_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

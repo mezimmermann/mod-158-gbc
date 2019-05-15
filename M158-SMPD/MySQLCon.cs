@@ -65,7 +65,7 @@ namespace M158_SMPD
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        MessageBox.Show("Cannot connect to server. Please contact your administrator","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         break;
 
                     case 1042:

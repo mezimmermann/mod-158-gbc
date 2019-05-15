@@ -33,12 +33,12 @@ namespace M158_SMPD
                 }
                 else
                 {
-                    MessageBox.Show("Benutzername oder Passwort inkorrekt.");
+                    MessageBox.Show("Benutzername oder Passwort inkorrekt.","Login",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 }
             }
             catch
             {
-                MessageBox.Show("Benutzername oder Passwort inkorrekt.");
+                //MessageBox.Show("Benutzername oder Passwort inkorrekt.");
             }
 
         }
@@ -55,7 +55,7 @@ namespace M158_SMPD
             }
             catch
             {
-                MessageBox.Show("Benutzername oder Passwort inkorrekt.");
+                //MessageBox.Show("Benutzername oder Passwort inkorrekt.");
             }
         }
 
@@ -79,7 +79,7 @@ namespace M158_SMPD
             frmLoading.Show();
             Wait(1400);
             frmLoading.Close();
-
+            TbxUsername.Text = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
         }
 
         private void TbxPassword_KeyPress(object sender, KeyPressEventArgs e)
@@ -94,6 +94,11 @@ namespace M158_SMPD
         {
             FrmDBSettings dbset = new FrmDBSettings();
             dbset.Show();
+        }
+
+        private void frmLogin_Shown(object sender, EventArgs e)
+        {
+            TbxPassword.Focus();
         }
     }
 }
