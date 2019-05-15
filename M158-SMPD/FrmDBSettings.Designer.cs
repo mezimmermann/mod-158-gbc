@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.BtnSave = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnExit = new System.Windows.Forms.Button();
             this.TbxDBServer = new System.Windows.Forms.TextBox();
             this.LblDBSrv = new System.Windows.Forms.Label();
             this.LblDBUsr = new System.Windows.Forms.Label();
@@ -50,14 +50,15 @@
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
-            // button2
+            // BtnExit
             // 
-            this.button2.Location = new System.Drawing.Point(129, 160);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Abbrechen";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnExit.Location = new System.Drawing.Point(129, 160);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(75, 23);
+            this.BtnExit.TabIndex = 1;
+            this.BtnExit.Text = "Abbrechen";
+            this.BtnExit.UseVisualStyleBackColor = true;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // TbxDBServer
             // 
@@ -137,7 +138,7 @@
             this.Controls.Add(this.TbxDBUser);
             this.Controls.Add(this.LblDBSrv);
             this.Controls.Add(this.TbxDBServer);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.BtnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmDBSettings";
@@ -151,7 +152,7 @@
         #endregion
 
         private System.Windows.Forms.Button BtnSave;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnExit;
         private System.Windows.Forms.TextBox TbxDBServer;
         private System.Windows.Forms.Label LblDBSrv;
         private System.Windows.Forms.Label LblDBUsr;

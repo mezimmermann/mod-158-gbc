@@ -243,7 +243,7 @@
             this.btnNotenlisten.Name = "btnNotenlisten";
             this.btnNotenlisten.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnNotenlisten.SmallImage")));
             this.btnNotenlisten.Text = "Notenlisten";
-            this.btnNotenlisten.Click += new System.EventHandler(this.btnNotenlisten_Click);
+            this.btnNotenlisten.Click += new System.EventHandler(this.BtnNotenlisten_Click);
             // 
             // RibPanOtherStd
             // 

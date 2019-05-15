@@ -82,7 +82,7 @@ namespace M158_SMPD
                 Application.DoEvents();
 
         }
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void FrmLogin_Load(object sender, EventArgs e)
         {
             FrmLoading frmLoading = new FrmLoading();
             frmLoading.Show();

@@ -34,5 +34,10 @@ namespace M158_SMPD
             TbxDBServer.Text = Properties.Settings.Default.DBServer;
             TbxDBPass.Text = Properties.Settings.Default.DBPassword;
         }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
