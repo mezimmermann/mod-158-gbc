@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace M158_SMPD.Forms.Grp6
 {
-    public partial class frmKlassen : Form
+    public partial class FrmKlassen : Form
     {
         //Momentaner Verbindungsaufbau
         string constring = "host=192.168.2.109;port=3306;user=remote;password=remote;database=access";
@@ -29,7 +29,7 @@ namespace M158_SMPD.Forms.Grp6
         public string Querybenr;
         public string QueryFillKuerzel;
 
-        public frmKlassen()
+        public FrmKlassen()
         {
             InitializeComponent();
             Filllcombo();

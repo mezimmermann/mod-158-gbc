@@ -28,7 +28,7 @@ namespace M158_SMPD
 
         private void BtnCreateUser_Click(object sender, EventArgs e)
         {
-            Forms.Grp1.frmUserRegister frmuserreg = new Forms.Grp1.frmUserRegister
+            Forms.Grp1.FrmUserRegister frmuserreg = new Forms.Grp1.FrmUserRegister
             {
                 MdiParent = this
             };
@@ -64,7 +64,7 @@ namespace M158_SMPD
 
         private void BtnSSL_Click(object sender, EventArgs e)
         {
-            Forms.Grp3.frmStudMgmt frmStudMgmt = new Forms.Grp3.frmStudMgmt
+            Forms.Grp3.FrmStudMgmt frmStudMgmt = new Forms.Grp3.FrmStudMgmt
             {
                 MdiParent = this
             };
@@ -73,7 +73,7 @@ namespace M158_SMPD
 
         private void BtnFirmendaten_Click(object sender, EventArgs e)
         {
-            Forms.Grp3.frmCompData frmCompData = new Forms.Grp3.frmCompData
+            Forms.Grp3.FrmCompData frmCompData = new Forms.Grp3.FrmCompData
             {
                 MdiParent = this
             };
@@ -82,7 +82,7 @@ namespace M158_SMPD
 
         private void BtnSchnellerfassung_Click(object sender, EventArgs e)
         {
-            Forms.Grp4.frmSchnellerfassung frmSchnellerfassung = new Forms.Grp4.frmSchnellerfassung
+            Forms.Grp4.FrmSchnellerfassung frmSchnellerfassung = new Forms.Grp4.FrmSchnellerfassung
             {
                 MdiParent = this
             };
@@ -118,7 +118,7 @@ namespace M158_SMPD
 
         private void BtnKlassen_Click(object sender, EventArgs e)
         {
-            Forms.Grp6.frmKlassen frmKlassen = new Forms.Grp6.frmKlassen
+            Forms.Grp6.FrmKlassen frmKlassen = new Forms.Grp6.FrmKlassen
             {
                 MdiParent = this
             };
@@ -127,7 +127,7 @@ namespace M158_SMPD
 
         private void BtnBerufe_Click(object sender, EventArgs e)
         {
-            Forms.Grp6.frmBerufe frmBerufe = new Forms.Grp6.frmBerufe
+            Forms.Grp6.FrmBerufe frmBerufe = new Forms.Grp6.FrmBerufe
             {
                 MdiParent = this
             };
@@ -136,7 +136,7 @@ namespace M158_SMPD
 
         private void BtnNotenlisten_Click(object sender, EventArgs e)
         {
-            Forms.Grp4.frmNotenlisten frmNotenlisten = new Forms.Grp4.frmNotenlisten
+            Forms.Grp4.FrmNotenlisten frmNotenlisten = new Forms.Grp4.FrmNotenlisten
             {
                 MdiParent = this
             };

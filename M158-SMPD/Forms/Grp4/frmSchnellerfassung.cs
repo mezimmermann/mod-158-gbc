@@ -13,13 +13,13 @@ using M158_SMPD.Forms.Grp5;
 
 namespace M158_SMPD.Forms.Grp4
 {
-    public partial class frmSchnellerfassung : Form
+    public partial class FrmSchnellerfassung : Form
     {
         // Verbindung zum DB
         MySQLCon conn = new MySQLCon();
         private BindingSource mysqlbinder = new BindingSource(); 
 
-        public frmSchnellerfassung()
+        public FrmSchnellerfassung()
         {
             //Formen Initialisierung
             InitializeComponent();
@@ -62,7 +62,7 @@ namespace M158_SMPD.Forms.Grp4
         private void btn_class_search_Click(object sender, EventArgs e)
         {
             //Klassen Form öffnen
-            frmKlassen klassen = new frmKlassen();
+            FrmKlassen klassen = new FrmKlassen();
             klassen.ShowDialog();
         }
 

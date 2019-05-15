@@ -13,13 +13,13 @@ using M158_SMPD.Forms.Grp5;
 
 namespace M158_SMPD.Forms.Grp4
 {
-    public partial class frmNotenlisten : Form
+    public partial class FrmNotenlisten : Form
     {
         // Verbindung zum DB
         MySQLCon conn = new MySQLCon();
         private BindingSource mysqlbinder = new BindingSource();
 
-        public frmNotenlisten()
+        public FrmNotenlisten()
         {
             //Formen Initialisieren
             InitializeComponent();

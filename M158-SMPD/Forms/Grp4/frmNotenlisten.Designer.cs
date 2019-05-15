@@ -1,6 +1,6 @@
 ﻿namespace M158_SMPD.Forms.Grp4
 {
-    partial class frmNotenlisten
+    partial class FrmNotenlisten
     {
         /// <summary>
         /// Required designer variable.

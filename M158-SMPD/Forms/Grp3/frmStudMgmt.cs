@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace M158_SMPD.Forms.Grp3
 {
-    public partial class frmStudMgmt : Form
+    public partial class FrmStudMgmt : Form
     { 
         public string comp;
         public string sal;
@@ -14,7 +14,7 @@ namespace M158_SMPD.Forms.Grp3
         public int plz;
         public string time;
 
-        public frmStudMgmt()
+        public FrmStudMgmt()
         {
             try
             {

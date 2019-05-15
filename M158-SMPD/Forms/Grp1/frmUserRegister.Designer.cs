@@ -1,6 +1,6 @@
 ﻿namespace M158_SMPD.Forms.Grp1
 {
-    partial class frmUserRegister
+    partial class FrmUserRegister
     {
         /// <summary>
         /// Required designer variable.

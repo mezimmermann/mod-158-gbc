@@ -1,6 +1,6 @@
 ﻿namespace M158_SMPD.Forms.Grp6
 {
-    partial class frmBerufe
+    partial class FrmBerufe
     {
         /// <summary>
         /// Required designer variable.

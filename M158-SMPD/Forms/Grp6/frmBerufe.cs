@@ -12,10 +12,10 @@ using M158_SMPD.Forms.Grp6;
 
 namespace M158_SMPD.Forms.Grp6
 {
-    public partial class frmBerufe : Form
+    public partial class FrmBerufe : Form
     {
         //From frmKlassen eingebunden
-        frmKlassen fk = new frmKlassen();
+        FrmKlassen fk = new FrmKlassen();
 
         //Momentaner Verbindungsaufbau
         string constring = "host=192.168.2.109;port=3306;user=remote;password=remote;database=access";
@@ -28,7 +28,7 @@ namespace M158_SMPD.Forms.Grp6
         public string sBerufNr;
         public string Query;
 
-        public frmBerufe()
+        public FrmBerufe()
         {
             InitializeComponent();
             Filllcombo();

@@ -1,6 +1,6 @@
 ﻿namespace M158_SMPD.Forms.Grp3
 {
-    partial class frmCompData
+    partial class FrmCompData
     {
         /// <summary>
         /// Erforderliche Designervariable.

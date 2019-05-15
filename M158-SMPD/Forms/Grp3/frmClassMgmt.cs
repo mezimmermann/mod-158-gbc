@@ -12,12 +12,12 @@ using MySql.Data.MySqlClient;
 
 namespace M158_SMPD.Forms.Grp3
 {
-    public partial class frmClassMgmt : Form
+    public partial class FrmClassMgmt : Form
     {
         public int klnr;
         public string studnr;
 
-        public frmClassMgmt()
+        public FrmClassMgmt()
         {
             InitializeComponent();
             lbxstudents.Font = new Font(lbxstudents.Font.FontFamily, 12);
@@ -94,7 +94,7 @@ namespace M158_SMPD.Forms.Grp3
                 {
                     studnr = row["Ll_Nr"].ToString();
                 }
-                var student = new M158_SMPD.Forms.Grp3.frmStudMgmt();
+                var student = new M158_SMPD.Forms.Grp3.FrmStudMgmt();
                 student.getexdata(studnr);
             }
             catch

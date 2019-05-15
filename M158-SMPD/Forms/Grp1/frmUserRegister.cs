@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace M158_SMPD.Forms.Grp1
 {
-    public partial class frmUserRegister : Form
+    public partial class FrmUserRegister : Form
     {
         private static DataTable DtGroups = new DataTable();
 
-        public frmUserRegister()
+        public FrmUserRegister()
         {
             InitializeComponent();
 

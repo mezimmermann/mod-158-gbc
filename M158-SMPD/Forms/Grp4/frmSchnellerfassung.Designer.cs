@@ -1,6 +1,6 @@
 ﻿namespace M158_SMPD.Forms.Grp4
 {
-    partial class frmSchnellerfassung
+    partial class FrmSchnellerfassung
     {
         /// <summary>
         /// Required designer variable.
