@@ -10,6 +10,7 @@ namespace M158_SMPD
             InitializeComponent();
         }
 
+        // Anpassung des Connectionsstrings
         private void BtnSave_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.DBName = TbxDBName.Text;
@@ -20,6 +21,7 @@ namespace M158_SMPD
             this.Close();
         }
 
+        // ladet Settings vom Connectionstring
         private void FrmDBSettings_Load(object sender, EventArgs e)
         {
             TbxDBName.Text = Properties.Settings.Default.DBName;

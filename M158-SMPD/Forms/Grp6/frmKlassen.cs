@@ -7,7 +7,7 @@ namespace M158_SMPD.Forms.Grp6
     public partial class FrmKlassen : Form
     {
         //Momentaner Verbindungsaufbau
-        string constring = "host=192.168.2.109;port=3306;user=remote;password=remote;database=access";
+        string constring = "host=192.168.2.88;port=3306;user=remote;password=remote;database=access";
 
         //Variablen
         public int FillKuerzel;

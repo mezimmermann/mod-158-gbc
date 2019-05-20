@@ -10,7 +10,7 @@ namespace M158_SMPD.Forms.Grp6
         FrmKlassen fk = new FrmKlassen();
 
         //Momentaner Verbindungsaufbau
-        string constring = "host=192.168.2.109;port=3306;user=remote;password=remote;database=access";
+        string constring = "host=192.168.2.88;port=3306;user=remote;password=remote;database=access";
 
         MySQLCon mysql = new MySQLCon();
 
@@ -26,8 +26,6 @@ namespace M158_SMPD.Forms.Grp6
             FillCombo();
             Filllistbox();
             CheckKuerzel();
-            //Form Klassen wird gleichzeitig geöffnet
-            fk.Show();
         }
 
         //Prüfung ob Textbox Kürzel und Berufe leer sind

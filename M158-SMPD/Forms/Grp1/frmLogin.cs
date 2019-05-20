@@ -80,7 +80,8 @@ namespace M158_SMPD
             frmLoading.Show();
             Wait(1400);
             frmLoading.Close();
-            TbxUsername.Text = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            // lokaler User in Textbox username schreiben
+            //TbxUsername.Text = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
         }
 
         private void TbxPassword_KeyPress(object sender, KeyPressEventArgs e)

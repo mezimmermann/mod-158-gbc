@@ -19,7 +19,7 @@ namespace M158_SMPD.Forms.Grp5
             BSbinder.DataSource = table; //Daten werden Formatiert
             DgvFrmfachdisplay.DataSource = BSbinder; //Daten werden in Data Grid View gelesen
 
-            DgvFrmfachdisplay.Columns["Fa_Nr"].ReadOnly = true; // Primary ID wird zum Bearbeiten Deaktiviert
+            DgvFrmfachdisplay.Columns["Fae_Nr"].ReadOnly = true; // Primary ID wird zum Bearbeiten Deaktiviert
         }
 
         private void Btnsearchfach_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace M158_SMPD.Forms.Grp5
             BSbinder.DataSource = table;//Daten werden Formatiert
             DgvFrmfachdisplay.DataSource = BSbinder;//Daten werden in Data Grid View gelesen
 
-            DgvFrmfachdisplay.Columns["Fa_Nr"].ReadOnly = true; // Primary ID wird zum Bearbeiten Deaktiviert
+            DgvFrmfachdisplay.Columns["Fae_Nr"].ReadOnly = true; // Primary ID wird zum Bearbeiten Deaktiviert
         }
 
         private void Btnsavfah_Click(object sender, EventArgs e)

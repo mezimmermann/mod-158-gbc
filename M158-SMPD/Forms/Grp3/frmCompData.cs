@@ -7,7 +7,7 @@ namespace M158_SMPD.Forms.Grp3
 {
     public partial class FrmCompData : Form
     {
-        public string connection = "Server=localhost;Database=notenprogramm;Uid=root;Pwd=;";
+        //public string connection = "Server=localhost;Database=notenprogramm;Uid=root;Pwd=;";
         public MySqlConnection connector = new MySqlConnection();
         public int sal;
         public int plz;

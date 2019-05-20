@@ -48,7 +48,7 @@
             this.Tbxsearchort.Location = new System.Drawing.Point(187, 16);
             this.Tbxsearchort.Margin = new System.Windows.Forms.Padding(4);
             this.Tbxsearchort.Name = "Tbxsearchort";
-            this.Tbxsearchort.Size = new System.Drawing.Size(424, 29);
+            this.Tbxsearchort.Size = new System.Drawing.Size(598, 29);
             this.Tbxsearchort.TabIndex = 0;
             // 
             // BtnSearchOrt
@@ -59,7 +59,7 @@
             this.BtnSearchOrt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSearchOrt.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSearchOrt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnSearchOrt.Location = new System.Drawing.Point(619, 13);
+            this.BtnSearchOrt.Location = new System.Drawing.Point(13, 13);
             this.BtnSearchOrt.Margin = new System.Windows.Forms.Padding(4);
             this.BtnSearchOrt.Name = "BtnSearchOrt";
             this.BtnSearchOrt.Size = new System.Drawing.Size(166, 34);
@@ -132,7 +132,7 @@
             this.BtnSaveOrt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSaveOrt.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSaveOrt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnSaveOrt.Location = new System.Drawing.Point(13, 13);
+            this.BtnSaveOrt.Location = new System.Drawing.Point(619, 409);
             this.BtnSaveOrt.Margin = new System.Windows.Forms.Padding(4);
             this.BtnSaveOrt.Name = "BtnSaveOrt";
             this.BtnSaveOrt.Size = new System.Drawing.Size(166, 34);
@@ -146,7 +146,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(806, 417);
+            this.ClientSize = new System.Drawing.Size(807, 450);
             this.Controls.Add(this.BtnSaveOrt);
             this.Controls.Add(this.DgvFrmortdisplay);
             this.Controls.Add(this.BtnSearchOrt);

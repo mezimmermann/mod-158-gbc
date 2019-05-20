@@ -6,6 +6,9 @@ namespace M158_SMPD
 {
     public partial class FrmLoading : Form
     {
+
+        // Intro Form
+
         public FrmLoading()
         {
             InitializeComponent();
