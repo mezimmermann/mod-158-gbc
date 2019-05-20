@@ -75,7 +75,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 30;
-            this.btnEdit.Text = "Edit";
+            this.btnEdit.Text = "Bearbeiten";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
@@ -110,7 +110,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 22);
             this.btnAdd.TabIndex = 25;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Hinzufügen";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
@@ -120,7 +120,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 24;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Löschen";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
@@ -141,7 +141,7 @@
             this.tbxKlasseNr.TabIndex = 35;
             this.tbxKlasseNr.Visible = false;
             // 
-            // frmKlassen
+            // FrmKlassen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,7 +158,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "frmKlassen";
+            this.Name = "FrmKlassen";
             this.Text = "frmKlassen";
             this.ResumeLayout(false);
             this.PerformLayout();

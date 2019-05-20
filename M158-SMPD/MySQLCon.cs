@@ -177,6 +177,11 @@ namespace M158_SMPD
         //    conn.SendDataTable(changes, "tbl_semester");
         //    ((DataTable) dataGridView1.DataSource).AcceptChanges();
         //</summary>
+        
+        public MySqlConnection GetConnection()
+        {
+            return connection;
+        }
 
         protected virtual void Dispose(bool disposing)
         {

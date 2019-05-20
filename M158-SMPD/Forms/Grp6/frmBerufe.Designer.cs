@@ -48,7 +48,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 22);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Hinzufügen";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
@@ -58,7 +58,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 22);
             this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Löschen";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
@@ -79,18 +79,18 @@
             this.lbxBerufe.Size = new System.Drawing.Size(196, 199);
             this.lbxBerufe.TabIndex = 17;
             // 
-            // tbxBerufe
+            // TbxBerufe
             // 
             this.TbxBerufe.Location = new System.Drawing.Point(12, 93);
-            this.TbxBerufe.Name = "tbxBerufe";
+            this.TbxBerufe.Name = "TbxBerufe";
             this.TbxBerufe.Size = new System.Drawing.Size(174, 20);
             this.TbxBerufe.TabIndex = 18;
             this.TbxBerufe.TextChanged += new System.EventHandler(this.TbxBerufe_TextChanged);
             // 
-            // tbxKuerzel
+            // TbxKuerzel
             // 
             this.TbxKuerzel.Location = new System.Drawing.Point(192, 93);
-            this.TbxKuerzel.Name = "tbxKuerzel";
+            this.TbxKuerzel.Name = "TbxKuerzel";
             this.TbxKuerzel.Size = new System.Drawing.Size(106, 20);
             this.TbxKuerzel.TabIndex = 19;
             this.TbxKuerzel.TextChanged += new System.EventHandler(this.TbxKuerzel_TextChanged);
@@ -128,7 +128,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 22);
             this.btnEdit.TabIndex = 27;
-            this.btnEdit.Text = "Edit";
+            this.btnEdit.Text = "Bearbeiten";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
@@ -140,7 +140,7 @@
             this.tbxBerufNr.TabIndex = 28;
             this.tbxBerufNr.Visible = false;
             // 
-            // frmBerufe
+            // FrmBerufe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -157,7 +157,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "frmBerufe";
+            this.Name = "FrmBerufe";
             this.Text = "frmBerufe";
             this.ResumeLayout(false);
             this.PerformLayout();

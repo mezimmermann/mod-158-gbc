@@ -7,7 +7,8 @@ namespace M158_SMPD.Forms.Grp6
     public partial class FrmKlassen : Form
     {
         //Momentaner Verbindungsaufbau
-        string constring = "host=192.168.2.88;port=3306;user=remote;password=remote;database=access";
+        //string constring = "host=192.168.2.88;port=3306;user=remote;password=remote;database=access";
+        MySQLCon mysql = new MySQLCon();
 
         //Variablen
         public int FillKuerzel;
@@ -52,7 +53,8 @@ namespace M158_SMPD.Forms.Grp6
             cmxKuerzel.Items.Clear();
             //Berufs Tabelle wird abgefragt
             Query = "select * from tbl_beruf ; ";
-            MySqlConnection conDataBase = new MySqlConnection(constring);
+            //MySqlConnection conDataBase = new MySqlConnection(constring);
+            MySqlConnection conDataBase = mysql.GetConnection();
             MySqlCommand cmdDataBase = new MySqlCommand(Query, conDataBase);
             MySqlDataReader myReader;
             try
@@ -64,6 +66,7 @@ namespace M158_SMPD.Forms.Grp6
                     sBeruf = myReader.GetString("Kürzel");
                     cmxKuerzel.Items.Add(sBeruf);
                 }
+                conDataBase.Close();
             }
             catch (Exception ex)
             {
@@ -77,7 +80,8 @@ namespace M158_SMPD.Forms.Grp6
             cmxKlasse.Items.Clear();
             //Berufs Tabelle wird abgefragt
             Query = "select * from tbl_klasse ; ";
-            MySqlConnection conDataBase = new MySqlConnection(constring);
+            //MySqlConnection conDataBase = new MySqlConnection(constring);
+            MySqlConnection conDataBase = mysql.GetConnection();
             MySqlCommand cmdDataBase = new MySqlCommand(Query, conDataBase);
             MySqlDataReader myReader;
             try
@@ -89,6 +93,7 @@ namespace M158_SMPD.Forms.Grp6
                     sKlasse = myReader.GetString("Klasse");
                     cmxKlasse.Items.Add(sKlasse);
                 }
+                conDataBase.Close();
             }
             catch (Exception ex)
             {
@@ -102,7 +107,8 @@ namespace M158_SMPD.Forms.Grp6
             lbxKlasse.Items.Clear();
             //Berufs Tabelle wird abgefragt
             Query = "select * from tbl_klasse ; ";
-            MySqlConnection conDataBase = new MySqlConnection(constring);
+            //MySqlConnection conDataBase = new MySqlConnection(constring);
+            MySqlConnection conDataBase = mysql.GetConnection();
             MySqlCommand cmdDataBase = new MySqlCommand(Query, conDataBase);
             MySqlDataReader myReader;
             try
@@ -115,8 +121,9 @@ namespace M158_SMPD.Forms.Grp6
                     sKlasse = myReader.GetString("Klasse");
                     lbxKlasse.Items.Add(sKlasse);
 
-                    
+
                 }
+                conDataBase.Close();
             }
             catch (Exception ex)
             {
@@ -128,7 +135,8 @@ namespace M158_SMPD.Forms.Grp6
         {
             //Hauptschlüssel der Berufe wird eingelesen
             QueryAdd = "select Be_Nr from tbl_beruf where Kürzel='" + cmxKuerzel.Text + "'; ";
-            MySqlConnection conDataBase = new MySqlConnection(constring);
+            //MySqlConnection conDataBase = new MySqlConnection(constring);
+            MySqlConnection conDataBase = mysql.GetConnection();
             MySqlCommand cmdAdd = new MySqlCommand(QueryAdd, conDataBase);
             MySqlDataReader AddReader;
             conDataBase.Open();
@@ -170,7 +178,8 @@ namespace M158_SMPD.Forms.Grp6
         {
             //Hauptschlüssel der Berufe wird eingelesen
             Queryedit = "select Be_Nr from tbl_beruf where Kürzel='" + cmxKuerzel.Text + "'; ";
-            MySqlConnection conDataBase = new MySqlConnection(constring);
+            //MySqlConnection conDataBase = new MySqlConnection(constring);
+            MySqlConnection conDataBase = mysql.GetConnection();
             MySqlCommand cmdedit = new MySqlCommand(Queryedit, conDataBase);
             MySqlDataReader editReader;
             conDataBase.Open();
@@ -196,6 +205,7 @@ namespace M158_SMPD.Forms.Grp6
                 {
 
                 }
+                conDataBase.Close();
             }
             catch (Exception ex)
             {
@@ -210,7 +220,8 @@ namespace M158_SMPD.Forms.Grp6
         {
             //MySQL Delete Command
             Query = "delete from tbl_klasse where Klasse='" + this.tbxKlasse.Text + "'; ";
-            MySqlConnection conDataBase = new MySqlConnection(constring);
+            //MySqlConnection conDataBase = new MySqlConnection(constring);
+            MySqlConnection conDataBase = mysql.GetConnection();
             MySqlCommand cmdDataBase = new MySqlCommand(Query, conDataBase);
             MySqlDataReader myReader;
             try
@@ -220,8 +231,9 @@ namespace M158_SMPD.Forms.Grp6
                 MessageBox.Show("Gelöscht");
                 while (myReader.Read())
                 {
-                    
+
                 }
+                conDataBase.Close();
             }
             catch (Exception ex)
             {
@@ -235,7 +247,8 @@ namespace M158_SMPD.Forms.Grp6
         private void CmxKlasse_SelectedIndexChanged(object sender, EventArgs e)
         {
             Query = "select * from tbl_klasse where Klasse='" + cmxKlasse.Text + "'; ";
-            MySqlConnection conDataBase = new MySqlConnection(constring);
+            //MySqlConnection conDataBase = new MySqlConnection(constring);
+            MySqlConnection conDataBase = mysql.GetConnection();
             MySqlCommand cmdDataBase = new MySqlCommand(Query, conDataBase);
             MySqlDataReader myReader;
             try
