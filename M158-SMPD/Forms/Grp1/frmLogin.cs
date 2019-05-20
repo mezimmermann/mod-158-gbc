@@ -36,9 +36,10 @@ namespace M158_SMPD
                     MessageBox.Show("Benutzername oder Passwort inkorrekt.","Login",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 //MessageBox.Show("Benutzername oder Passwort inkorrekt.");
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -55,7 +56,7 @@ namespace M158_SMPD
             }
             catch
             {
-                //MessageBox.Show("Benutzername oder Passwort inkorrekt.");
+                MessageBox.Show("Benutzername oder Passwort inkorrekt.");
             }
         }
 

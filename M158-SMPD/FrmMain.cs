@@ -8,7 +8,7 @@ namespace M158_SMPD
         public FrmMain()
         {
             InitializeComponent();
-            // Adminberechtigung
+            //Adminberechtigung
             if ((frmLogin.BoolExit == false) && (frmLogin.DtUserdetails.Rows[0][5].ToString() == "True"))
             {
                 BtnCreateUser.Enabled = true;
@@ -144,6 +144,12 @@ namespace M158_SMPD
                 MdiParent = this
             };
             frmNotenlisten.Show();
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            FrmDBSettings frmDBSettings = new FrmDBSettings();
+            frmDBSettings.Show();
         }
     }
 }

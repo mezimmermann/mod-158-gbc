@@ -54,6 +54,7 @@
             this.BtnReports = new System.Windows.Forms.RibbonButton();
             this.RibPanListen = new System.Windows.Forms.RibbonPanel();
             this.btnNotenlisten = new System.Windows.Forms.RibbonButton();
+            this.btnSettings = new System.Windows.Forms.RibbonOrbMenuItem();
             this.SuspendLayout();
             // 
             // RbnMain
@@ -69,8 +70,9 @@
             this.RbnMain.OrbDropDown.BorderRoundness = 8;
             this.RbnMain.OrbDropDown.Location = new System.Drawing.Point(0, 0);
             this.RbnMain.OrbDropDown.MenuItems.Add(this.BtnCreateUser);
+            this.RbnMain.OrbDropDown.MenuItems.Add(this.btnSettings);
             this.RbnMain.OrbDropDown.Name = "";
-            this.RbnMain.OrbDropDown.Size = new System.Drawing.Size(527, 116);
+            this.RbnMain.OrbDropDown.Size = new System.Drawing.Size(527, 160);
             this.RbnMain.OrbDropDown.TabIndex = 0;
             this.RbnMain.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
             this.RbnMain.OrbText = "Start";
@@ -305,6 +307,16 @@
             this.btnNotenlisten.Text = "Notenlisten";
             this.btnNotenlisten.Click += new System.EventHandler(this.BtnNotenlisten_Click);
             // 
+            // btnSettings
+            // 
+            this.btnSettings.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.btnSettings.Image = global::M158_SMPD.Properties.Resources.settingsico;
+            this.btnSettings.LargeImage = global::M158_SMPD.Properties.Resources.settingsico;
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.SmallImage = global::M158_SMPD.Properties.Resources.settingsico;
+            this.btnSettings.Text = "Einstellungen";
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,6 +360,7 @@
         private System.Windows.Forms.RibbonButton BtnOrte;
         private System.Windows.Forms.RibbonButton BtnKlassen;
         private System.Windows.Forms.RibbonButton BtnBerufe;
+        private System.Windows.Forms.RibbonOrbMenuItem btnSettings;
     }
 }
 
