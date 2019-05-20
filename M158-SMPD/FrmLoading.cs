@@ -13,7 +13,7 @@ namespace M158_SMPD
         private void PlaySimpleSound()
         {
             SoundPlayer simpleSound = new SoundPlayer(M158_SMPD.Properties.Resources.btman);
-            simpleSound.Play();
+            //simpleSound.Play();
         }
         private void FrmLoading_Shown(object sender, EventArgs e)
         {

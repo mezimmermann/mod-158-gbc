@@ -45,7 +45,7 @@
             this.BtnSave.Location = new System.Drawing.Point(163, 132);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(94, 23);
-            this.BtnSave.TabIndex = 0;
+            this.BtnSave.TabIndex = 5;
             this.BtnSave.Text = "Übernehmen";
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -55,7 +55,7 @@
             this.BtnExit.Location = new System.Drawing.Point(82, 132);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(75, 23);
-            this.BtnExit.TabIndex = 1;
+            this.BtnExit.TabIndex = 10;
             this.BtnExit.Text = "Abbrechen";
             this.BtnExit.UseVisualStyleBackColor = true;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
@@ -65,7 +65,7 @@
             this.TbxDBServer.Location = new System.Drawing.Point(97, 12);
             this.TbxDBServer.Name = "TbxDBServer";
             this.TbxDBServer.Size = new System.Drawing.Size(160, 20);
-            this.TbxDBServer.TabIndex = 2;
+            this.TbxDBServer.TabIndex = 1;
             // 
             // LblDBSrv
             // 
@@ -90,7 +90,7 @@
             this.TbxDBUser.Location = new System.Drawing.Point(97, 64);
             this.TbxDBUser.Name = "TbxDBUser";
             this.TbxDBUser.Size = new System.Drawing.Size(160, 20);
-            this.TbxDBUser.TabIndex = 6;
+            this.TbxDBUser.TabIndex = 3;
             // 
             // lblDBPass
             // 
@@ -106,7 +106,7 @@
             this.TbxDBPass.Location = new System.Drawing.Point(97, 90);
             this.TbxDBPass.Name = "TbxDBPass";
             this.TbxDBPass.Size = new System.Drawing.Size(160, 20);
-            this.TbxDBPass.TabIndex = 8;
+            this.TbxDBPass.TabIndex = 4;
             this.TbxDBPass.UseSystemPasswordChar = true;
             // 
             // LblDBName
@@ -123,7 +123,7 @@
             this.TbxDBName.Location = new System.Drawing.Point(97, 38);
             this.TbxDBName.Name = "TbxDBName";
             this.TbxDBName.Size = new System.Drawing.Size(160, 20);
-            this.TbxDBName.TabIndex = 10;
+            this.TbxDBName.TabIndex = 2;
             // 
             // FrmDBSettings
             // 
