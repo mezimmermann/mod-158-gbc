@@ -174,6 +174,10 @@ namespace M158_SMPD
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                this.CloseConnection();
+            }
             
         }
         //<summary>
