@@ -129,7 +129,7 @@ namespace M158_SMPD.Forms.Grp3
             this.cmxcity.Name = "cmxcity";
             this.cmxcity.Size = new System.Drawing.Size(100, 21);
             this.cmxcity.TabIndex = 8;
-            this.cmxcity.SelectedIndexChanged += new System.EventHandler(this.cmxcity_SelectedIndexChanged);
+            this.cmxcity.SelectedIndexChanged += new System.EventHandler(this.cmxcity_SelectedIndexChanged_1);
             // 
             // cmxplz
             // 
@@ -317,7 +317,7 @@ namespace M158_SMPD.Forms.Grp3
             this.cmxtime.Size = new System.Drawing.Size(121, 21);
             this.cmxtime.TabIndex = 33;
             // 
-            // frmStudMgmt
+            // FrmStudMgmt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -352,7 +352,7 @@ namespace M158_SMPD.Forms.Grp3
             this.Controls.Add(this.lblsal);
             this.Controls.Add(this.lblap);
             this.Controls.Add(this.tbxap);
-            this.Name = "frmStudMgmt";
+            this.Name = "FrmStudMgmt";
             this.Text = "Lehrlinge Verwalten";
             this.ResumeLayout(false);
             this.PerformLayout();
