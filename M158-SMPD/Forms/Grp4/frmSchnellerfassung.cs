@@ -59,6 +59,7 @@ namespace M158_SMPD.Forms.Grp4
             FrmKlassen klassen = new FrmKlassen();
             klassen.MdiParent = this.MdiParent;
             klassen.Show();
+            this.Close();
         }
 
         private void btn_subjects_Click(object sender, EventArgs e)
@@ -67,6 +68,7 @@ namespace M158_SMPD.Forms.Grp4
             frmfach faecher = new frmfach();
             faecher.MdiParent = this.MdiParent;
             faecher.Show();
+            this.Close();
         }
 
 
