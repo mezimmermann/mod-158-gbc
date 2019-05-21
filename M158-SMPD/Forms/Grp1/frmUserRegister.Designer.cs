@@ -194,7 +194,7 @@
             // LblComments
             // 
             this.LblComments.AutoSize = true;
-            this.LblComments.Location = new System.Drawing.Point(46, 302);
+            this.LblComments.Location = new System.Drawing.Point(41, 290);
             this.LblComments.Name = "LblComments";
             this.LblComments.Size = new System.Drawing.Size(0, 13);
             this.LblComments.TabIndex = 16;
@@ -204,7 +204,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 299);
+            this.ClientSize = new System.Drawing.Size(322, 341);
             this.Controls.Add(this.LblComments);
             this.Controls.Add(this.LblAddUser);
             this.Controls.Add(this.BtnBreak);
