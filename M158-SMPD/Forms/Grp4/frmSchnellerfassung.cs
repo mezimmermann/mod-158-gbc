@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using M158_SMPD.Forms.Grp6;
+using M158_SMPD.Forms.Grp5;
 
 namespace M158_SMPD.Forms.Grp4
 {
@@ -58,18 +59,14 @@ namespace M158_SMPD.Forms.Grp4
             FrmKlassen klassen = new FrmKlassen();
             klassen.MdiParent = this.MdiParent;
             klassen.Show();
-            //Forms.Grp7.FrmReview frm = new Forms.Grp7.FrmReview
-            //{
-            //    MdiParent = this
-            //};
-            //frmReview.Show();
         }
 
         private void btn_subjects_Click(object sender, EventArgs e)
         {
             //Fächer öffnen
-            //frmStammdaten faecher = new frmStammdaten();
-            //faecher.ShowDialog();
+            frmfach faecher = new frmfach();
+            faecher.MdiParent = this.MdiParent;
+            faecher.Show();
         }
 
 
