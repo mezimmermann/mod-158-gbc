@@ -55,7 +55,7 @@ namespace M158_SMPD.Forms.Grp1
                 }
                 LbxSemester.DataSource = new BindingSource(choices_se, null);
                 LbxSemester.DisplayMember = "Key";
-                LbxSemester.ValueMember = "Value";
+                LbxSemester.ValueMember = "Value";                
             }
             catch (Exception ex)
             {
@@ -105,6 +105,7 @@ namespace M158_SMPD.Forms.Grp1
             if (DialogResult.OK == printDialog.ShowDialog())
             {
                 printDocument1.DocumentName = "Test Page Print";
+                printDocument1.DefaultPageSettings.Landscape = true;
                 printDocument1.Print();
             }
         }
