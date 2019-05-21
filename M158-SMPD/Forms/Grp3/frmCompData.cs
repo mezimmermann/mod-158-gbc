@@ -186,42 +186,49 @@ namespace M158_SMPD.Forms.Grp3
                 }
                 else //Wenn keine neue Firma erstellt werden soll
                 {
-                    //Anrede in Anredennummer umwandeln um einzufügen
-                    if (cmxsal.Text != "")
+                    if (cmxcompsrc.Text == "")
                     {
-                        DataTable DtClass = classquerry.GetSqlStatement("SELECT `An_Nr` FROM `tbl_anrede` WHERE `Anrede` = '" + cmxsal.Text + "'");
-                        foreach (DataRow row in DtClass.Rows)
-                        {
-                            sal = Convert.ToInt16(row["An_Nr"]);
-                        }
+                        MessageBox.Show("Bitte tragen Sie einen Firmenmamen ein");
                     }
                     else
                     {
-                        //Falls keine Anrede ausgwählt ist, soll 0 geschrieben werden
-                        sal = 0;
-                    }
+                        //Anrede in Anredennummer umwandeln um einzufügen
+                        if (cmxsal.Text != "")
+                        {
+                            DataTable DtClass = classquerry.GetSqlStatement("SELECT `An_Nr` FROM `tbl_anrede` WHERE `Anrede` = '" + cmxsal.Text + "'");
+                            foreach (DataRow row in DtClass.Rows)
+                            {
+                                sal = Convert.ToInt16(row["An_Nr"]);
+                            }
+                        }
+                        else
+                        {
+                            //Falls keine Anrede ausgwählt ist, soll 0 geschrieben werden
+                            sal = 0;
+                        }
 
-                    //Postletzahl in OrtNr umwandeln um in Tabelle einzufügen
-                    if (cmxplz.Text != "")
-                    {
-                        DataTable DtClass = classquerry.GetSqlStatement("SELECT `Or_Nr` FROM `tbl_ort` WHERE `PLZ` = " + cmxplz.Text);
-                        foreach (DataRow row in DtClass.Rows)
+                        //Postletzahl in OrtNr umwandeln um in Tabelle einzufügen
+                        if (cmxplz.Text != "")
                         {
-                            plz = Convert.ToInt16(row["Or_Nr"]);
+                            DataTable DtClass = classquerry.GetSqlStatement("SELECT `Or_Nr` FROM `tbl_ort` WHERE `PLZ` = " + cmxplz.Text);
+                            foreach (DataRow row in DtClass.Rows)
+                            {
+                                plz = Convert.ToInt16(row["Or_Nr"]);
+                            }
                         }
+                        else
+                        {
+                            //Falls kein Ort ausgewählt soll 0 geschrieben werden.
+                            plz = 0;
+                        }
+                        //Datenstatz in Tabelle erstellen
+                        classquerry.SetSQLStatement("UPDATE `tbl_firma` SET `F_Name`= '" + tbxcomp.Text + "', `F_Vorname`= '" + tbxprename.Text + "', `F_Nachname`= '" + tbxname.Text + "',`F_Strasse`= '" + tbxstreet.Text + "', `An_Nr`= '" + sal + "', `Or_Nr`= '" + plz + "',`F_Ansprechperson`= '" + tbxcontact.Text + "',`F_Zusatz`= '" + tbxadd.Text + "',`F_Telefon`= '" + tbxtel.Text + "',`F_Fax`= '" + tbxfax.Text + "' WHERE `F_Name` = '" + cmxcompsrc.Text + "'");
                     }
-                    else
-                    {
-                        //Falls kein Ort ausgewählt soll 0 geschrieben werden.
-                        plz = 0;
-                    }
-                    //Datenstatz in Tabelle erstellen
-                    classquerry.SetSQLStatement("UPDATE `tbl_firma` SET `F_Name`= '" + tbxcomp.Text + "', `F_Vorname`= '" + tbxprename.Text + "', `F_Nachname`= '" + tbxname.Text + "',`F_Strasse`= '" + tbxstreet.Text + "', `An_Nr`= '" + sal + "', `Or_Nr`= '" + plz + "',`F_Ansprechperson`= '" + tbxcontact.Text + "',`F_Zusatz`= '" + tbxadd.Text + "',`F_Telefon`= '" + tbxtel.Text + "',`F_Fax`= '" + tbxfax.Text + "' WHERE `F_Name` = '" + cmxcompsrc.Text + "'");
                 }
             }
             catch
             {
-                MessageBox.Show("Beim Speichern ist ein Fehler aufgetretten, versuchen Sie es erneut oder kontaktieren Sie den Support.");
+                MessageBox.Show("Beim Speichern ist ein Fehler aufgetreten, versuchen Sie es erneut oder kontaktieren Sie den Support.");
             }
         }
 
@@ -286,7 +293,7 @@ namespace M158_SMPD.Forms.Grp3
             }
             catch
             {
-                MessageBox.Show("Beim Aufrufen von weiteren Firmen-Infos ist ein Fehler aufgetretten, versuchen Sie es erneut oder kontaktieren Sie den Support.");
+                MessageBox.Show("Beim Aufrufen von weiteren Firmen-Infos ist ein Fehler aufgetreten, versuchen Sie es erneut oder kontaktieren Sie den Support.");
             }
         }
 

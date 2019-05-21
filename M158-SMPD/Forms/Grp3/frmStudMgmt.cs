@@ -64,7 +64,7 @@ namespace M158_SMPD.Forms.Grp3
             }
             catch
             {
-                MessageBox.Show("Beim Starten dieses Fensters ist ein Problem aufgetretten \nVersuchen Sie es erneut oder kontaktieren Sie den Support");
+                MessageBox.Show("Beim Starten dieses Fensters ist ein Problem aufgetreten \nVersuchen Sie es erneut oder kontaktieren Sie den Support");
                 Application.Exit();
             }
             getpeople();
@@ -84,7 +84,7 @@ namespace M158_SMPD.Forms.Grp3
             }
             catch
             {
-                MessageBox.Show("Beim Abfragen der Lehrlinge ist ein Fehler aufgetretten, versuchen Sie es erneut");
+                MessageBox.Show("Beim Abfragen der Lehrlinge ist ein Fehler aufgetreten, versuchen Sie es erneut");
             }
         }
 
@@ -416,7 +416,7 @@ namespace M158_SMPD.Forms.Grp3
             }
             catch
             {
-                MessageBox.Show("Beim Speichern ist ein Fehler aufgetretten, versuchen Sie es erneut oder kontaktieren Sie den Support");
+                MessageBox.Show("Beim Speichern ist ein Fehler aufgetreten, versuchen Sie es erneut oder kontaktieren Sie den Support");
             }
             getpeople();
         }
@@ -443,6 +443,9 @@ namespace M158_SMPD.Forms.Grp3
                 tbxstr.Text = "";
                 tbxtel.Text = "";
                 dtrbirth.Value = Convert.ToDateTime(DateTime.Now);
+                cmxapsrc.Items.Clear();
+                getpeople();
+                
             }
             catch
             {

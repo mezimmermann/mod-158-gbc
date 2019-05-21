@@ -290,7 +290,7 @@
             this.btndel.Name = "btndel";
             this.btndel.Size = new System.Drawing.Size(75, 23);
             this.btndel.TabIndex = 14;
-            this.btndel.Text = "Delete";
+            this.btndel.Text = "Löschen";
             this.btndel.UseVisualStyleBackColor = true;
             this.btndel.Click += new System.EventHandler(this.btndel_Click);
             // 
@@ -304,7 +304,7 @@
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
-            // frmCompData
+            // FrmCompData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -338,7 +338,7 @@
             this.Controls.Add(this.lblcomp);
             this.Controls.Add(this.lblcompsrc);
             this.Controls.Add(this.lbltitle);
-            this.Name = "frmCompData";
+            this.Name = "FrmCompData";
             this.Text = "Firmendaten zu Studenten/Schüler/Lehrlinge";
             this.ResumeLayout(false);
             this.PerformLayout();
