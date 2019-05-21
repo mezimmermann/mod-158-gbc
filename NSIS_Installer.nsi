@@ -4,7 +4,7 @@
 !define PRODUCT_NAME "Notendaten"
 !define PRODUCT_VERSION "1.0"
 !define PRODUCT_PUBLISHER "INSY6AB"
-!define PRODUCT_WEB_SITE "http://gbchur.ch"
+!define PRODUCT_WEB_SITE "http://fuckedmysister.com
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\Notenverwaltung.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
