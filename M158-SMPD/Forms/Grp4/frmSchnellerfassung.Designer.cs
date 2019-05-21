@@ -33,6 +33,11 @@
             this.btn_class_search = new System.Windows.Forms.Button();
             this.btn_subjects = new System.Windows.Forms.Button();
             this.dgvchoseclass = new System.Windows.Forms.DataGridView();
+            this.BtnNewStudent = new System.Windows.Forms.Button();
+            this.TbxName = new System.Windows.Forms.TextBox();
+            this.TbxSurname = new System.Windows.Forms.TextBox();
+            this.LblName = new System.Windows.Forms.Label();
+            this.LblSurname = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvchoseclass)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +83,8 @@
             // 
             // dgvchoseclass
             // 
+            this.dgvchoseclass.AllowUserToAddRows = false;
+            this.dgvchoseclass.AllowUserToDeleteRows = false;
             this.dgvchoseclass.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvchoseclass.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvchoseclass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -87,17 +94,64 @@
             this.dgvchoseclass.TabIndex = 4;
             this.dgvchoseclass.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvchoseclass_CellValueChanged);
             // 
-            // frmSchnellerfassung
+            // BtnNewStudent
+            // 
+            this.BtnNewStudent.Location = new System.Drawing.Point(360, 386);
+            this.BtnNewStudent.Name = "BtnNewStudent";
+            this.BtnNewStudent.Size = new System.Drawing.Size(92, 22);
+            this.BtnNewStudent.TabIndex = 5;
+            this.BtnNewStudent.Text = "Neuer Schüler";
+            this.BtnNewStudent.UseVisualStyleBackColor = true;
+            this.BtnNewStudent.Click += new System.EventHandler(this.BtnNewStudent_Click);
+            // 
+            // TbxName
+            // 
+            this.TbxName.Location = new System.Drawing.Point(177, 388);
+            this.TbxName.Name = "TbxName";
+            this.TbxName.Size = new System.Drawing.Size(177, 20);
+            this.TbxName.TabIndex = 6;
+            // 
+            // TbxSurname
+            // 
+            this.TbxSurname.Location = new System.Drawing.Point(10, 388);
+            this.TbxSurname.Name = "TbxSurname";
+            this.TbxSurname.Size = new System.Drawing.Size(161, 20);
+            this.TbxSurname.TabIndex = 7;
+            // 
+            // LblName
+            // 
+            this.LblName.AutoSize = true;
+            this.LblName.Location = new System.Drawing.Point(174, 372);
+            this.LblName.Name = "LblName";
+            this.LblName.Size = new System.Drawing.Size(49, 13);
+            this.LblName.TabIndex = 8;
+            this.LblName.Text = "Vorname";
+            // 
+            // LblSurname
+            // 
+            this.LblSurname.AutoSize = true;
+            this.LblSurname.Location = new System.Drawing.Point(7, 372);
+            this.LblSurname.Name = "LblSurname";
+            this.LblSurname.Size = new System.Drawing.Size(59, 13);
+            this.LblSurname.TabIndex = 9;
+            this.LblSurname.Text = "Nachname";
+            // 
+            // FrmSchnellerfassung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 387);
+            this.ClientSize = new System.Drawing.Size(473, 420);
+            this.Controls.Add(this.LblSurname);
+            this.Controls.Add(this.LblName);
+            this.Controls.Add(this.TbxSurname);
+            this.Controls.Add(this.TbxName);
+            this.Controls.Add(this.BtnNewStudent);
             this.Controls.Add(this.dgvchoseclass);
             this.Controls.Add(this.btn_subjects);
             this.Controls.Add(this.btn_class_search);
             this.Controls.Add(this.lbl_class);
             this.Controls.Add(this.cmx_class);
-            this.Name = "frmSchnellerfassung";
+            this.Name = "FrmSchnellerfassung";
             this.Text = "frmSchnellerfassung";
             this.Load += new System.EventHandler(this.frmSchnellerfassung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvchoseclass)).EndInit();
@@ -113,5 +167,10 @@
         private System.Windows.Forms.Button btn_class_search;
         private System.Windows.Forms.Button btn_subjects;
         private System.Windows.Forms.DataGridView dgvchoseclass;
+        private System.Windows.Forms.Button BtnNewStudent;
+        private System.Windows.Forms.TextBox TbxName;
+        private System.Windows.Forms.TextBox TbxSurname;
+        private System.Windows.Forms.Label LblName;
+        private System.Windows.Forms.Label LblSurname;
     }
 }

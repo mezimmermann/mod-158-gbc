@@ -266,6 +266,9 @@
     <EmbeddedResource Include="Forms\Grp1\FrmUserRegister.resx">
       <DependentUpon>FrmUserRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp4\frmSchnellerfassung.resx">
+      <DependentUpon>FrmSchnellerfassung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Grp5\FrmAnrede.resx">
       <DependentUpon>FrmAnrede.cs</DependentUpon>
     </EmbeddedResource>

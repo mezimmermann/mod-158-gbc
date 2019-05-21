@@ -128,5 +128,34 @@ namespace M158_SMPD.Forms.Grp4
             }
             
         }
+
+        private void BtnNewStudent_Click(object sender, EventArgs e)
+        {
+            string class_id = "";
+            try
+            {
+                string ausclass = (this.cmx_class.SelectedItem.ToString());
+                var sqlstatementauswahl = "Select Kl_Nr from tbl_klasse where Klasse = '" + ausclass + "' LIMIT 1";
+                DataTable _class = conn.GetSqlStatement(sqlstatementauswahl);
+                foreach (DataRow row in _class.Rows)
+                {
+                   class_id = row[0].ToString();
+                }
+
+                //Daten im DB direkt eintragen und speichern
+                var sqlstatement = "INSERT INTO tbl_lehrling (Name, Vorname, Kl_Nr) VALUES('" + TbxName.Text + "', '" + TbxSurname.Text + "', '" + class_id + "')";
+                //conn.SetSQLStatement(sqlstatement);
+                conn.SetSQLStatement(sqlstatement);
+                TbxSurname.Text = "";
+                TbxName.Text = "";
+                MessageBox.Show("Gespeichert");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
