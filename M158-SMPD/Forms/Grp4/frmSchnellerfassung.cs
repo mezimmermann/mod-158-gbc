@@ -56,7 +56,13 @@ namespace M158_SMPD.Forms.Grp4
         {
             //Klassen Form öffnen
             FrmKlassen klassen = new FrmKlassen();
-            klassen.ShowDialog();
+            klassen.MdiParent = this.MdiParent;
+            klassen.Show();
+            //Forms.Grp7.FrmReview frm = new Forms.Grp7.FrmReview
+            //{
+            //    MdiParent = this
+            //};
+            //frmReview.Show();
         }
 
         private void btn_subjects_Click(object sender, EventArgs e)
