@@ -7,14 +7,13 @@ namespace M158_SMPD.Forms.Grp3
 {
     public partial class FrmCompData : Form
     {
-        //public string connection = "Server=localhost;Database=notenprogramm;Uid=root;Pwd=;";
-        public MySqlConnection connector = new MySqlConnection();
-        public int sal;
-        public int plz;
+        public int sal; //Variabel für die Anrede
+        public int plz; //Variabel für die Postleitzahl
 
         public FrmCompData()
         {
-            InitializeComponent();
+            InitializeComponent();     
+            //Alle Text und Comboboxen leeren
             cmxcompsrc.Items.Clear();
             tbxcomp.Clear();
             cmxsal.Items.Clear();
@@ -31,10 +30,12 @@ namespace M158_SMPD.Forms.Grp3
             cmxsal.Text = "";
             cmxtown.Text = "";
             cmxplz.Text = "";
+            //Firmenauswahl Dropdown "Neue Firma" einfügen für das erstellen neuer Firmen
             cmxcompsrc.Items.Add("Neue Firma");
 
             try
             {
+                //Alle Firmen werden eingelesen und in ein Dropdownmenu eingelesen
                 var classquerry = new M158_SMPD.MySQLCon();
                 DataTable DtClass = classquerry.GetSqlStatement("SELECT `F_Name` FROM `tbl_firma` WHERE 1");
                 foreach (DataRow row in DtClass.Rows)
@@ -50,6 +51,7 @@ namespace M158_SMPD.Forms.Grp3
 
             try
             {
+                //Erfasste Anreden abfragen und in Dropdown einfügen
                 var classquerry = new M158_SMPD.MySQLCon();
                 DataTable DtClass = classquerry.GetSqlStatement("SELECT `Anrede` FROM `tbl_anrede` WHERE 1");
                 foreach (DataRow row in DtClass.Rows)
@@ -65,13 +67,20 @@ namespace M158_SMPD.Forms.Grp3
 
             try
             {
+                //Orte und Postleitzahlen abfragen und in ihre eigenen Dropdown-Menus einfügen
                 var classquerry = new M158_SMPD.MySQLCon();
-                DataTable DtClass = classquerry.GetSqlStatement("SELECT `PLZ`, `Ort` FROM `tbl_ort` WHERE 1");
+                DataTable DtClass = classquerry.GetSqlStatement("SELECT `PLZ` FROM `tbl_ort` WHERE 1");
+                foreach (DataRow row in DtClass.Rows)
+                {
+                    cmxplz.Items.Add(row["PLZ"].ToString());
+                }
+                //Orte mit mehreren Postleitzahlen werden nur einmal als Ort aufgelistet
+                DtClass = classquerry.GetSqlStatement("SELECT DISTINCT `Ort` FROM `tbl_ort` WHERE 1");
                 foreach (DataRow row in DtClass.Rows)
                 {
                     cmxtown.Items.Add(row["Ort"].ToString());
-                    cmxplz.Items.Add(row["PLZ"].ToString());
                 }
+                
             }
             catch
             {
@@ -90,12 +99,14 @@ namespace M158_SMPD.Forms.Grp3
                 cmxcompsrc.Items.Clear();
                 cmxcompsrc.Text = "";
 
+                //Firmen werden nochmals abgefragt und in Combobox geschrieben, damit die Gelöschte Firma nicht mehr auftaucht
                 DataTable DtClass = classquerry.GetSqlStatement("SELECT `F_Name` FROM `tbl_firma` WHERE 1");
                 foreach (DataRow row in DtClass.Rows)
                 {
                     cmxcompsrc.Items.Add(row["F_Name"].ToString());
                 }
 
+                //Alle Text - Comboboxen leeren nachdem die Firma gelöscht wurde
                 tbxcomp.Clear();
                 cmxsal.Text = "";
                 tbxname.Clear();
@@ -108,7 +119,6 @@ namespace M158_SMPD.Forms.Grp3
                 tbxtel.Clear();
                 tbxfax.Clear();
                 cbxactive.Checked = false;
-                connector.Close();
                 cmxcompsrc.Items.Add("Neue Firma");
             }
             catch
@@ -121,11 +131,13 @@ namespace M158_SMPD.Forms.Grp3
         {
             try
             {
+                var classquerry = new M158_SMPD.MySQLCon();
+                //Schauen ob es eine Firma ist
                 if (cmxcompsrc.Text == "Neue Firma")
                 {
                     decimal existent = 0;
 
-                    var classquerry = new M158_SMPD.MySQLCon();
+                    //Schauen ob es diesen Firmennamen bereits gibt.
                     DataTable DtClass = classquerry.GetSqlStatement("SELECT `F_Name` FROM `tbl_firma` WHERE 1");
                     foreach (DataRow row in DtClass.Rows)
                     {
@@ -138,36 +150,72 @@ namespace M158_SMPD.Forms.Grp3
 
                     if (existent == 0)
                     {
-                        DtClass = classquerry.GetSqlStatement("SELECT `An_Nr` FROM `tbl_anrede` WHERE `Anrede` = '" + cmxsal.Text + "'");
+                        if (cmxsal.Text != "")
+                        {
+                            //Anrede in Anredennummer umformen um in Tabelle einzufügen
+                            DtClass = classquerry.GetSqlStatement("SELECT `An_Nr` FROM `tbl_anrede` WHERE `Anrede` = '" + cmxsal.Text + "'");
+                            foreach (DataRow row in DtClass.Rows)
+                            {
+                                sal = Convert.ToInt16(row["An_Nr"]);
+                            }
+                        }
+                        else
+                        {
+                            //Falls keine Anrede ausgwählt ist, soll 0 geschrieben werden
+                            sal = 0;
+                        }
+
+                        //Postletzahl in OrtNr umwandeln um in Tabelle einzufügen
+                        if (cmxplz.Text != "")
+                        {
+                            DtClass = classquerry.GetSqlStatement("SELECT `Or_Nr` FROM `tbl_ort` WHERE `PLZ` = " + cmxplz.Text);
+                            foreach (DataRow row in DtClass.Rows)
+                            {
+                                plz = Convert.ToInt16(row["Or_Nr"]);
+                            }
+                        }
+                        else
+                        {
+                            //Falls kein Ort ausgewählt soll 0 geschrieben werden.
+                            plz = 0;
+                        }
+
+                        //Infos in Datenbank einfügen
+                        classquerry.SetSQLStatement("INSERT INTO `tbl_firma` (`Fi_Nr`, `F_Name`, `F_Vorname`, `F_Nachname`, `F_Strasse`, `An_Nr`, `Or_Nr`, `F_Ansprechperson`, `F_Zusatz`, `F_Telefon`, `F_Fax`, `F_Aktiv`) VALUES(NULL, '" + tbxcomp.Text + "', '" + tbxprename.Text + "', '" + tbxname.Text + "', '" + tbxstreet.Text + "', '" + sal + "', '" + plz + "', '" + tbxcontact.Text + "', '" + tbxadd.Text + "', '" + tbxtel.Text + "', '" + tbxfax.Text + "', '1')");
+                    }
+                }
+                else //Wenn keine neue Firma erstellt werden soll
+                {
+                    //Anrede in Anredennummer umwandeln um einzufügen
+                    if (cmxsal.Text != "")
+                    {
+                        DataTable DtClass = classquerry.GetSqlStatement("SELECT `An_Nr` FROM `tbl_anrede` WHERE `Anrede` = '" + cmxsal.Text + "'");
                         foreach (DataRow row in DtClass.Rows)
                         {
                             sal = Convert.ToInt16(row["An_Nr"]);
                         }
+                    }
+                    else
+                    {
+                        //Falls keine Anrede ausgwählt ist, soll 0 geschrieben werden
+                        sal = 0;
+                    }
 
-                        DtClass = classquerry.GetSqlStatement("SELECT `Or_Nr` FROM `tbl_ort` WHERE `PLZ` = " + cmxplz.Text);
+                    //Postletzahl in OrtNr umwandeln um in Tabelle einzufügen
+                    if (cmxplz.Text != "")
+                    {
+                        DataTable DtClass = classquerry.GetSqlStatement("SELECT `Or_Nr` FROM `tbl_ort` WHERE `PLZ` = " + cmxplz.Text);
                         foreach (DataRow row in DtClass.Rows)
                         {
                             plz = Convert.ToInt16(row["Or_Nr"]);
                         }
-
-                        classquerry.SetSQLStatement("INSERT INTO `tbl_firma` (`Fi_Nr`, `F_Name`, `F_Vorname`, `F_Nachname`, `F_Strasse`, `An_Nr`, `Or_Nr`, `F_Ansprechperson`, `F_Zusatz`, `F_Telefon`, `F_Fax`, `F_Aktiv`) VALUES(NULL, '" + tbxcomp.Text + "', '" + tbxprename.Text + "', '" + tbxname.Text + "', '" + tbxstreet.Text + "', '" + sal + "', '" + plz + "', '" + tbxcontact.Text + "', '" + tbxadd.Text + "', '" + tbxtel.Text + "', '" + tbxfax.Text + "', '1')");
                     }
-                }
-                else
-                {
-                    var classquerry = new M158_SMPD.MySQLCon();
-                    DataTable DtClass = classquerry.GetSqlStatement("SELECT `An_Nr` FROM `tbl_anrede` WHERE `Anrede` = '" + cmxsal.Text + "'");
-                    foreach (DataRow row in DtClass.Rows)
+                    else
                     {
-                        sal = Convert.ToInt16(row["An_Nr"]);
+                        //Falls kein Ort ausgewählt soll 0 geschrieben werden.
+                        plz = 0;
                     }
-
-                    DtClass = classquerry.GetSqlStatement("SELECT `Or_Nr` FROM `tbl_ort` WHERE `PLZ` = " + cmxplz.Text);
-                    foreach (DataRow row in DtClass.Rows)
-                    {
-                        plz = Convert.ToInt16(row["Or_Nr"]);
-                    }
-
+                    //Datenstatz in Tabelle erstellen
                     classquerry.SetSQLStatement("UPDATE `tbl_firma` SET `F_Name`= '" + tbxcomp.Text + "', `F_Vorname`= '" + tbxprename.Text + "', `F_Nachname`= '" + tbxname.Text + "',`F_Strasse`= '" + tbxstreet.Text + "', `An_Nr`= '" + sal + "', `Or_Nr`= '" + plz + "',`F_Ansprechperson`= '" + tbxcontact.Text + "',`F_Zusatz`= '" + tbxadd.Text + "',`F_Telefon`= '" + tbxtel.Text + "',`F_Fax`= '" + tbxfax.Text + "' WHERE `F_Name` = '" + cmxcompsrc.Text + "'");
                 }
             }
@@ -177,12 +225,13 @@ namespace M158_SMPD.Forms.Grp3
             }
         }
 
-        private void cmxcompsrc_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmxcompsrc_SelectedIndexChanged(object sender, EventArgs e) //Wenn im Dropdown eine Firma ausgewählt wurde
         {
             try
             {
                 string firmasuchen = Convert.ToString(cmxcompsrc.Text);
 
+                //Alle Felder sollen geleert werden
                 tbxcomp.Clear();
                 cmxsal.Text = "";
                 tbxname.Clear();
@@ -198,6 +247,7 @@ namespace M158_SMPD.Forms.Grp3
 
                 if (cmxcompsrc.Text != "Neue Firma")
                 {
+                    //Falls es keine neue Firma sein soll, werden alle Infos der Firma abgeruffen und in die Felder eingetragen
                     var classquerry = new M158_SMPD.MySQLCon();
                     DataTable DtClass = classquerry.GetSqlStatement("SELECT * FROM `tbl_firma` WHERE `F_Name` LIKE '" + firmasuchen + "'");
                     foreach (DataRow row in DtClass.Rows)
@@ -218,12 +268,14 @@ namespace M158_SMPD.Forms.Grp3
                         }
                     }
 
+                    //Umwandlung Anredennummer in Anrede
                     DtClass = classquerry.GetSqlStatement("SELECT `Anrede` FROM `tbl_anrede` WHERE `An_Nr` = " + sal);
                     foreach (DataRow row in DtClass.Rows)
                     {
                         cmxsal.Text = Convert.ToString(row["Anrede"]);
                     }
 
+                    //Umwandlung Ortnummer in Ort und Postleitzahl
                     DtClass = classquerry.GetSqlStatement("SELECT * FROM `tbl_ort` WHERE `Or_Nr` = " + plz);
                     foreach (DataRow row in DtClass.Rows)
                     {
@@ -238,12 +290,12 @@ namespace M158_SMPD.Forms.Grp3
             }
         }
 
-        private void cmxplz_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmxplz_SelectedIndexChanged(object sender, EventArgs e) //Wenn eine Postleitzahl ausgwählt ist, soll Postleitzahl in Ort umgewandelt werden
         {
             try
             {
                 var classquerry = new M158_SMPD.MySQLCon();
-                DataTable DtClass = classquerry.GetSqlStatement("SELECT `Ort` FROM `tbl_ort` WHERE `PLZ` = " + plz);
+                DataTable DtClass = classquerry.GetSqlStatement("SELECT `Ort` FROM `tbl_ort` WHERE `PLZ` = " + cmxplz.Text);
                 foreach (DataRow row in DtClass.Rows)
                 {
                     cmxtown.Text = Convert.ToString(row["Ort"]);
@@ -255,7 +307,7 @@ namespace M158_SMPD.Forms.Grp3
             }
         }
 
-        private void cmxtown_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmxtown_SelectedIndexChanged(object sender, EventArgs e) //Wenn ein Ort ausgewählt ist, solle er in eine Postleitzahl umgewandelt werden
         {
             try
             {
