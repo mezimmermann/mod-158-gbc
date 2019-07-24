@@ -7,10 +7,30 @@
     <ProjectGuid>{66D5C36F-3A40-4FDC-BE0E-52D1EE646996}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>M158_SMPD</RootNamespace>
-    <AssemblyName>M158-SMPD</AssemblyName>
+    <AssemblyName>Notenverwaltung</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\ltemp\tuubels\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Notenverwaltung</ProductName>
+    <PublisherName>INSY6AB</PublisherName>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,9 +51,36 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\appico.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>89821EC864A18552A657BC17302E756E12A6BFA2</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>M158-SMPD_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.Ribbon">
+      <HintPath>Assemblies\v4.5.2\System.Windows.Forms.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,18 +90,235 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Grp1\Cryption.cs" />
+    <Compile Include="Forms\Grp1\FrmNotendaten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp1\FrmNotendaten.Designer.cs">
+      <DependentUpon>FrmNotendaten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp1\FrmUserRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp1\FrmUserRegister.Designer.cs">
+      <DependentUpon>FrmUserRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSVUtil.cs" />
+    <Compile Include="Forms\Grp3\FrmClassMgmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp3\FrmClassMgmt.Designer.cs">
+      <DependentUpon>FrmClassMgmt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp3\FrmCompData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp3\FrmCompData.Designer.cs">
+      <DependentUpon>FrmCompData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp3\FrmStudMgmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp3\FrmStudMgmt.Designer.cs">
+      <DependentUpon>FrmStudMgmt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp5\FrmAnrede.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp5\FrmAnrede.Designer.cs">
+      <DependentUpon>FrmAnrede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp5\FrmFach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp5\FrmFach.Designer.cs">
+      <DependentUpon>FrmFach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp5\FrmOrt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp5\FrmOrt.Designer.cs">
+      <DependentUpon>FrmOrt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp6\FrmBerufe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp6\FrmBerufe.Designer.cs">
+      <DependentUpon>FrmBerufe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReview.Designer.cs">
+      <DependentUpon>FrmReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp2\FrmFaecherzuteilung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp2\FrmFaecherzuteilung.Designer.cs">
+      <DependentUpon>FrmFaecherzuteilung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp1\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp1\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp4\FrmNotenlisten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp4\FrmNotenlisten.Designer.cs">
+      <DependentUpon>FrmNotenlisten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp2\FrmNotenperiode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp2\FrmNotenperiode.Designer.cs">
+      <DependentUpon>FrmNotenperiode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp4\FrmSchnellerfassung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp4\FrmSchnellerfassung.Designer.cs">
+      <DependentUpon>FrmSchnellerfassung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp6\FrmKlassen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp6\FrmKlassen.Designer.cs">
+      <DependentUpon>FrmKlassen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDBSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDBSettings.Designer.cs">
+      <DependentUpon>FrmDBSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoading.Designer.cs">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewBeruf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewBeruf.Designer.cs">
+      <DependentUpon>FrmReviewBeruf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewFaecher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewFaecher.Designer.cs">
+      <DependentUpon>FrmReviewFaecher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewFirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewFirma.Designer.cs">
+      <DependentUpon>FrmReviewFirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewKlasse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewKlasse.Designer.cs">
+      <DependentUpon>FrmReviewKlasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewLehrling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewLehrling.Designer.cs">
+      <DependentUpon>FrmReviewLehrling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewLehrzeiten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewLehrzeiten.Designer.cs">
+      <DependentUpon>FrmReviewLehrzeiten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewSemester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grp7\FrmReviewSemester.Designer.cs">
+      <DependentUpon>FrmReviewSemester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MySQLCon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Forms\Grp1\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp1\FrmNotendaten.resx">
+      <DependentUpon>FrmNotendaten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp1\FrmUserRegister.resx">
+      <DependentUpon>FrmUserRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp4\frmSchnellerfassung.resx">
+      <DependentUpon>FrmSchnellerfassung.cs</DependentUpon>
+	</EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp3\FrmStudMgmt.resx">
+      <DependentUpon>FrmStudMgmt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp5\FrmAnrede.resx">
+      <DependentUpon>FrmAnrede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp5\FrmFach.resx">
+      <DependentUpon>FrmFach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp5\FrmOrt.resx">
+      <DependentUpon>FrmOrt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp6\FrmBerufe.resx">
+      <DependentUpon>FrmBerufe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp6\FrmKlassen.resx">
+      <DependentUpon>FrmKlassen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDBSettings.resx">
+      <DependentUpon>FrmDBSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoading.resx">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReview.resx">
+      <DependentUpon>FrmReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewBeruf.resx">
+      <DependentUpon>FrmReviewBeruf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewFaecher.resx">
+      <DependentUpon>FrmReviewFaecher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewFirma.resx">
+      <DependentUpon>FrmReviewFirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewKlasse.resx">
+      <DependentUpon>FrmReviewKlasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewLehrling.resx">
+      <DependentUpon>FrmReviewLehrling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewLehrzeiten.resx">
+      <DependentUpon>FrmReviewLehrzeiten.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grp7\FrmReviewSemester.resx">
+      <DependentUpon>FrmReviewSemester.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -64,6 +328,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -77,6 +342,41 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3453038.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btman.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingsico.png" />
+    <None Include="Resources\notendaten.png" />
+    <None Include="Resources\stammdatenico.png" />
+    <None Include="Resources\classico.png" />
+    <None Include="Resources\locico.png" />
+    <None Include="Resources\erfassenico.png" />
+    <None Include="Resources\reportico.png" />
+    <None Include="Resources\List-Icon.svg.png" />
+    <None Include="Resources\jobico.png" />
+    <None Include="Resources\notdatico.png" />
+    <None Include="Resources\periodico.png" />
+    <None Include="Resources\classesico.png" />
+    <None Include="Resources\dataico.ico" />
+    <None Include="Resources\appico.ico" />
+    <Content Include="RibbonMarkup.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

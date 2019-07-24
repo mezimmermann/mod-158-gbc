@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace M158_SMPD
@@ -16,6 +13,7 @@ namespace M158_SMPD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmLogin());
             Application.Run(new FrmMain());
         }
     }
